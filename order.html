@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock and Fork: menú</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <link rel = "stylesheet" href = "style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/loading-bar.css"/>
+    <style>
+        /* Estilos CSS */
+        /* Añade aquí tus estilos CSS según tus preferencias */
+    </style>
+</head>
+<body>
+    <section id="pag1" class="order_page">
+        <!-- Paso 1: Selección de Productos -->
+        <article id="paso-1">
+            <p class="miga-pan"><span class="breadcrumb-link order_to_home">Home ></span> Selecciona tus productos ></p>
+            <article class="col-6 col-s-6 align-center" id="paso1-left">
+                <h2 class="align-center">Paso 1 - Selección de Productos</h2>
+                <div class="align-center" id="product-list">
+                    <!-- Aquí se mostrarán los productos -->
+                </div>     
+            </article>
+            <article class="col-6 col-s-6 align-center" id="paso1-right" >
+                <div class="tray box align-center">
+                    <!--Segunda columna que contiene la "cesta"-->
+                    <h2 class="align-center">Bandeja</h2>
+                    <ul id="productos-en-cesta">
+                        <!-- Aquí se mostrarán los productos seleccionados -->
+                    </ul>
+                    <button id="next_step">SIGUIENTE PASO</button>
+                </div>
+            </article>
+        </article>
+
+        <!-- Paso 2: Revisión del Pedido y Pago -->
+        <article id="paso-2">
+            <article class="col-6 col-s-6 align-center" id="paso2-left">
+                <p class="miga-pan"><span class="breadcrumb-link order_to_home">Home ></span><span class="breadcrumb-link" id="selecciona-productos">Selecciona tus productos ></span> Revisa tu pedido</p>
+                <h2>Paso 2 - Revisión del Pedido y Pago</h2>
+                <!-- Aquí se mostrarán los productos seleccionados y el total a pagar -->
+                <div class="tray box align-center">
+                    <ul id="lista-productosUL">  </ul>
+                        <!-- Aquí se mostrarán los productos seleccionados -->
+                    <div id="total-pagar">Total a Pagar: $0</div>
+                </div>
+            </article>
+            <article class="col-6 col-s-6 align-center" id="paso2-right" >
+                <h2 class="align-center">Formulario de Pago</h2>
+                <form class="centerForm" id="registrationForm">
+                    <!-- Nombre Input -->
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+            
+                    <!-- Tarjeta Inputs -->
+                    <div class="form-group">
+                        <label for="tarjeta">Número de tarjeta</label>
+                        <input type="text" id="tarjeta" name="tarjeta" required>
+                    </div>
+            
+                    <!-- Fecha Caducidad Input -->
+                    <div class="form-group">
+                        <label for="date">Fecha de vencimiento</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+            
+                    <!-- CVV Input -->
+                    <div class="form-group">
+                        <label for="cvv">Cvv</label>
+                        <input type="number" id="cvv" name="cvv" required>
+                    </div>
+                </form>
+                <button id="revisionBtn">Pagar pedido</button>
+            </article>
+        </article>
+
+        <!-- Paso 3: Estado del Pedido -->
+        <article id="paso-3" class="align-center">
+            <p class="miga-pan"><span class="breadcrumb-link order_to_home">Home ></span>Selecciona tus productos > Revisa tu pedido > Estado del pedido</p>
+            <h2>Paso 3 - Estado del Pedido</h2>
+            <p>Su pedido se ha realizado exitosamente.</p>
+           
+            <div
+            class="ldBar label-center"
+            data-type="fill"
+            data-img="images/burger.svg"
+            data-img-size="100,100"
+            data-fill-background="#9A8670"
+            data-value="0"
+            id="timer"
+            >
+            </div>
+        
+        
+        </article>
+        
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript/order.js"></script>
+    <script type="text/javascript" src="javascript/loading-bar.js"></script>
+</body>
+</html>

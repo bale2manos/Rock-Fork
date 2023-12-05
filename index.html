@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">   <!--ask why this works -> w3c schools-->
+<meta charset="UTF-8">
+<title>Rock and Fork</title>
+<link rel="icon" type="image/x-icon" href="images/logo.ico">
+<link rel = "stylesheet" href = "style/style.css">
+</head>
+<body>
+    <header class="top-nav">
+        <input id="menu-toggle" type="checkbox"/>
+        <label class='menu-button-container' for="menu-toggle">
+            <span class='menu-button'></span>
+        </label>
+        <ul class="burger-menu">
+            <li><a href="#pag2">Info</a></li>
+            <li><a href="#pag3">Menu</a></li>
+            <li><a href="#pag4">Live</a></li>
+            <li><a href="#registration">Registro</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    
+    
+    <!--Página principal-->
+    <section id="pag1" class="pagina">
+        <article class="col-5 col-s-12 main-image align-center" >
+            <figure>
+                <img id="image_1" src="images/logo.png" alt="Rock and fork">
+            </figure>
+            <div class = "video_container">
+                <video class = "video box" controls autoplay muted>
+                    <source src="images/video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </article>
+
+        <nav class="col-7 col-s-12 flex-container align-center">
+            <div class = "box">
+                <a href="#pag2">Info</a>
+            </div>
+            <div class = "box">
+                <a href="#pag3">Menu</a>
+            </div>
+            <div class = "box">
+                <a href="#pag4">Live</a>
+            </div>
+            <div class = "box">
+                <a href="#registration">Registro</a>
+            </div>
+            <div class = "box" id="go-to-order">
+                <a href="order.html">Order</a>
+            </div>
+            <div class = "box">
+                <a href="#contact">Contact</a>
+            </div>    
+        </nav>
+    </section>
+    
+    <!--Página 2-->
+    <section id = "pag2" class="pagina">
+        <article class="col-7 col-s-12 align-center">
+            <p> <!--TODO es buena practica?-->  
+                Bienvenidos a Rock & Fork, el epicentro del sabor americano y la música rock en Leganés. 
+                Sumérgete en una experiencia culinaria única donde los sabores auténticos se mezclan con los ritmos más vibrantes. 
+                En Rock & Fork, no solo ofrecemos comida excepcional, sino que también te transportamos a una época en la que el rock 
+                era la banda sonora de la vida.</p> 
+        </article>
+
+        <article class="col-5 col-s-12 galeria-1">
+            <h1 class = "title align-center">Info</h1>
+            <figure class = "align-center" id="image-gallery">
+                <img  id="zoomed-image" src="images/galeria1.jpg" alt="image1"/>
+                <figure id="thumbnail-container">
+                  <img class="thumbnail" src="images/galeria1.jpg" alt="image1"/>
+                  <img class="thumbnail" src="images/galeria2.jpg" alt="image2"/>
+                  <img class="thumbnail" src="images/galeria3.jpg" alt="image3"/>
+                  <img class="thumbnail" src="images/galeria4.jpg" alt="image4"/>
+                </figure>
+              </figure>
+        </article>
+        <!--Cajas-->
+    </section>
+
+    <!--Página 3-->
+    <section id = "pag3" class = "pagina-special">
+        <article>
+            <article class="align-center barra-menu">
+                <button id = "boton-barra-entrantes" class = "boton-barra-menu">
+                    <p>Entrantes</p>
+                </button>
+                <button id = "boton-barra-Burgers" class = "boton-barra-menu">
+                    <p>Burgers</p>
+                </button>
+                <button id = "boton-barra-Costillas" class = "boton-barra-menu">
+                    <p>Costillas</p>
+                </button>
+                <button id = "boton-barra-Ensaladas" class = "boton-barra-menu">
+                    <p>Ensaladas</p>
+                </button>
+                <button id = "boton-barra-Postres" class = "boton-barra-menu">
+                    <p>Postres</p>
+                </button>
+            </article>
+        </article>
+        <article>
+            <article class="col-6 col-s-6 menu">
+                <div id = "Novedades-Entrantes1">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/nachos.jpg" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Nachos Rockeros
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Burgers1">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/hamburguesa1.jpg" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Hetfield Burger
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Costillas1">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/costillas1.png" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Vandenberg Ribs
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Ensaladas1">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/ensaladas1.png" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Satriani's Salad
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Postres1">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/postres1.png" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Mustaine's Shake
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-6 col-s-6 menu">
+                <div id = "Novedades-Entrantes2">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/entrantes1.jpg" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Aros Blueseros
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Burgers2">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/hamburguesa2.jpg" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Hammet Burger
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Costillas2">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/costillas2.png" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Hoffmann Ribs
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Ensaladas2">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/ensaladas2.jpg" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="align-center">
+                            Vaughan Salad
+                        </p>
+                    </div>
+                </div>
+                <div id = "Novedades-Postres2">
+                    <div>
+                        <figure>
+                            <img class="imagen_novedad" src="images/postres2.png" alt="Rock and fork">
+                        </figure>
+                    </div>
+                    <div class="align-center">
+                        <p>
+                            Rosendo's Ice cream
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </article>
+            <!--Cajas-->
+        
+    </section>
+
+    <!--Página 4-->
+    <section id = "pag4" class="pagina">
+        <article class="col-7 col-s-12 align-center">
+            <p id="live-music"> <!--TODO es buena practica?-->  
+                En Rock & Fork, la música en vivo es una parte esencial de nuestra identidad. 
+                Cada semana, ofrecemos emocionantes actuaciones en vivo para complementar tu experiencia culinaria. 
+                Nuestro escenario se ha convertido en un lugar de encuentro para amantes de la música de todas las edades y géneros.
+            </p> 
+            
+        </article>
+
+        <article class="col-5 col-s-12 galeria-1">
+            <div class="slider">
+                <img src="images/galeria1.jpg" alt="Image 1">
+                <img src="images/hamburguesa1.jpg" alt="Hamburguesa 1">
+                <img src="images/galeria3.jpg" alt="Image 3"> <!-- TODO CAMBIAR LOS ALT DE LAS IMGS -->
+                <img src="images/galeria4.jpg" alt="Image 4">
+                <img src="images/hamburguesa2.jpg" alt="Hamburguesa 2">
+                <img src="images/galeria6.jpg" alt="Image 6">
+                <img src="images/galeria2.jpg" alt="Image 7">
+                <img src="images/galeria5.jpg" alt="Image 8">
+                <img src="images/entrantes1.jpg" alt="Image 9">
+            </div>
+            
+        </article>
+        <!--Cajas-->
+    </section>
+    
+
+    <!--Página 5-->
+    <!-- Registration Form -->
+    <section id="registration" class="pagina">
+        <article class="col-7 col-s-12">
+        <h1>Registro de Usuarios</h1>
+        <form class="centerForm" id="registrationForm">
+            <!-- DNI Input -->
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+                <span id="dniError" class="error"></span>
+            </div>
+    
+            <!-- Nombre y Apellidos Inputs -->
+            <div class="form-group">
+                <label for="fullName">Nombre y Apellidos:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+    
+            <!-- Teléfono Input -->
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" required>
+            </div>
+    
+            <!-- Correo Electrónico Input -->
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <!-- Buttons -->
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+                <button type="button" id="clearBtn">Limpiar Campos</button>
+                <button type="button" id="cancelBtn">Cancelar</button>
+            </div>
+        </form>
+        </article>
+        <article class="col-5 col-s-0 not_mobile">
+            <figure>
+                <img src="images/galeria1.jpg" alt="galeria1" id="photo_form">
+            </figure>
+        </article>
+    </section>
+  
+
+    <!-- Página 6: Información de Contacto -->
+    <section id="contact" class="pagina">
+        <article class="col-6 col-s-12 align-center">
+            <div class="contact-info">
+                <h1 class="align-center">Info de Contacto</h1>
+                <p>Contáctanos para cualquier pregunta o necesidad. Estamos aquí para ayudarte.</p>
+                <p>Dirección: Calle del Rock, 123, Leganés</p>
+                <iframe class="map align-center" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12166.5069587944!2d-3.7662597!3d40.3284408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418bd335994a33%3A0x14b516d6cb9c9336!2sGoiko!5e0!3m2!1ses!2ses!4v1698313601112!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </article>
+    
+        <article class="col-6 col-s-12 align-center centerForm">
+            <h2 id = "contact_form_title">Formulario de Contacto</h2>
+            <form id = "contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email2" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </article>
+    </section>
+  
+
+    <!--Footer-->
+
+    <footer class="footer-basic">
+        <div class="social align-center col-6 col-s-6">
+            <a class="icon" id="email_footer" href="mailto:rockandfork33@gmail.com"></a>
+            <a class="icon" id="instagram" href="https://www.instagram.com/rock_fork/"></a>
+            <a class="icon" id="facebook" href="https://www.facebook.com/rockforkcuenca/?locale=es_LA"></a>
+            <a class="icon" id="phone_footer" href="tel:+34000000000"></a>
+        </div>
+        <ul class="list-inline align-center col-6 col-s-6">
+            <li class="list-inline-item"><a href="#pag1">Home</a></li>
+            <li class="list-inline-item"><a href="#pag3">Menu</a></li>
+            <li class="list-inline-item"><a href="#pag4">Live</a></li>
+            <li class="list-inline-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src = "javascript/script.js"></script>
+</body>
+</html>

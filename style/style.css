@@ -1,0 +1,1092 @@
+@font-face {
+  font-family: 'Cunia';
+  src: url('../Cunia.ttf'); 
+}
+
+
+*{
+    margin: 0;/*externo al bloque*/
+    padding: 0;/*interno al bloque (mueve el contenido (puede hacer crecer el elemento))*/
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*clase general para el body.*/
+body{
+    background-color: #C1A88C;
+    font-family: 'Cunia', sans-serif;
+    
+}
+
+/*clase general para los enlaces*/
+a{
+  text-decoration: none;  
+  
+}
+
+/*clase general para los párrafos*/
+p {
+  font-size: 1em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-block-start: 5vw;
+  padding: 10px;
+  color:#442414;
+}
+
+h1{
+  color: #C1A88C;
+}
+
+#paso-3 > h2{
+  font-size: 8vmin;
+}
+
+h3{
+  font-size:calc(14px + 1.5vw);
+  color:#30190e;
+
+}
+
+.contact-info{
+  /*PRUEBA*/
+  width:90%;
+}
+
+/*Clase de uso global para alinear en el centro el contenido del bloque en el que esté*/
+.align-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+/* TEXTOS */
+.description{
+  display: none;
+}
+
+
+/* MOBILE HEADER */
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: linear-gradient(to left, #442414, #C1A88C);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+  position: fixed; /* Add this line */
+  top: 0; /* Stick it to the top */
+  width: 100%; /* Take the full width of the viewport */
+  z-index: 999; /* Set a high z-index to ensure it's on top of other content */
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.burger-menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+
+  .menu-button-container {
+    display: flex;
+  }
+  .burger-menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .burger-menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .burger-menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .burger-menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .burger-menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+  .burger-menu > li > a {
+    color: white;
+  }
+}
+
+
+/* CONTAINERS */
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3vh;
+}
+
+
+/* LINKS */
+.box{
+	overflow:hidden;
+  /*Radio del contenedor de un elemento*/
+	-webkit-border-radius: 10px;
+  border-radius: 10px;
+  /*Primer valor es cuanto se mueve las sombra en horizontal, el segundo en vertical y el tercer valor
+  es la opacidad de la sombra, a menor valor, más opaca*/
+  box-shadow: 3px 10px 20px black;
+}
+
+
+/*clase para el contenedor de links de la primera página*/
+.flex-container{
+  padding-top: 1vh;
+}
+/*comportamiento de los divs en clase flex-container*/
+.flex-container > div {
+    background-color: #773E22;
+    text-align: center;
+    line-height: 2.8em;
+    font-size: 1.4em;
+    margin-inline:1px;
+    min-width: 80px;
+    width:30vw;
+}
+
+.box > a {
+  color: #C1A88C;
+  font-size: 4.5vw;
+}
+
+
+/*Comportamiento general de las fotos en las galerías*/
+.photo {
+  margin: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  min-width: 100px;
+  max-width: 150px;
+  width:28vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+}
+
+/*Comportamiento de las fotos en la página 3 (distinto ya que metemos muchas menos fotos)*/
+#pag3 .photo {
+  /* Your styles for .photo inside #pag3 and .galeria-1 go here */
+  border: 3px solid white;
+  min-width: 50px;
+  width:45vw;
+  max-width: 230px;
+  
+}
+
+/*Clase especial para los títulos de las páginas*/
+.title{
+  margin: auto;
+  font-size: 7vh;
+}
+
+/*Id especial para el video de la primera página*/
+video {
+    min-width: 300px;
+    max-width: 600px;/*estaba en 300*/
+    width:30vw;
+    display: block;
+    align-content: center;
+    border: 4px solid #773E22;
+}
+.video_container{
+  padding-top:6vh;
+  margin:auto;
+  padding-bottom: 6vh;
+}
+
+#image_1{
+  display: flex;
+  margin:auto;
+  min-width: 150px;
+  max-width: 450px;
+  width:15vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+
+}
+
+/*Clase general para cualquier página*/
+.pagina {
+    height:100vh;
+    overflow: hidden;
+}
+
+.order_page {
+  height:100vh;
+}
+
+
+
+
+
+/* FOTOS */
+.main-image{
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  padding-top: 12vh;
+}
+
+/*Forma que tiene el contenedor de todas las imágenes*/
+.galeria-1 {
+  display: flex;
+  flex-grow: 1;
+  background-color: #773E22;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+[class*="col-"] {
+float: left;
+}
+
+
+
+/* FOOTER */
+
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+
+  text-align: center;
+  padding-left: 15px;
+  background-color: #773E22;
+}
+footer > p{
+  font-size: 0.8em;
+}
+
+
+.footer-basic {
+    padding:1vmin;
+    background-color:#773E22;
+    color:#C1A88C;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size: 18px;
+    font-size: min(3vmin, 18px);
+    line-height:1.6;
+    margin-bottom:0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:6vmin;
+    max-width: 40px;
+    height:6vmin;
+    max-height: 40px;
+    line-height:40px;
+    display:inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #C1A88C;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+
+  .map{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* GALERIA */
+  #image-gallery2 {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
+  #zoomed-image,#zoomed-image2 {
+    width: 70%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  }
+  #thumbnail-container, #thumbnail-container2{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+  .thumbnail, .thumbnail2 {
+    width: 10vh;
+    margin: 0 2vmin;
+    cursor: pointer;
+  }
+  .thumbnail:hover, .thumbnail2:hover {
+    opacity: 0.7;
+  }
+  
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+
+  .footer-basic .icon{
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+  }
+
+  #email_footer{
+    background-image: url("../images/gmail.png");
+  }
+
+  #instagram{
+    background-image: url("../images/instagram-logo.png");
+  }
+
+  #facebook{
+    background-image: url("../images/facebook.png");
+  }
+
+  #phone_footer{
+    background-image: url("../images/phone.png");
+  }
+
+  .not_mobile{
+    display: none;
+    overflow:hidden;
+  }
+  #photo_form{
+    height:100vh;
+  }
+
+  .contact-info{
+    padding:0;
+  }
+
+  .contact-info > p {
+    padding-left:0;
+  }
+
+  .contact-info > h1 {
+    font-size: 4vmin;
+    color: #773E22;
+  }
+
+#contact_form_title{
+  font-size: 4vmin;
+}
+
+  /* ORDER HTML */
+#product-list{
+  flex-direction: column;
+  padding-bottom: 2vh;
+  width: 80%;
+}
+
+#product-list > ul{
+  width:100%
+}
+
+#product-list > ul > li{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+
+#product-list > ul > li > button{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#lista-productosUL > li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+#paso-1{
+  width:100vw;
+}
+
+#paso1-left{
+  flex-direction: column;
+}
+
+#paso1-right{
+  padding-right:5vw;
+  padding-left: 5vw;
+}
+
+
+#paso1-right > h2{
+  margin-top: 0;
+}
+
+
+
+#paso-2{
+  display: none;
+}
+
+#paso2-right{
+  padding-top: 5vh;
+  flex-direction: column;
+}
+
+
+.tray{
+  background-color: #773E22;
+  width:100%;
+  height:100%;
+  margin: auto;
+  padding: 2vmin;
+  color: #C1A88C;
+}
+
+.tray > h2 {
+  color:white;
+}
+
+#paso2-left > .tray{
+  width:80% !important;
+}
+
+#productos-en-cesta{
+  min-height: 60vh;
+}
+
+#total-pagar{
+  color:white;
+  font-size: 3vmin;
+}
+
+#paso-3{
+  display: none;
+  margin: auto;
+  margin-top: 0;
+}
+
+.breadcrumb-link{
+  color:#30190e;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+
+ul{
+  width: 100%;
+  list-style-type: none;
+}
+
+li{
+  padding: 1vmin;
+}
+
+
+
+.seleccionar, .eliminar{
+  width: 7vmin; /* Set the width of the button */
+  height: 7vmin; /* Set the height of the button */
+  min-height:20px;
+  min-width: 20px;
+  background-size: contain; /* Ensure the image covers the button */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center; /* Center the image */
+  border: none; /* Remove the button border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+#paso-2 button,
+#next_step{
+  border-radius: 1vmin;
+  border-style: none;
+  box-sizing: border-box;
+  background-color: #442414;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  height: 4vmin;
+  min-height: 20px;
+  line-height: 2vmin;
+  list-style: none;
+  padding-left: 1vmin;
+  margin-left:1vmin;
+  padding-right: 1vmin;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: bold;
+  
+}
+
+
+#paso-1 .seleccionar{
+  background-image: url('../images/seleccionar.png'); 
+}
+
+.eliminar{
+  background-image: url('../images/eliminar.png'); 
+  width:4vmin !important;
+  height:4vmin !important;
+
+  float:right;
+}
+
+
+#paso-2 button:hover,
+#paso-2 button:focus,
+#paso-1 button:hover,
+#paso-1 button:focus{
+  background-color: #d08662;
+}
+
+#paso-1 button.seleccionar,
+#paso-1 button.eliminar,
+#paso-2 button.eliminar{
+  float: right;
+}
+
+#next_step{
+  background-color: #C1A88C !important;
+  color: black !important;
+}
+
+button.eliminar{
+  background-color: #6A0018 !important;
+}
+
+#next_step:hover{
+  background-color: #e7c9a8 !important;
+}
+
+button.eliminar:hover{
+  background-color: #9b0022 !important;
+}
+
+
+
+  /* TIMER CSS */
+
+  #timer{
+    width: 100%;
+    height:100%;
+    margin:auto;
+  }
+
+
+  /* FORMS */
+  
+  .centerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top:8formvh;
+  }
+
+  #registrationForm{
+    height: 80vh;
+  }
+
+  #contact{
+    padding-top:25px;
+  }
+
+  #contactForm{
+    height: 40vh;
+    margin:auto;
+  }
+
+  .form-group {
+    width: 100%; /* Adjust the width as needed */
+    margin:auto;
+    margin-left:0; /* Center the form horizontally */
+    padding:2vmin;
+  }
+
+  .form-group > label {
+    font-size: 3vmin; /* Increase label font size */
+  }
+
+
+  .form-group > input {
+    background-color: #eee0ce;
+    width: 100%;
+    height: 4vh;
+    font-size: 3vmin;
+    padding-left: 2vmin;
+  }
+
+  .form-group > textarea {
+    background-color: #eee0ce;
+    width: 100%;
+    height: 4vh;
+    font-size: 3vmin;
+    padding-left: 2vmin;
+  }
+
+  .form-group > button {
+    background-color: #773E22;
+    color: #C1A88C;
+    font-size: 3vmin; /* Increase button font size */
+    padding: 10px 20px; /* Increase button padding */
+  }
+
+/* For MOBILE PHONE */
+[class*="col-"] {
+    width: 100%;
+}
+
+#pag1 > nav{
+  display:None;
+}
+
+
+
+
+
+/* SLIDER */
+
+.slider {
+  height: 100%; /* Set the height of the slider */;
+  overflow: hidden; /* Hide the overflow of the slider */
+}
+
+.slider img {
+  height: 100%; /* Set the height of the images to fill the slider */
+  display: block; /* Make the images block elements */
+  margin: 0 auto; /* Center the images horizontally */
+  animation: slide 35s infinite; /* Set the animation for the slider */
+  object-fit:cover;
+}
+
+.pagina-special{
+  height:100vh;
+  overflow: hidden;
+}
+
+.barra-menu{
+  display: flex;
+  flex-direction: row;
+  gap:2px;
+  width: 100vw;
+  padding-top: 10px;
+}
+
+.boton-barra-menu{
+  background-color: #773E22;
+}
+
+.boton-barra-menu > p{
+  color: #C1A88C
+}
+
+.imagen_novedad{
+  min-width: 150px;
+  max-width: 450px;
+  width:30vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+}
+/*######################################################################################################################*/
+/*######################################################################################################################*/
+/*######################################################################################################################*/
+/*######################################################################################################################*/
+@keyframes slide {
+  0% {
+    transform: translateY(0); /* Start the animation at the top */
+  }
+  100% {
+    transform: translateY(-600vh); /* End the animation at the bottom */
+  }
+}
+
+
+/*COLUMNAS*/
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+
+    .video_container{
+      padding-top:0;
+      margin:auto;
+      padding-bottom: 6vh;
+    }
+
+    #pag1 > nav{
+      /*Mostrar el menú principal*/
+      display: flex;
+    }
+
+    #pag2{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-nav{
+      display: none;
+    }
+
+    .photo{
+      width:30vw;
+      min-width: 100px;
+      max-width: 160px;
+    }
+
+    #image_1{
+      width:15vw;
+      margin:auto;
+      padding-left: 6vh;
+    }
+    .not_mobile{
+      display: None;
+    }
+
+    .main-image{
+      padding-top: 6vh;
+    }
+    
+    
+    
+
+}
+@media only screen and (min-width: 768px) {
+    /* For Desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .video_container{
+      padding-top:0;
+      padding-bottom: 6vh;
+    }
+
+    #pag1 > nav{
+      /*Mostrar el menú principal*/
+      display: flex;
+    }
+
+    p {
+      font-size: 3vmin;
+    }
+
+    .top-nav{
+      display: none;
+    }
+    
+    #contact{
+      padding-top:0px;
+    }
+
+    .slider {
+      height: 100vh; /* Set the height of the slider */;
+      overflow: hidden; /* Hide the overflow of the slider */
+    }
+
+    .menu{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+
+    .plate{
+      display: block;
+      font-weight: bold;
+      font-style: italic;
+      font-size:1.5vw;
+    }
+    
+    .description{
+      display:block;
+      font-size: 1.25vw;
+    }
+    
+    .photo {
+      margin: 10px;
+      border: 3px solid rgb(255, 255, 255);
+      min-width: 100px;
+      max-width: 170px;
+      width:15vw;
+      object-fit: cover;
+      aspect-ratio: 1/1; /* Formato cuadrado */
+    }
+
+    
+    
+    .main-image{
+        display: flex;
+        flex-direction: row;
+        padding-top: 6vh;
+        height: 100%;
+        width:100%;
+        flex:1;
+    }
+
+
+   
+
+
+
+    .title{
+      flex-grow: 0.4;
+      margin:0;
+    }
+    
+    .pagina, .order_page{
+        display:flex;
+    }
+
+    
+    .pagina-special{
+      height:100vh;
+      
+      overflow: hidden;
+    }
+    
+
+    .flex-container {
+      align-content: center;
+      flex-direction: row;
+  }
+    .flex-container > div {
+      margin: 0;
+      text-align: center;
+      width:25vw;
+      line-height: 20vh;
+      font-size: 8vmin;
+  }
+
+  
+
+
+  .not_mobile{
+    display: block;
+  }
+
+}
+
+/*A partir de aquí, creamos varias media queries para tamaños con los cuales nuestro diseño se desordena tanto que son necesarias
+estas media queries*/
+
+
+/* Small PC */
+@media only screen and (max-width: 1170px) and (min-width:768px){
+
+  .main-image{
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    height: 100%;
+    flex:1;
+}
+
+  .video_container{
+    padding-top:0;
+    margin:auto;
+    padding-bottom: 6vh;
+  }
+
+  .flex-container > div {
+    width:25vw;
+    font-size: 8vmin;
+}
+
+  #pag1 > nav{
+    /*Mostrar el menú principal*/
+    display: flex;
+  }
+
+  .description{
+    display:none;
+  }
+  
+  
+
+  h3{
+    font-size: 4vw;
+  }
+
+  .plate{
+    font-size: 3vw;
+  }
+
+ 
+  .not_mobile{
+    display: block;
+  }
+
+
+  .photo {
+    border: 3px solid rgb(255, 255, 255);
+    min-width: 110px;
+    width:15vw;
+    max-width: 130px;
+  }
+
+}
+
+@media only screen and (min-width: 325px) and (max-width: 625px) {
+  /* For mobiles between 325 and 565 where a new media query is required: */
+  #pag3 .photo {
+    /* Your styles for .photo inside #pag3 and .galeria-1 go here */
+    border: 3px solid white;
+    min-width: 50px;
+    width:32vw;
+    max-width: 230px;
+    
+  }
+  .menu{
+    flex-direction: row;
+    padding-top: 1vh;
+  }
+}
+
