@@ -206,6 +206,21 @@ h3{
   padding-top: 3vh;
 }
 
+.menu_novedad{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3vh;
+}
+
+.menu_carta_completa{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3vh;
+}
 
 /* LINKS */
 .box{
@@ -789,6 +804,10 @@ button.eliminar:hover{
   height:100vh;
   overflow: hidden;
 }
+.pagina-special-carta{
+  height:100vh;
+  overflow: auto;
+}
 
 .barra-menu{
   display: flex;
@@ -809,10 +828,39 @@ button.eliminar:hover{
 .imagen_novedad{
   min-width: 150px;
   max-width: 450px;
-  width:30vw;
+  width:20vw;
   object-fit: cover;
   aspect-ratio: 1/1; /* Formato cuadrado */
 }
+
+.imagen_novedad2{
+  min-width: 50px;
+  max-width: 450px;
+  width:20vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+}
+
+.menu_novedad > div{
+  background-color: rgb(152, 191, 193);
+  padding: 10px;
+}
+
+#boton-ver-carta-completa{
+  margin-top: 5px;
+}
+#boton-home{
+  margin-left: 15px;
+}
+.menu_carta_completa > div{
+  background-color: rgb(152, 191, 193);
+  padding: 10px;
+  margin: auto;
+  margin-top:15px;
+  width:25vw;
+}
+
+
 /*######################################################################################################################*/
 /*######################################################################################################################*/
 /*######################################################################################################################*/
@@ -935,6 +983,18 @@ button.eliminar:hover{
       align-items: center;
       justify-content: center;
     }
+    .menu_novedad{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu_carta_completa{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     
 
@@ -990,6 +1050,11 @@ button.eliminar:hover{
       height:100vh;
       
       overflow: hidden;
+    }
+    .pagina-special-carta{
+      height:100vh;
+      
+      overflow: auto;
     }
     
 
@@ -1085,6 +1150,14 @@ estas media queries*/
     
   }
   .menu{
+    flex-direction: row;
+    padding-top: 1vh;
+  }
+  .menu_novedad{
+    flex-direction: row;
+    padding-top: 1vh;
+  }
+  .menu_carta_completa{
     flex-direction: row;
     padding-top: 1vh;
   }

@@ -250,7 +250,11 @@ function hide_others(){
   $('#Novedades-Postres1').hide();
   $('#Novedades-Postres2').hide();
 }
-  
+// Ajuste enlace menu original
+$('#boton-ver-carta-completa').click(function() {
+  console.log("HOLA")
+  window.location.href = 'carta.html';
+});
 
 });
   
