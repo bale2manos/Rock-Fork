@@ -22,67 +22,143 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
+
+    <header class="header-book-table">
+        <div class="burger-menu-icon">
+          <img
+            loading="lazy"
+            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+            class="burger-icon-book-table"
+          />
+        </div>
+          <form class= "align-center" id="reservar-mesa">
+            <input type="search" id="address" name="address" placeholder="Dirección">
+            <input type="search" id="current_date" name="current_date" placeholder="Current Date">
+            
+            <div>
+            <input type="search" id="hour" name="hour" placeholder="Hora">
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+            class="triangulo-book-table"
+            />
+            </div>
+            
+            <input type="number" id="comensales" name="comensales" min="1" max="30" placeholder="Personas">
+            <button type="submit">Reservar mesa</button>    
+        
+        </form>
+        
+        <img
+          loading="lazy"
+          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+          class="user-icon-book-table"
+        />
+      </header>
+      
+      
+      
+      <!-- Log In / Sign Up Pop up -->
+      <div id="popup-overlay" class="popup-overlay">
+        <div class="titulo-popup-login">
+            <img
+                loading="lazy"
+                src="images/cross.png"
+                class="close-popup-login"
+            />
+        </div>
+      <div class="popup-container">
+        <div class="popup-login">
+            <section id="top-part-login-popup">
+            <form class="centerForm" id="registrationFormPopUp">
+                <!-- Correo Electrónico Input -->
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <!-- Nombre y Apellidos Inputs -->
+                <div class="form-group">
+                    <label for="fullName">Contraseña:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+    
+                <!-- Buttons -->
+                <div class="form-group align-center">
+                    <button type="submit">Iniciar Sesión</button>
+                </div>
+
+                <div class="register-popup">
+                    <p>Si no tienes cuenta, <span class="registro-link-popup">registrate</span></p>
+                </div>
+            </form>
+            <img
+                loading="lazy"
+                src="images/wheel.png"
+                class="wheel"
+                />
+            </section>
+            <div class="social-images-icons">
+                <img
+                loading="lazy"
+                src="images/facebook.png"
+                class="icon-login"
+                />
+                <img
+                loading="lazy"
+                src="images/instagram-logo.png"
+                id="twitter-icon-login"
+                />
+                <img
+                loading="lazy"
+                src="images/instagram-logo.png"
+                class="icon-login"
+                />
+                <img
+                loading="lazy"
+                src="images/instagram-logo.png"
+                class="icon-login"
+                />
+            </div>
+      </div>
+    </div>
+</div>
+
+
+
+    
+      
     
     
     <!--Página principal-->
-    <section id="pag1" class="pagina">
-        <article class="col-5 col-s-12 main-image align-center" >
-            <figure>
-                <img id="image_1" src="images/logo.png" alt="Rock and fork">
-            </figure>
-            <div class = "video_container">
-                <video class = "video box" controls autoplay muted>
-                    <source src="images/video.mp4" type="video/mp4">
-                </video>
+    <section id="pag1-landing" class="pagina">
+        <article class="col-5 col-s-12 main-image align-center" id="landing-page-left" >
+            <h1 class="main-title">Rock<span class="and">&</span>Fork</h1>
+            <h1 class="main-text">Pide ya la nueva 
+                Metal and Fork Burguer,
+                con más queso, más carne 
+                y mucho más heavy!</h1>
+            <div class = "align-center buttons-landing">
+                <button class = "boton-inicio" id="a_pedir_a_domicilio">
+                    <p>¡A CASA!</p>
+                </button>
+                <button class = "boton-inicio" id="a_la_carta">
+                <img
+                    loading="lazy"
+                    src="images/fork_knife.png"
+                    id="fork-knife-landing"
+                />
+                <p>Rockea la carta</p>
+                </button>
             </div>
+           
         </article>
 
-        <nav class="col-7 col-s-12 flex-container align-center">
-            <div class = "box">
-                <a href="#pag2">Info</a>
-            </div>
-            <div class = "box">
-                <a href="#pag3">Menu</a>
-            </div>
-            <div class = "box">
-                <a href="#pag4">Live</a>
-            </div>
-            <div class = "box">
-                <a href="#registration">Registro</a>
-            </div>
-            <div class = "box" id="go-to-order">
-                <a href="order.html">Order</a>
-            </div>
-            <div class = "box">
-                <a href="#contact">Contact</a>
-            </div>    
-        </nav>
+        <article class="col-7 col-s-12 flex-container align-center">
+            <video class="burger__360" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster=""> <source src="https://www.goiko.com/es/wp-content/uploads/2023/07/KB-360x2-1.mov" type="video/mp4; codecs=&quot;hvc1&quot;"> <source src="https://www.goiko.com/es/wp-content/uploads/2023/07/kb-360x2-1.webm" type="video/webm"> </video>  
+        </article>
     </section>
     
-    <!--Página 2-->
-    <section id = "pag2" class="pagina">
-        <article class="col-7 col-s-12 align-center">
-            <p> <!--TODO es buena practica?-->  
-                Bienvenidos a Rock & Fork, el epicentro del sabor americano y la música rock en Leganés. 
-                Sumérgete en una experiencia culinaria única donde los sabores auténticos se mezclan con los ritmos más vibrantes. 
-                En Rock & Fork, no solo ofrecemos comida excepcional, sino que también te transportamos a una época en la que el rock 
-                era la banda sonora de la vida.</p> 
-        </article>
-
-        <article class="col-5 col-s-12 galeria-1">
-            <h1 class = "title align-center">Info</h1>
-            <figure class = "align-center" id="image-gallery">
-                <img  id="zoomed-image" src="images/galeria1.jpg" alt="image1"/>
-                <figure id="thumbnail-container">
-                  <img class="thumbnail" src="images/galeria1.jpg" alt="image1"/>
-                  <img class="thumbnail" src="images/galeria2.jpg" alt="image2"/>
-                  <img class="thumbnail" src="images/galeria3.jpg" alt="image3"/>
-                  <img class="thumbnail" src="images/galeria4.jpg" alt="image4"/>
-                </figure>
-              </figure>
-        </article>
-        <!--Cajas-->
-    </section>
 
     <!--Página 3-->
     <section id = "pag3" class = "pagina-special">
@@ -241,33 +317,7 @@
         
     </section>
 
-    <!--Página 4-->
-    <section id = "pag4" class="pagina">
-        <article class="col-7 col-s-12 align-center">
-            <p id="live-music"> <!--TODO es buena practica?-->  
-                En Rock & Fork, la música en vivo es una parte esencial de nuestra identidad. 
-                Cada semana, ofrecemos emocionantes actuaciones en vivo para complementar tu experiencia culinaria. 
-                Nuestro escenario se ha convertido en un lugar de encuentro para amantes de la música de todas las edades y géneros.
-            </p> 
-            
-        </article>
-
-        <article class="col-5 col-s-12 galeria-1">
-            <div class="slider">
-                <img src="images/galeria1.jpg" alt="Image 1">
-                <img src="images/hamburguesa1.jpg" alt="Hamburguesa 1">
-                <img src="images/galeria3.jpg" alt="Image 3"> <!-- TODO CAMBIAR LOS ALT DE LAS IMGS -->
-                <img src="images/galeria4.jpg" alt="Image 4">
-                <img src="images/hamburguesa2.jpg" alt="Hamburguesa 2">
-                <img src="images/galeria6.jpg" alt="Image 6">
-                <img src="images/galeria2.jpg" alt="Image 7">
-                <img src="images/galeria5.jpg" alt="Image 8">
-                <img src="images/entrantes1.jpg" alt="Image 9">
-            </div>
-            
-        </article>
-        <!--Cajas-->
-    </section>
+   
     
 
     <!--Página 5-->
@@ -349,10 +399,64 @@
             </form>
         </article>
     </section>
+    <footer class="footer-main">
+        <div class="footer-grid">
+          <div class="column">
+            <div class="resumen-footer">
+              <div class="rockfork-footer">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/729d17b2904b20cc781081d3d42799de68211f95efe91e482729af162b61ccee?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+                  class="logo-footer"
+                />
+                <div class="rockfork-text-footer">Rock Fork</div>
+              </div>
+              <div class="resumen-text-footer">
+                Nuestra historia comienza con la pasión por las deliciosas y jugosas
+                hamburguesas. Comenzamos como un pequeño restaurante familiar que
+                servía hamburguesas caseras utilizando solo los ingredientes más
+                frescos y de alta calidad
+              </div>
+              <div class="copyright-footer">©Rock&Fork 2023. Todos los derechos reservados</div>
+            </div>
+          </div>
+          <div class="column-2">
+            <div class="accesos-directos-footer">
+              <div class="accesos-directos-1-footer">
+                <div class="menu-footer">Menu</div>
+                <div class="about-us-footer">Nuestra historia</div>
+                <div class="alergenos-footer">Alérgenos</div>
+              </div>
+              <div class="accesos-directos-2-footer">
+                <div class="privacy-policy-footer">Política de privacidad</div>
+                <div class="faqs-footer">FAQs</div>
+              </div>
+            </div>
+          </div>
+          <div class="column-3">
+            <div class="contacto-footer">
+              <div class="location-footer">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/eacbcfd7f29b0b6b1f6a8a94a92b9ddaf8dcf3e79dbd437f290484b7569a5028?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+                  class="pin-ubicacion-footer"
+                />
+                <div class="texto-ubicacion-footer">#23, Calle Pepinero, Leganés</div>
+              </div>
+              <div class="email-footer">info@rock&fork.com</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e0ea95bc0b0a9af7adb11c0e4edfb532c76b606e6c4b67f075fd32c9c741043?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+                class="social-media-footer"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
   
 
     <!--Footer-->
-
+    <!--
     <footer class="footer-basic">
         <div class="social align-center col-6 col-s-6">
             <a class="icon" id="email_footer" href="mailto:rockandfork33@gmail.com"></a>
@@ -367,7 +471,7 @@
             <li class="list-inline-item"><a href="#contact">Contact</a></li>
         </ul>
     </footer>
-
+    -->
     
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

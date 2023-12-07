@@ -251,10 +251,53 @@ function hide_others(){
   $('#Novedades-Postres2').hide();
 }
 // Ajuste enlace menu original
-$('#boton-ver-carta-completa').click(function() {
+$('#boton-ver-carta-completa, #a_la_carta, .menu-footer').click(function() {
   console.log("HOLA")
   window.location.href = 'carta.html';
 });
+
+$('#a_pedir_a_domicilio, .wheel').click(function() {
+  window.location.href = "order.html";
+});
+
+function showPopup() {
+  $("#popup-overlay, .popup-container").fadeIn();
+  $("body").css("overflow", "hidden"); // Hide the rest of the page
+  $(".header-book-table").css("position", "static"); // Hide the rest of the page
+}
+
+// Function to hide the popup
+function hidePopup() {
+  $("#popup-overlay, .popup-container").fadeOut();
+  $("body").css("overflow", "auto"); // Restore overflow property
+  setTimeout(function() {
+    // Code to execute after 2 seconds
+    $(".header-book-table").css("position", "fixed"); // Hide the rest of the page
+  }, 500);
+}
+
+// Attach the click event to the user icon
+$(".user-icon-book-table").on("click", function() {
+  showPopup();
+});
+
+// Attach the click event to the overlay and close button (if any)
+$(".close-popup-login").on("click", function() {
+  hidePopup();
+});
+var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth() + 1; // Month is zero-based
+  var year = currentDate.getFullYear();
+
+  // Format the date as "DD/MM/YYYY"
+  var formattedDate = `${day}/${month}/${year}`;
+
+  // Set the formatted date as the placeholder
+  document.getElementById("current_date").placeholder = formattedDate;
+
+
+
 
 });
   
