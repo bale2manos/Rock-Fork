@@ -53,6 +53,8 @@ $('#boton-barra-Burgers').click(function() {
   colors('boton-barra-Burgers');
   $('#Novedades-Burgers1').show();
   $('#Novedades-Burgers2').show();
+  $('#Novedades-Burgers1-2').show();
+  $('#Novedades-Burgers2-1').show();
 });
 
 $('#boton-barra-Costillas').click(function() {
@@ -61,6 +63,8 @@ $('#boton-barra-Costillas').click(function() {
   colors('boton-barra-Costillas');
   $('#Novedades-Costillas1').show();
   $('#Novedades-Costillas2').show();
+  $('#Novedades-Costillas1-2').show();
+  $('#Novedades-Costillas2-1').show();
 });
 
 $('#boton-barra-Ensaladas').click(function() {
@@ -69,6 +73,8 @@ $('#boton-barra-Ensaladas').click(function() {
   colors('boton-barra-Ensaladas');
   $('#Novedades-Ensaladas1').show();
   $('#Novedades-Ensaladas2').show();
+  $('#Novedades-Ensaladas1-2').show();
+  $('#Novedades-Ensaladas2-1').show();
 });
 
 $('#boton-barra-Postres').click(function() {
@@ -77,6 +83,8 @@ $('#boton-barra-Postres').click(function() {
   colors('boton-barra-Postres');
   $('#Novedades-Postres1').show();
   $('#Novedades-Postres2').show();
+  $('#Novedades-Postres1-2').show();
+  $('#Novedades-Postres2-1').show();
 });
 
 
@@ -89,12 +97,20 @@ function hide_others(){
   $('#Novedades-Entrantes2').hide();
   $('#Novedades-Burgers1').hide();
   $('#Novedades-Burgers2').hide();
+  $('#Novedades-Burgers1-2').hide();
+  $('#Novedades-Burgers2-1').hide();
   $('#Novedades-Costillas1').hide();
   $('#Novedades-Costillas2').hide();
+  $('#Novedades-Costillas1-2').hide();
+  $('#Novedades-Costillas2-1').hide();
   $('#Novedades-Ensaladas1').hide();
   $('#Novedades-Ensaladas2').hide();
+  $('#Novedades-Ensaladas1-2').hide();
+  $('#Novedades-Ensaladas2-1').hide();
   $('#Novedades-Postres1').hide();
   $('#Novedades-Postres2').hide();
+  $('#Novedades-Postres1-2').hide();
+  $('#Novedades-Postres2-1').hide();
 }
   
 $('#boton-home').click(function() {
