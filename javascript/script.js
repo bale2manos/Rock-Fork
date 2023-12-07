@@ -260,20 +260,29 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
   window.location.href = "order.html";
 });
 
+var current_position = 0;
+
 function showPopup() {
+  scrollPosition = window.scrollY;
   $("#popup-overlay, .popup-container").fadeIn();
   $("body").css("overflow", "hidden"); // Hide the rest of the page
   $(".header-book-table").css("position", "static"); // Hide the rest of the page
+
+  // Smoothly scroll to the top
+  $("html, body").animate({ scrollTop: 0 }, "fast");
 }
 
 // Function to hide the popup
 function hidePopup() {
   $("#popup-overlay, .popup-container").fadeOut();
   $("body").css("overflow", "auto"); // Restore overflow property
-  setTimeout(function() {
+  setTimeout(function () {
     // Code to execute after 2 seconds
     $(".header-book-table").css("position", "fixed"); // Hide the rest of the page
   }, 500);
+
+  // Smoothly scroll back to the previous position
+  $("html, body").animate({ scrollTop: scrollPosition }, "fast");
 }
 
 // Attach the click event to the user icon
@@ -297,7 +306,81 @@ var currentDate = new Date();
   document.getElementById("current_date").placeholder = formattedDate;
 
 
+  var dropdownBtn = document.getElementById("dropdown-btn");
+  var dropdownContent = document.getElementById("time-dropdown");
+  var hourInput = document.getElementById("hour");
 
+
+  // DROPDOWN
+  var dropdownBtn = document.getElementById("dropdown-btn");
+  var dropdownContent = document.getElementById("time-dropdown");
+  var hourInput = document.getElementById("hour");
+  var addressInput = document.getElementById("address");
+  var currentDateInput = document.getElementById("current_date");
+  var comensalesInput = document.getElementById("comensales");
+  var reservationForm = document.getElementById("reservar-mesa");
+
+  dropdownBtn.addEventListener("click", function () {
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
+  });
+
+  // Close the dropdown when clicking outside of it
+  window.addEventListener("click", function (event) {
+    if (!event.target.matches(".triangulo-book-table")) {
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      }
+    }
+  });
+
+  // Add click event listeners to each time option
+  var timeOptions = document.querySelectorAll(".time-option");
+  timeOptions.forEach(function (option) {
+    option.addEventListener("click", function () {
+      // Update the text of the hour input
+      hourInput.value = option.textContent;
+
+      // Close the dropdown after selecting a time
+      dropdownContent.style.display = "none";
+    });
+  });
+
+  // Add submit event listener to the reservation form
+  reservationForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Check if all fields are filled
+    if (
+      addressInput.value &&
+      currentDateInput.value &&
+      hourInput.value &&
+      comensalesInput.value
+    ) {
+      // Display reservation message with input information
+      var reservationMessage =
+        "Mesa reservada. Información: " +
+        "Dirección: " +
+        addressInput.value +
+        ", Fecha: " +
+        currentDateInput.value +
+        ", Hora: " +
+        hourInput.value +
+        ", Personas: " +
+        comensalesInput.value;
+
+      alert(reservationMessage);
+
+      // Clear input fields
+      addressInput.value = "";
+      currentDateInput.value = "";
+      hourInput.value = "";
+      comensalesInput.value = "";
+    } else {
+      // Display message if any field is missing
+      alert("Rellena todos los campos");
+    }
+  });
 
 });
   

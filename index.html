@@ -35,17 +35,38 @@
             <input type="search" id="address" name="address" placeholder="Dirección">
             <input type="search" id="current_date" name="current_date" placeholder="Current Date">
             
-            <div>
-            <input type="search" id="hour" name="hour" placeholder="Hora">
-            <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&"
-            class="triangulo-book-table"
-            />
+            <div class="dropdown">
+                <div class="dropdown-input">
+                    <input type="search" id="hour" name="hour" placeholder="Hora">
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+                    class="triangulo-book-table"
+                    id="dropdown-btn"
+                    />
+                </div>
+                <div class="dropdown-content" id="time-dropdown">
+ 
+                  <div class="time-option">13:00</div>
+                  <div class="time-option">13:30</div>
+                  <div class="time-option">14:00</div>
+                  <div class="time-option">14:30</div>
+                  <div class="time-option">15:00</div>
+                  <div class="time-option">15:30</div>
+                  <div class="time-option">16:00</div>
+                  <div class="time-option">20:00</div>
+                  <div class="time-option">20:30</div>
+                  <div class="time-option">21:00</div>
+                  <div class="time-option">21:30</div>
+                  <div class="time-option">22:00</div>
+                </div>
+              </div>
+
+
             </div>
             
             <input type="number" id="comensales" name="comensales" min="1" max="30" placeholder="Personas">
-            <button type="submit">Reservar mesa</button>    
+            <button type="reservar-mesa">Reservar mesa</button>    
         
         </form>
         
@@ -69,7 +90,7 @@
         </div>
       <div class="popup-container">
         <div class="popup-login">
-            <section id="top-part-login-popup">
+            <section class="col-7 col-s-12">
             <form class="centerForm" id="registrationFormPopUp">
                 <!-- Correo Electrónico Input -->
                 <div class="form-group">
@@ -92,34 +113,38 @@
                     <p>Si no tienes cuenta, <span class="registro-link-popup">registrate</span></p>
                 </div>
             </form>
-            <img
-                loading="lazy"
-                src="images/wheel.png"
-                class="wheel"
-                />
             </section>
-            <div class="social-images-icons">
+            <section class="align-center col-5 col-s-12" id="left-side-popup">
                 <img
-                loading="lazy"
-                src="images/facebook.png"
-                class="icon-login"
-                />
-                <img
-                loading="lazy"
-                src="images/instagram-logo.png"
-                id="twitter-icon-login"
-                />
-                <img
-                loading="lazy"
-                src="images/instagram-logo.png"
-                class="icon-login"
-                />
-                <img
-                loading="lazy"
-                src="images/instagram-logo.png"
-                class="icon-login"
-                />
-            </div>
+                    loading="lazy"
+                    src="images/wheel.png"
+                    class="wheel align-center"
+                    />
+            
+                <div class="social-images-icons col-5 col-s-12 align-center">
+                    <img
+                    loading="lazy"
+                    src="images/facebook.png"
+                    class="icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    id="twitter-icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    class="icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    class="icon-login"
+                    />
+                </div>
+            </section>
+    
       </div>
     </div>
 </div>
