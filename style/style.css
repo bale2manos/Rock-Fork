@@ -1,8 +1,12 @@
 @font-face {
-  font-family: 'Cunia';
-  src: url('../Cunia.ttf'); 
+  font-family: 'ColinSamuelsW00Bold';
+  src: url('../ColinSamuelsW00Bold.ttf'); 
 }
 
+@font-face {
+  font-family: 'ColinSamuelsW00Regular';
+  src: url('../ColinSamuelsW00Regular.ttf'); 
+}
 
 *{
     margin: 0;/*externo al bloque*/
@@ -17,7 +21,7 @@ html {
 /*clase general para el body.*/
 body{
     background-color: #C1A88C;
-    font-family: 'Cunia', sans-serif;
+    font-family: 'ColinSamuelsW00Bold', sans-serif;
     
 }
 
@@ -30,10 +34,14 @@ a{
 /*clase general para los párrafos*/
 p {
   font-size: 1em;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'ColinSamuelsW00Regular','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-block-start: 5vw;
   padding: 10px;
   color:#442414;
+}
+
+button {
+ font-family: 'ColinSamuelsW00Regular','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1{
@@ -127,7 +135,7 @@ h3{
   flex-grow: 1;
   justify-content: center;
   margin: auto 0;
-  padding: 12px 60px 12px 40px;
+  padding: 12px 30px 12px 20px;
   font: 400 14px Inter, sans-serif;
 }
 
@@ -135,7 +143,7 @@ h3{
 #current_date::placeholder,
 #hour::placeholder,
 #comensales::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.578);
 }
 
 .triangulo-book-table {
@@ -148,6 +156,7 @@ h3{
   max-width: 100%;
   justify-content: center;
   align-self: center;
+  cursor: pointer;
 }
 
 .personas-text-book-table {
@@ -174,9 +183,35 @@ h3{
   margin: auto 0;
 }
 
+/*DROPDOWN OF HOURS*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.time-option {
+  padding: 12px;
+  cursor: pointer;
+}
+
+
 
 
 /* LOG IN SIGNUP POPUP */
+#left-side-popup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  gap: 10vh;
+}
+
+
 .social-images-icons {
   display: flex;
   align-items: flex-start;
@@ -287,7 +322,7 @@ h3{
   color: #000;
   max-width: 358px;
   margin: 39px 0 0 14px;
-  font: 700 22px ColinSamuelsW00-Bold, -apple-system, Roboto, Helvetica,
+  font: 700 22px 'ColinSamuelsW00Bold', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -300,7 +335,7 @@ h3{
   color: #000;
   width: 310px;
   margin: 6px 0 0 14px;
-  font: 700 22px ColinSamuelsW00-Bold, -apple-system, Roboto, Helvetica,
+  font: 700 22px 'ColinSamuelsW00Bold', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -313,7 +348,7 @@ h3{
   color: #000;
   width: 656px;
   margin: 6px 0 0 14px;
-  font: 700 22px ColinSamuelsW00-Bold, -apple-system, Roboto, Helvetica,
+  font: 700 22px 'ColinSamuelsW00Bold', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -336,7 +371,7 @@ h3{
   aspect-ratio: 6.114754098360656;
   margin-top: 32px;
   padding: 17px 44px;
-  font: 700 32px ColinSamuelsW00-Bold, -apple-system, Roboto, Helvetica,
+  font: 700 32px 'ColinSamuelsW00Bold', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -743,7 +778,7 @@ float: left;
   flex-grow: 1;
   white-space: nowrap;
   margin: auto 0;
-  font: 400 35px Akronim, sans-serif;
+  font: 400 35px 'ColinSamuelsW00Bold', sans-serif;
 }
 @media (max-width: 991px) {
   .rockfork-text-footer {
@@ -755,7 +790,7 @@ float: left;
   text-transform: capitalize;
   align-self: stretch;
   margin-top: 14px;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -769,7 +804,7 @@ float: left;
   align-self: stretch;
   margin-top: 11px;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -813,7 +848,7 @@ float: left;
   color: var(--white, #fff);
   text-transform: capitalize;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -826,7 +861,7 @@ float: left;
   text-transform: capitalize;
   margin-top: 30px;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -839,7 +874,7 @@ float: left;
   text-transform: capitalize;
   margin-top: 33px;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular'ColinSam, -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -857,7 +892,7 @@ float: left;
   color: var(--white, #fff);
   text-transform: capitalize;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -870,7 +905,7 @@ float: left;
   text-transform: capitalize;
   margin-top: 34px;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -920,7 +955,7 @@ float: left;
   flex-grow: 1;
   white-space: nowrap;
   margin: auto 0;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -934,7 +969,7 @@ float: left;
   align-self: center;
   margin-top: 16px;
   white-space: nowrap;
-  font: 400 16px ColinSamuelsW00-Regular, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -1358,7 +1393,7 @@ button.eliminar:hover{
     margin: 0;
   }
   
-  #top-part-login-popup{
+  .popup-login{
     display: flex;
     flex-direction: row;
   }
