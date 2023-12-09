@@ -1,5 +1,6 @@
 .ldBar {
   position: relative;
+  width: 5vmin;
 }
 .ldBar.label-center > .ldBar-label {
   position: absolute;

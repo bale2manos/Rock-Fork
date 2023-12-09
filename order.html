@@ -7,32 +7,852 @@
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
     <link rel = "stylesheet" href = "style/style.css">
     <link rel="stylesheet" type="text/css" href="style/loading-bar.css"/>
+    <link rel="stylesheet" type="text/css" href="style/order.css"/>
     <style>
         /* Estilos CSS */
         /* Añade aquí tus estilos CSS según tus preferencias */
     </style>
 </head>
 <body>
+    <header class="header-book-table">
+        <div class="burger-menu-icon">
+          <img
+            loading="lazy"
+            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/51492be75989777cfb72354fc8afb04f0488e1d4cda09e5a40a1271662ee8b4b?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+            class="burger-icon-book-table"
+          />
+        </div>
+          <form class= "align-center" id="reservar-mesa">
+            <input type="search" id="address" name="address" placeholder="Dirección">
+            <input type="search" id="current_date" name="current_date" placeholder="Current Date">
+            
+            <div class="dropdown">
+                <div class="dropdown-input">
+                    <input type="search" id="hour" name="hour" placeholder="Hora">
+                    <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+                    class="triangulo-book-table"
+                    id="dropdown-btn"
+                    />
+                </div>
+                <div class="dropdown-content" id="time-dropdown">
+                  <div class="time-option">13:00</div>
+                  <div class="time-option">13:30</div>
+                  <div class="time-option">14:00</div>
+                  <div class="time-option">14:30</div>
+                  <div class="time-option">15:00</div>
+                  <div class="time-option">15:30</div>
+                  <div class="time-option">16:00</div>
+                  <div class="time-option">20:00</div>
+                  <div class="time-option">20:30</div>
+                  <div class="time-option">21:00</div>
+                  <div class="time-option">21:30</div>
+                  <div class="time-option">22:00</div>
+                </div>
+              </div>
+
+
+            </div>
+            
+            <input type="number" id="comensales" name="comensales" min="1" max="30" placeholder="Personas">
+            <button type="reservar-mesa">Reservar mesa</button>    
+        
+        </form>
+        
+        <img
+          loading="lazy"
+          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/90015193d709e3b3d571215c6f30e0ee4009a3619165df9210d456a7cde2e1a7?apiKey=24a24588ff7345eaa80b6926956f4b47&"
+          class="user-icon-book-table"
+        />
+      </header>
+      <!-- Log In / Sign Up Pop up -->
+      <div id="popup-overlay" class="popup-overlay">
+        <div class="titulo-popup-login">
+            <img
+                loading="lazy"
+                src="images/cross.png"
+                class="close-popup-login"
+            />
+        </div>
+      <div class="popup-container">
+        <div class="popup-login">
+            <section class="col-7 col-s-12">
+            <form class="centerForm" id="registrationFormPopUp">
+                <!-- Correo Electrónico Input -->
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <!-- Nombre y Apellidos Inputs -->
+                <div class="form-group">
+                    <label for="fullName">Contraseña:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+    
+                <!-- Buttons -->
+                <div class="form-group align-center">
+                    <button type="submit">Iniciar Sesión</button>
+                </div>
+
+                <div class="register-popup">
+                    <p>Si no tienes cuenta, <span class="registro-link-popup">registrate</span></p>
+                </div>
+            </form>
+            </section>
+            <section class="align-center col-5 col-s-12" id="left-side-popup">
+                <img
+                    loading="lazy"
+                    src="images/wheel.png"
+                    class="wheel align-center"
+                    />
+            
+                <div class="social-images-icons col-5 col-s-12 align-center">
+                    <img
+                    loading="lazy"
+                    src="images/facebook.png"
+                    class="icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    id="twitter-icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    class="icon-login"
+                    />
+                    <img
+                    loading="lazy"
+                    src="images/instagram-logo.png"
+                    class="icon-login"
+                    />
+                </div>
+            </section>
+    
+            </div>
+            </div>
+        </div>
+
+
+
+
+
     <section id="pag1" class="order_page">
         <!-- Paso 1: Selección de Productos -->
         <article id="paso-1">
             <p class="miga-pan"><span class="breadcrumb-link order_to_home">Home ></span> Selecciona tus productos ></p>
-            <article class="col-6 col-s-6 align-center" id="paso1-left">
-                <h2 class="align-center">Paso 1 - Selección de Productos</h2>
-                <div class="align-center" id="product-list">
-                    <!-- Aquí se mostrarán los productos -->
-                </div>     
-            </article>
-            <article class="col-6 col-s-6 align-center" id="paso1-right" >
-                <div class="tray box align-center">
-                    <!--Segunda columna que contiene la "cesta"-->
-                    <h2 class="align-center">Bandeja</h2>
-                    <ul id="productos-en-cesta">
-                        <!-- Aquí se mostrarán los productos seleccionados -->
-                    </ul>
-                    <button id="next_step">SIGUIENTE PASO</button>
-                </div>
-            </article>
+            <section id = "pag_carta" class = "pagina-special-carta">
+                <article>
+                    <article class="barra-menu">
+                        <button id = "boton-carta-vegana" class = "boton-barra-menu">
+                            <p>Carta vegana</p>
+                        </button>
+                        <button id = "boton-carta-default" class = "boton-barra-menu">
+                            <p>Carta</p>
+                        </button>
+                        <article id="botones_carta_default" class="align-center barra-menu">
+                            <button id = "boton-barra-entrantes" class = "boton-barra-menu">
+                                <p>Entrantes</p>
+                            </button>
+                            <button id = "boton-barra-Burgers" class = "boton-barra-menu">
+                                <p>Burgers</p>
+                            </button>
+                            <button id = "boton-barra-Costillas" class = "boton-barra-menu">
+                                <p>Costillas</p>
+                            </button>
+                            <button id = "boton-barra-Ensaladas" class = "boton-barra-menu">
+                                <p>Ensaladas</p>
+                            </button>
+                            <button id = "boton-barra-Postres" class = "boton-barra-menu">
+                                <p>Postres</p>
+                            </button>
+                        </article>
+                        <article id="botones_carta_vegana" class="align-center barra-menu">
+                            <button id = "boton-barra-entrantes-vegano" class = "boton-barra-menu">
+                                <p>Entrantes</p>
+                            </button>
+                            <button id = "boton-barra-Burgers-vegano" class = "boton-barra-menu">
+                                <p>Burgers veganas</p>
+                            </button>
+                            <button id = "boton-barra-Ensaladas-vegano" class = "boton-barra-menu">
+                                <p>Ensaladas</p>
+                            </button>
+                            <button id = "boton-barra-Postres-vegano" class = "boton-barra-menu">
+                                <p>Postres</p>
+                            </button>
+                        </article>
+                        <button id="next_step" class="boton-barra-menu"><p>SIGUIENTE PASO</p></button>
+                    </article>
+                    
+                    
+                </article>
+                <article class="carta-normal">
+                    <article id = "carta_primera_columna" class="col-6 col-s-6 menu_carta_completa">
+                        <div id = "Novedades-Entrantes1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/nachos_rockeros.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Nachos Rockeros - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Nachos Rockeros">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes1-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/tipton's_spicy_fries.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Tipton's Spicy fries - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Tipton's Spicy fries">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes1-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/downing's_fingers.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Downing's fingers - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Downing's fingers">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/hetfield_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Hetfield Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Hetfield Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers1-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/page's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Page's Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Page's Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Costillas1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vandenberg_ribs.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vandenberg Ribs - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vandenberg Ribs">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Costillas1-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/prince's_ribs.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Prince's Ribs - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Prince's Ribs">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/satriani's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Satriani's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Satriani's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas1-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/wilde's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Wilde's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Wilde's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/mustaine's_shake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Mustaine's Shake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Mustaine's Shake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres1-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/clapton's_cake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Clapton's Cake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Clapton's Cake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+        
+                    <article id = "carta_segunda_columna" class="col-6 col-s-6 menu_carta_completa">
+                        <div id = "Novedades-Entrantes2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/aros_blueseros.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Aros Blueseros - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Aros Blueseros">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes2-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/steve_vai's_wings.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Steve Vai's wings - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Steve Vai's wings">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes2-2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/bruce's_croquettes.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Bruce's croquettes - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Bruce's croquettes">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/hammet_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Hammet Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Hammet Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers2-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/trujillo's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Trujillo's Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Trujillo's Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Costillas2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/hoffmann_ribs.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Hoffmann Ribs - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Hoffmann Ribs">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Costillas2-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/cristopher's_ribs.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Cristopher's Ribs - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Cristopher's Ribs">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vaughan_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vaughan Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vaughan Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas2-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/becker's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Becker's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Becker's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres2" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/rosendo's_ice_cream.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div class="align-center">
+                                <p>
+                                    Rosendo's Ice cream - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Rosendo's Ice cream">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres2-1" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/faulkner's_cake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div class="align-center">
+                                <p>
+                                    Faulkner's Cake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Faulkner's Cake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </article>
+                <article class="carta-vegana">
+                    <article id = "carta_primera_columna-vegano" class="col-6 col-s-6 menu_carta_completa">
+                        <div id = "Novedades-Entrantes1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vegan_croquettes.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vegan croquettes - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vegan croquettes">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes1-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vegan_nachos.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vegan nachos - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vegan nachos">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/tornillo's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Tornillo's burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Tornillo's burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers1-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/halford's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Halford's Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Halford's Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/king's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    King's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="King's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas1-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/knopfler's_salad.jpg.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Knopfler's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Knopfler's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/mustaine's_shake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Mustaine's Shake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Mustaine's Shake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres1-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/clapton's_cake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Clapton's Cake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Clapton's Cake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article id = "carta_segunda_columna-vegano" class="col-6 col-s-6 menu_carta_completa">
+                        <div id = "Novedades-Entrantes2-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vegan_fingers.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vegan fingers - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vegan fingers">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Entrantes2-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/vegan_potatoes.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Vegan potatoes - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Vegan potatoes">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers2-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/hill's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Hill's burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Hill's burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Burgers2-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/simmon's_burger.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Simmon's Burger - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Simmon's Burger">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas2-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/hendrix's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Hendrix's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Hendrix's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Ensaladas2-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/slash's_salad.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div>
+                                <p class="align-center">
+                                    Slash's Salad - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Slash's Salad">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres2-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/rosendo's_ice_cream.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div class="align-center">
+                                <p>
+                                    Rosendo's Ice cream - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Rosendo's Ice cream">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "Novedades-Postres2-1-vegano" class = "box align-center">
+                            <div>
+                                <figure>
+                                    <img class="imagen_novedad2" src="images/faulkner's_cake.jpg" alt="Rock and fork">
+                                </figure>
+                            </div>
+                            <div class="align-center">
+                                <p>
+                                    Faulkner's Cake - 20€
+                                </p>
+                                <div class="plate-container" data-plate="Faulkner's Cake">
+                                    <button class="remove-plate">RETIRAR</button>
+                                    <p class="quantity-display">0</p>
+                                    <button class="add-plate">AÑADIR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </article>
+                    <!--Cajas-->
+                
+            </section>
+            
         </article>
 
         <!-- Paso 2: Revisión del Pedido y Pago -->
@@ -84,15 +904,11 @@
             <h2>Paso 3 - Estado del Pedido</h2>
             <p>Su pedido se ha realizado exitosamente.</p>
            
-            <div
-            class="ldBar label-center"
-            data-type="fill"
-            data-img="images/burger.svg"
-            data-img-size="100,100"
-            data-fill-background="#9A8670"
-            data-value="0"
-            id="timer"
-            >
+            
+
+            <div class="ldBar label-center" 
+            data-value="50" 
+            id="timer">
             </div>
         
         
@@ -100,6 +916,7 @@
         
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src = "javascript/script_carta.js"></script>
     <script src="javascript/order.js"></script>
     <script type="text/javascript" src="javascript/loading-bar.js"></script>
 </body>

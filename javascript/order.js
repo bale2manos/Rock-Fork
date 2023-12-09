@@ -1,103 +1,100 @@
 $(document).ready(function() {
     // Variables para llevar el seguimiento de los productos seleccionados
-    var productosSeleccionados = [];
+    
 
+    var allPlatos = {};
 
-    
-    
-    // Función para actualizar el contador en el paso 2
-    function actualizarCesta(productoNuevo) {
-        let cesta = $('#productos-en-cesta');
-        let cestaItems = cesta.children();
-    
-        // Verifica si el producto ya está en la cesta
-        let productoExistenteNuevo = cestaItems.filter(function() {
-            return $(this).text().includes(productoNuevo.nombre);
-        });
-    
-        if (productoExistenteNuevo.length > 0) {
-            // Si el producto ya existe en la cesta, actualiza su cantidad
-            let cantidadActual = parseInt(productoExistenteNuevo.text().match(/\d+/)[0]);
-            cantidadActual = productoNuevo.cantidad;
-            console.log("Cantidad producto nuevo:",productoNuevo.cantidad);
-            productoExistenteNuevo.html(productoNuevo.nombre + ' - Cantidad: ' + cantidadActual + ' <button class="box eliminar"></button>');
-        } else {
-            // Si el producto no existe en la cesta, crea un nuevo elemento "li"
-            let cestaItem = document.createElement("li");
-            cestaItem.innerHTML = productoNuevo.nombre + ' - Cantidad: ' + productoNuevo.cantidad + ' <button class="box eliminar"></button';
+    // Function to extract data from a carta section
+    function extractPlatos(sectionClass) {
+        $(sectionClass + ' .menu_carta_completa p').each(function() {
+            var plateElement = $(this);
+            var plateText = plateElement.text().trim();
             
-            cesta.append(cestaItem);
-        }
-    }
-    
-    $('#productos-en-cesta').on('click', 'button.eliminar', function() {
-        // Obtén el nombre del producto desde el texto del elemento "li"
-        var productoNombre = $(this).parent().text().split(' - Cantidad:')[0];
-    
-        // Elimina el elemento "li" padre del botón
-        $(this).closest('li').remove();
-    
-        // Elimina el producto correspondiente de productosSeleccionados
-        productosSeleccionados = productosSeleccionados.filter(function(producto) {
-            return producto.nombre !== productoNombre;
+            // Extracting the plate name and price
+            var matches = plateText.match(/^(.*?)\s*-\s*(\d+(\.\d+)?)€/);
+            if (matches) {
+                var plateName = matches[1].trim();
+                var price = parseFloat(matches[2]);
+                allPlatos[plateName] = price;
+            }
         });
-    });
+    }
 
-    $('#lista-productosUL').on('click', 'button.eliminar', function() {
-        // Obtén el nombre del producto desde el texto del elemento "li"
+    // Extract data from both carta-normal and carta-vegana sections
+    extractPlatos('.carta-normal');
+    extractPlatos('.carta-vegana');
 
-        // Usar una expresión regular para extraer los valores
-        let text = $(this).parent().text();
+    // Display the result in the console (you can store it in a variable or use it as needed)
+    console.log(allPlatos);
 
-        var matches = text.match(/([^-]+) - Cantidad: (\d+) - Precio: €(\d+)/);
 
-        // matches[1] contendrá el nombre
-        var nombre = matches[1].trim();
+    // Initialize variables
+var productosSeleccionados = {};
 
-        // matches[2] contendrá la cantidad como cadena, puedes convertirla a un número entero
-        var cantidad = parseInt(matches[2], 10);
+// Function to update the productosSeleccionados variable
+function updateProductosSeleccionados(plateName, increment) {
+    if (productosSeleccionados.hasOwnProperty(plateName)) {
+        productosSeleccionados[plateName] += increment;
+    } else {
+        productosSeleccionados[plateName] = increment;
+    }
+    console.log(productosSeleccionados);
+}
 
-        // matches[3] contendrá el precio como cadena, también puedes convertirla a un número
-        var precio = parseInt(matches[3], 10);
-        console.log("NOMBRE", nombre);
-        console.log("CANTIDAD", cantidad);
-        console.log("PRECIO", precio);
-        
+// Click event for the "AÑADIR" button
+$('.add-plate').on('click', function () {
+    var plateName = $(this).closest('.plate-container').data('plate');
+
+    // Update productosSeleccionados by adding 1
+    updateProductosSeleccionados(plateName, 1);
+
+    // Update the quantity display
+    updateQuantityDisplay(plateName);
+});
+
+// Click event for the "RETIRAR" button
+$('.remove-plate').on('click', function () {
+    var plateName = $(this).closest('.plate-container').data('plate');
+
+    // Update productosSeleccionados by subtracting 1
+    if (productosSeleccionados.hasOwnProperty(plateName) && productosSeleccionados[plateName] > 0) {
+        updateProductosSeleccionados(plateName, -1);
+    }
+
+    if (productosSeleccionados[plateName] === 0) {
+        delete productosSeleccionados[plateName];
+    }
+
+    // Update the quantity display
+    updateQuantityDisplay(plateName);
+});
+
+// Function to update the quantity display
+function updateQuantityDisplay(plateName) {
+    // Find the corresponding quantity display element
+    var quantityDisplayElement = $('.plate-container[data-plate="' + plateName + '"] .quantity-display');
+
+    // Update the quantity display
+    if (productosSeleccionados.hasOwnProperty(plateName)) {
+        quantityDisplayElement.text(productosSeleccionados[plateName]);
+    } else {
+        quantityDisplayElement.text('0');
+    }
+}
+
+
+
     
-        // Elimina el elemento "li" padre del botón
-        $(this).closest('li').remove();
-        $('#productos-en-cesta').children().filter(function() {
-            return $(this).text().includes(nombre);
-        }).remove();
     
-        // Elimina el producto correspondiente de productosSeleccionados
-        productosSeleccionados = productosSeleccionados.filter(function(producto) {
-            return producto.nombre !== nombre;
-        })
-        
-        var totalText = $('#total-pagar').text();
-        console.log('TEXTO', totalText);
-        var total = parseFloat(totalText.replace('Total a Pagar: $', ''));
-        console.log('TOTAL', total);
-        total -= precio * cantidad;
-        console.log('TOTAL UPDATED', total);
-        $('#total-pagar').text('Total a Pagar: $' + total);
-        ;
-    });
-    
-    
-    
-
-   
 
     // Función para iniciar el contador descendente en el paso 3
     function iniciarContador() {
-        var tiempoRestante = 30; // 10 minutos en segundos
+        var tiempoRestante = 50; // 10 minutos en segundos
         var bar2 = document.getElementById('timer').ldBar;
         var contador = setInterval(function() {
             $('#tiempo-restante').text(tiempoRestante);
             tiempoRestante--;
-            let percentage = (tiempoRestante/30)*100;
+            let percentage = (tiempoRestante/50)*100;
             bar2.set(100-percentage);
             if (tiempoRestante < 0) {
                 clearInterval(contador);
@@ -107,131 +104,76 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    // Cargar productos del restaurante y permitir la selección
-    // Puedes cargar productos desde un servicio web o un archivo JSON
-    // Aquí solo se muestra un ejemplo estático.
-    var productos = [
-        { nombre: 'Rock Burger', precio: 12, cantidad: 0, image: 'images/hamburguesa1.jpg' },
-        { nombre: 'Blues Burger', precio: 12, cantidad: 0, image: 'images/hamburguesa2.jpg' },
-        { nombre: 'Quesadillas', precio: 7, cantidad: 0, image: 'images/quesadillas.jpg' },
-        { nombre: 'Nacho&Fork', precio: 6, cantidad: 0, image: 'images/nachos.jpg' },
-        { nombre: 'Salchichas', precio: 4, cantidad: 0, image: 'images/salchichas.jpg' },
-        { nombre: 'Rock&Rings', precio: 8, cantidad: 0, image: 'images/entrantes1.jpg' },
-    ];
+   
     
-    var listaProductos = $('#product-list');
-    var listaProductosUl = $('<ul></ul>');
-    for (var i = 0; i < productos.length; i++) {
-        var producto = productos[i];
-        
-        var imgElement = $('<img class="box">').attr('src', producto.image).attr('alt', producto.nombre).css({
-            'width': '10vh',
-            'height': '10vh',
-            'object-fit': 'cover',  
-            'margin-right': '3vw'
-        });
-        
-        
-        var productoLi = $('<li></li>');
-        productoLi.append(imgElement);  
-        productoLi.append(document.createTextNode(producto.nombre + ' - Precio: €' + producto.precio + ' '));
-        productoLi.append($('<button class="seleccionar box"></button>'));
-        
-        productoLi.data('producto', producto);
-        listaProductosUl.append(productoLi);
-    }
-    listaProductos.append(listaProductosUl);
-    
-    
+// Function to show selected products in "lista-productosUL"
+// Update the showSelectedProducts function
+// Update the showSelectedProducts function
+// Update the showSelectedProducts function
+function showSelectedProducts() {
+    var listaProductosUL = $('#lista-productosUL');
+    listaProductosUL.empty(); // Clear the list
+    var totalPagar = 0;
 
-     // Función para mostrar el paso 2 y el resumen del pedido
-     $('#next_step').click(function() {
-        console.log("CLICK");
-        if (productosSeleccionados.length > 0) {
-            $('#paso-1').hide();
-            $('#paso-2').show();
-            
-            // Mostrar productos seleccionados y calcular el total a pagar
-            var total = 0;
-            var listaProductos = $('#lista-productosUL');
-            listaProductos.empty();
-            for (var i = 0; i < productosSeleccionados.length; i++) {
-                var producto = productosSeleccionados[i];
-                var imgElement = $('<img class="box">').attr('src', producto.image).attr('alt', producto.nombre).css({
-                    'width': '10vh',
-                    'height': '10vh',
-                    'object-fit': 'cover',
-                    'margin-right': '3vw'
-                });
-                //listaProductos.append('<li>' + producto.nombre + ' - Cantidad: ' + producto.cantidad + '</li>');
-                total += producto.precio * producto.cantidad;
-                var productoLi = $('<li></li>');
-                productoLi.append(imgElement); 
-                productoLi.append(document.createTextNode(producto.nombre + ' - Cantidad: '+ producto.cantidad +' - Precio: €' + producto.precio + ''));
-                productoLi.append($('<button class="box eliminar"></button>'));
-                
-                productoLi.data('producto', producto);
-                listaProductos.append(productoLi);
-            }
-            
-            $('#total-pagar').text('Total a Pagar: $' + total);
-        } else {
-            alert("¿Estás seguro de que no quieres nada?");
-        }
+    // Loop through selected products
+    for (var plateName in productosSeleccionados) {
+        var quantity = productosSeleccionados[plateName];
+        var price = allPlatos[plateName];
+        var totalPrice = quantity * price;
 
+        // Create a div element for each selected product
+        var productDiv = $('<div class="selected-product"></div>');
+
+        // Add the product image to the div
+        productDiv.append('<figure><img class="selected-product-image" src="images/' + plateName.toLowerCase().replace(/ /g, '_') + '.jpg" alt="' + plateName + '"></figure>');
+
+        // Add the product text to the div
+        productDiv.append('<p>' + plateName + ' x' + quantity + ' - ' + totalPrice.toFixed(2) + '€</p>');
+
+        // Add the bin icon to the div
+        var binIcon = $('<figure class="bin-icon"><img class="bin" src="images/bin.png"></figure>');
         
-       
-    });
-    
-
-    
-
-    // Evento para seleccionar un producto
-    listaProductos.on('click', '.seleccionar', function() {
-        var productoLi = $(this).parent();
-        var producto = productoLi.data('producto');
-        var cantidad = parseInt(prompt('Ingrese la cantidad deseada:', '1'), 10);
-        console.log("cantidad inicial",cantidad,'de producto',producto.nombre);
-
-        if (!isNaN(cantidad) && cantidad > 0) {
-            // Verifica si el producto ya está en productosSeleccionados
-            var productoExistente = productosSeleccionados.find(function(item) {
-                return item.nombre === producto.nombre;
+        // Use a closure to capture the plateName for each bin
+        (function (plate) {
+            binIcon.on('click', function () {
+                // Handle the bin icon click event
+                updateProductosSeleccionados(plate, -1);
+                if (productosSeleccionados[plate] === 0) {
+                    delete productosSeleccionados[plate];
+                }
+                showSelectedProducts(); // Update the displayed products after removal
             });
+        })(plateName);
 
-            if (productoExistente) {
-                // Si el producto ya existe, actualiza su cantidad
-                productoExistente.cantidad += cantidad;
-                console.log("Esto es la cantidad del productoExistente al principio: ",productoExistente.cantidad);
-                console.log("Este es el producto: ",productoExistente);
-                actualizarCesta(productoExistente);
-                
-            } else {
-                producto.cantidad = cantidad;
-                // Si el producto no existe, agrégalo a productosSeleccionados
-                productosSeleccionados.push(producto);
-                console.log("Este es el producto: ",producto);
-                actualizarCesta(producto);
-            }
+        productDiv.append(binIcon);
 
-            // Llama a la función para actualizar la cesta
-            
-        }
-    });
+        // Add the div to the list
+        listaProductosUL.append(productDiv);
+
+        // Update the total price
+        totalPagar += totalPrice;
+    }
+
+    // Update the "Total a Pagar" element
+    $('#total-pagar').text('Total a Pagar: ' + totalPagar.toFixed(2) + '€');
+    $('#paso-1').hide();
+    $('#paso-2').show();
+}
 
 
-    // Evento para quitar la selección de un producto
-    listaProductos.on('contextmenu', 'li', function(e) {
-        e.preventDefault();
-        var productoLi = $(this);
-        var producto = productoLi.data('producto');
-        var index = productosSeleccionados.indexOf(producto);
-        if (index > -1) {
-            productosSeleccionados.splice(index, 1);
-            productoLi.remove();
-            actualizarCesta();
-        }
-    });
+
+// Click event for the "#next-step" button
+$('#next_step').on('click', function () {
+    // Check if there are products selected
+    if (Object.keys(productosSeleccionados).length > 0) {
+        // Call the function to show selected products
+        showSelectedProducts();
+    } else {
+        alert('No hay productos seleccionados');
+    }
+});
+
+
 
 
     // Guardar los productos seleccionados en una cookie
@@ -252,7 +194,7 @@ $(document).ready(function() {
     // Iniciar el contador descendente cuando se inicie el paso 3
     $('#paso-2').on('click', '#revisionBtn', function() {
 
-
+        console.log("PORQUE LLEGO AQUi")
         let name = $('#name').val();
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
@@ -279,8 +221,19 @@ $(document).ready(function() {
 
     // MIGA DE PAN
 
-    $('#selecciona-productos').click(function() {
+    // Function to update quantity display in paso-1
+    function updateQuantityDisplaysInPaso1() {
+        $('.plate-container').each(function () {
+            var plateName = $(this).data('plate');
+            var quantityDisplayElement = $(this).find('.quantity-display');
+            quantityDisplayElement.text(productosSeleccionados[plateName] || '0');
+        });
+    }
+
+    // Click event for returning to paso-1
+    $('#selecciona-productos').click(function () {
         console.log("CLICK");
+        updateQuantityDisplaysInPaso1(); // Update quantity displays
         $('#paso-2').hide();
         $('#paso-1').show();
     });
@@ -293,5 +246,131 @@ $(document).ready(function() {
 
     
  
+$('#a_pedir_a_domicilio, .wheel').click(function() {
+    window.location.href = "order.html";
+  });
+  
+
+  
+  function showPopup() {
+    scrollPosition = window.scrollY;
+    $("#popup-overlay, .popup-container").fadeIn();
+    $("body").css("overflow", "hidden"); // Hide the rest of the page
+    $(".header-book-table").css("position", "static"); // Hide the rest of the page
+  
+    // Smoothly scroll to the top
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+  }
+  
+  // Function to hide the popup
+  function hidePopup() {
+    $("#popup-overlay, .popup-container").fadeOut();
+    $("body").css("overflow", "auto"); // Restore overflow property
+    setTimeout(function () {
+      // Code to execute after 2 seconds
+      $(".header-book-table").css("position", "fixed"); // Hide the rest of the page
+    }, 500);
+  
+    // Smoothly scroll back to the previous position
+    $("html, body").animate({ scrollTop: scrollPosition }, "fast");
+  }
+  
+  // Attach the click event to the user icon
+  $(".user-icon-book-table").on("click", function() {
+    showPopup();
+  });
+  
+  // Attach the click event to the overlay and close button (if any)
+  $(".close-popup-login").on("click", function() {
+    hidePopup();
+  });
+  var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1; // Month is zero-based
+    var year = currentDate.getFullYear();
+  
+    // Format the date as "DD/MM/YYYY"
+    var formattedDate = `${day}/${month}/${year}`;
+  
+    // Set the formatted date as the placeholder
+    document.getElementById("current_date").placeholder = formattedDate;
+  
+  
+    var dropdownBtn = document.getElementById("dropdown-btn");
+    var dropdownContent = document.getElementById("time-dropdown");
+    var hourInput = document.getElementById("hour");
+  
+  
+    // DROPDOWN
+    var dropdownBtn = document.getElementById("dropdown-btn");
+    var dropdownContent = document.getElementById("time-dropdown");
+    var hourInput = document.getElementById("hour");
+    var addressInput = document.getElementById("address");
+    var currentDateInput = document.getElementById("current_date");
+    var comensalesInput = document.getElementById("comensales");
+    var reservationForm = document.getElementById("reservar-mesa");
+  
+    dropdownBtn.addEventListener("click", function () {
+      dropdownContent.style.display =
+        dropdownContent.style.display === "block" ? "none" : "block";
+    });
+  
+    // Close the dropdown when clicking outside of it
+    window.addEventListener("click", function (event) {
+      if (!event.target.matches(".triangulo-book-table")) {
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        }
+      }
+    });
+  
+    // Add click event listeners to each time option
+    var timeOptions = document.querySelectorAll(".time-option");
+    timeOptions.forEach(function (option) {
+      option.addEventListener("click", function () {
+        // Update the text of the hour input
+        hourInput.value = option.textContent;
+  
+        // Close the dropdown after selecting a time
+        dropdownContent.style.display = "none";
+      });
+    });
+  
+    // Add submit event listener to the reservation form
+    reservationForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting
+  
+      // Check if all fields are filled
+      if (
+        addressInput.value &&
+        currentDateInput.value &&
+        hourInput.value &&
+        comensalesInput.value
+      ) {
+        // Display reservation message with input information
+        var reservationMessage =
+          "Mesa reservada. Información: " +
+          "Dirección: " +
+          addressInput.value +
+          ", Fecha: " +
+          currentDateInput.value +
+          ", Hora: " +
+          hourInput.value +
+          ", Personas: " +
+          comensalesInput.value;
+  
+        alert(reservationMessage);
+  
+        // Clear input fields
+        addressInput.value = "";
+        currentDateInput.value = "";
+        hourInput.value = "";
+        comensalesInput.value = "";
+      } else {
+        // Display message if any field is missing
+        alert("Rellena todos los campos");
+      }
+    });
+  
 
 });

@@ -132,11 +132,17 @@ h3{
   align-items: start;
   background-color: #373737;
   align-self: center;
-  flex-grow: 1;
   justify-content: center;
   margin: auto 0;
-  padding: 12px 30px 12px 20px;
+  padding: 2vh 3vw 2vh 2vw;
   font: 400 14px Inter, sans-serif;
+  width: 10vw;
+  min-width: 150px;
+}
+
+#address{
+  width: 20vw;
+  min-width: 150px;
 }
 
 #address::placeholder,
@@ -256,7 +262,7 @@ h3{
 }
 
 .wheel{
-  width: 40vh;
+  width: 40vmin;
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
@@ -381,137 +387,6 @@ h3{
 }
 
 /* NEW LANDING PAGE */
-
-
-
-
-
-
-/* MOBILE HEADER */
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #00BAF0;
-  background: linear-gradient(to left, #442414, #C1A88C);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #FFF;
-  height: 50px;
-  padding: 1em;
-  position: fixed; /* Add this line */
-  top: 0; /* Stick it to the top */
-  width: 100%; /* Take the full width of the viewport */
-  z-index: 999; /* Set a high z-index to ensure it's on top of other content */
-}
-
-.burger-menu {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.burger-menu > li {
-  margin: 0 1rem;
-  overflow: hidden;
-}
-
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-button,
-.menu-button::before,
-.menu-button::after {
-  display: block;
-  background-color: #fff;
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  border-radius: 2px;
-}
-
-.menu-button::before {
-  content: '';
-  margin-top: -8px;
-}
-
-.menu-button::after {
-  content: '';
-  margin-top: 8px;
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::before {
-  margin-top: 0px;
-  transform: rotate(405deg);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button {
-  background: rgba(255, 255, 255, 0);
-}
-
-#menu-toggle:checked + .menu-button-container .menu-button::after {
-  margin-top: 0px;
-  transform: rotate(-405deg);
-}
-
-@media (max-width: 700px) {
-
-  .menu-button-container {
-    display: flex;
-  }
-  .burger-menu {
-    position: absolute;
-    top: 0;
-    margin-top: 50px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  #menu-toggle ~ .burger-menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  #menu-toggle:checked ~ .burger-menu li {
-    border: 1px solid #333;
-    height: 2.5em;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .burger-menu > li {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: white;
-    background-color: #222;
-  }
-  .burger-menu > li:not(:last-child) {
-    border-bottom: 1px solid #444;
-  }
-  .burger-menu > li > a {
-    color: white;
-  }
-}
 
 
 /* CONTAINERS */
@@ -1290,33 +1165,7 @@ li{
   cursor: pointer; /* Add a pointer cursor on hover */
 }
 #paso-2 button,
-#next_step{
-  border-radius: 1vmin;
-  border-style: none;
-  box-sizing: border-box;
-  background-color: #442414;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  height: 4vmin;
-  min-height: 20px;
-  line-height: 2vmin;
-  list-style: none;
-  padding-left: 1vmin;
-  margin-left:1vmin;
-  padding-right: 1vmin;
-  outline: none;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  font-weight: bold;
-  
-}
+
 
 
 #paso-1 .seleccionar{
@@ -1333,9 +1182,7 @@ li{
 
 
 #paso-2 button:hover,
-#paso-2 button:focus,
-#paso-1 button:hover,
-#paso-1 button:focus{
+#paso-1 button:hover{
   background-color: #d08662;
 }
 
@@ -1345,18 +1192,11 @@ li{
   float: right;
 }
 
-#next_step{
-  background-color: #C1A88C !important;
-  color: black !important;
-}
 
 button.eliminar{
   background-color: #6A0018 !important;
 }
 
-#next_step:hover{
-  background-color: #e7c9a8 !important;
-}
 
 button.eliminar:hover{
   background-color: #9b0022 !important;
@@ -1450,6 +1290,10 @@ button.eliminar:hover{
     padding: 10px 20px; /* Increase button padding */
   }
 
+  #reservar-mesa { 
+    display: none;
+  }
+
 /* For MOBILE PHONE */
 [class*="col-"] {
     width: 100%;
@@ -1498,6 +1342,10 @@ button.eliminar:hover{
 
 .boton-barra-menu{
   background-color: #773E22;
+}
+
+.boton-barra-menu:hover{
+  background-color: #C1A88C;
 }
 
 .boton-barra-menu > p{
@@ -1670,6 +1518,13 @@ button.eliminar:hover{
       padding-bottom: 6vh;
     }
 
+    #reservar-mesa{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
     #pag1 > nav{
       /*Mostrar el menú principal*/
       display: flex;
@@ -1807,6 +1662,10 @@ estas media queries*/
     padding-top: 6vh;
     height: 100%;
     flex:1;
+}
+
+#reservar-mesa { 
+  display: none;
 }
 
   .video_container{
