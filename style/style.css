@@ -87,7 +87,7 @@ h3{
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 9px 51px 9px 20px;
+  padding: 9px 20px 9px 20px;
 }
 @media (max-width: 991px) {
   .header-book-table {
@@ -1287,7 +1287,7 @@ button.eliminar:hover{
     background-color: #773E22;
     color: #C1A88C;
     font-size: 3vmin; /* Increase button font size */
-    padding: 10px 20px; /* Increase button padding */
+    padding: 1vmin 2vmin; /* Increase button padding */
   }
 
   #reservar-mesa { 

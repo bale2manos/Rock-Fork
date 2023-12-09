@@ -1,6 +1,22 @@
 $(document).ready(function() {
     // Variables para llevar el seguimiento de los productos seleccionados
+    // Function to update the count in the header
+    function calculateTotalQuantity() {
+        var totalQuantity = 0;
     
+        // Loop through selected products
+        for (var plateName in productosSeleccionados) {
+            totalQuantity += productosSeleccionados[plateName];
+        }
+    
+        return totalQuantity;
+    }
+    function updateNumeroProductos() {
+        var totalQuantity = calculateTotalQuantity();
+        $('.numero-productos').text('(x' + totalQuantity + ')');
+    }
+
+    updateNumeroProductos();
 
     var allPlatos = {};
 
@@ -50,6 +66,7 @@ $('.add-plate').on('click', function () {
 
     // Update the quantity display
     updateQuantityDisplay(plateName);
+    updateNumeroProductos();
 });
 
 // Click event for the "RETIRAR" button
@@ -67,6 +84,7 @@ $('.remove-plate').on('click', function () {
 
     // Update the quantity display
     updateQuantityDisplay(plateName);
+    updateNumeroProductos();
 });
 
 // Function to update the quantity display
@@ -142,6 +160,7 @@ function showSelectedProducts() {
                     delete productosSeleccionados[plate];
                 }
                 showSelectedProducts(); // Update the displayed products after removal
+                updateNumeroProductos();
             });
         })(plateName);
 
@@ -172,6 +191,8 @@ $('#next_step').on('click', function () {
         alert('No hay productos seleccionados');
     }
 });
+
+
 
 
 

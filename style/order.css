@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'ColinSamuelsW00Bold';
+    src: url('../ColinSamuelsW00Bold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: 'ColinSamuelsW00Regular';
+    src: url('../ColinSamuelsW00Regular.ttf'); 
+  }
+
 #pag1{
     padding-top: 13vh;
     overflow: scroll;
@@ -23,13 +33,41 @@
 }
 
 .selected-product img {
-    max-width: 100%;
-    height: auto;
-    max-height: 30px; /* Adjust the max-height as needed */
+    aspect-ratio: 1;
+    width: 3vw;
+    object-fit: cover; /* Ensure the image covers the entire box without stretching */
     margin-right: 2vw;
 }
+
 
 .selected-product p {
     margin: 0;
     color: white;
 }
+
+.bolsa-productos {
+    display: flex;
+    align-items: end;
+    gap: 0px;
+    margin-left: auto; /* Try adding a margin-left to move it to the right */
+}
+
+.numero-productos {
+    color: #fff;
+    margin-top: 10px;
+    white-space: nowrap;
+    font: 'ColinSamuelsW00Regular', sans-serif;
+    font-size: 1vw;
+    width: 3vw;
+}
+
+.bolsa-img {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    max-height: 65px;;
+}
+
+
+  
