@@ -197,6 +197,8 @@ $('#boton-carta-vegana').click(function() {
   $('#botones_carta_vegana').show();
   $('#carta_primera_columna').hide();
   $('#carta_segunda_columna').hide();
+  $('#carta_primera_columna-vegano').show();
+  $('#carta_segunda_columna-vegano').show();
   $('#boton-carta-default').show(); 
   $('#boton-carta-vegana').hide(); 
   $('#Novedades-Entrantes1-vegano').show();

@@ -175,6 +175,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // Al iniciar la página, solo los entrantes serán mostrados.
 $(document).ready(function() {
   // Oculta todos los contenedores excepto los relacionados con "Novedades-Entrantes"
+  $('#popup-entrantes-1').hide();
+  $('#popup-entrantes-2').hide();
+  $('#popup-burgers-1').hide();
+  $('#popup-burgers-2').hide();
+  $('#popup-costillas-1').hide();
+  $('#popup-costillas-2').hide();
+  $('#popup-ensaladas-1').hide();
+  $('#popup-ensaladas-2').hide();
+  $('#popup-postres-1').hide();
+  $('#popup-postres-2').hide();
   hide_others();
   $('#Novedades-Entrantes1').show();
   $('#Novedades-Entrantes2').show();
@@ -381,6 +391,92 @@ var currentDate = new Date();
       alert("Rellena todos los campos");
     }
   });
+
+
+
+$('#info-entrantes-1').on('click', function () {
+  $('#popup-entrantes-1').fadeIn();
+});
+
+$('#closePopup-entrantes-1').on('click', function () {
+  $('#popup-entrantes-1').fadeOut();
+});
+
+$('#info-entrantes-2').on('click', function () {
+  $('#popup-entrantes-2').fadeIn();
+});
+
+$('#closePopup-entrantes-2').on('click', function () {
+  $('#popup-entrantes-2').fadeOut();
+});
+
+$('#info-burgers-1').on('click', function () {
+  $('#popup-burgers-1').fadeIn();
+});
+
+$('#closePopup-burgers-1').on('click', function () {
+  $('#popup-burgers-1').fadeOut();
+});
+
+$('#info-burgers-2').on('click', function () {
+  $('#popup-burgers-2').fadeIn();
+});
+
+$('#closePopup-burgers-2').on('click', function () {
+  $('#popup-burgers-2').fadeOut();
+});
+
+$('#info-costillas-1').on('click', function () {
+  $('#popup-costillas-1').fadeIn();
+});
+
+$('#closePopup-costillas-1').on('click', function () {
+  $('#popup-costillas-1').fadeOut();
+});
+
+$('#info-costillas-2').on('click', function () {
+  $('#popup-costillas-2').fadeIn();
+});
+
+$('#closePopup-costillas-2').on('click', function () {
+  $('#popup-costillas-2').fadeOut();
+});
+
+$('#info-ensaladas-1').on('click', function () {
+  $('#popup-ensaladas-1').fadeIn();
+});
+
+$('#closePopup-ensaladas-1').on('click', function () {
+  $('#popup-ensaladas-1').fadeOut();
+});
+
+$('#info-ensaladas-2').on('click', function () {
+  $('#popup-ensaladas-2').fadeIn();
+});
+
+$('#closePopup-ensaladas-2').on('click', function () {
+  $('#popup-ensaladas-2').fadeOut();
+});
+
+
+$('#info-postres-1').on('click', function () {
+  $('#popup-postres-1').fadeIn();
+});
+
+$('#closePopup-postres-1').on('click', function () {
+  $('#popup-postres-1').fadeOut();
+});
+
+$('#info-postres-2').on('click', function () {
+  $('#popup-postres-2').fadeIn();
+});
+
+$('#closePopup-postres-2').on('click', function () {
+  $('#popup-postres-2').fadeOut();
+});
+
+
+
 
 });
   
