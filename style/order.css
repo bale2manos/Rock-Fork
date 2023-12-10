@@ -164,5 +164,51 @@
     margin: 80px auto;
   }
 
+
+  #music-bar {
+    /* Remove background color */
+    background: none;
+    box-shadow: none;
+    width:40%;
+    margin: 0;
+}
+
+#music-bar > span {
+    /* Set progress bar color to black */
+    height: 1vh;
+    background-color: #000;
+    background-image: none; /* Remove gradient if any */
+    border-top-right-radius: 4px; /* Adjust border radii */
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative; /* Add relative positioning for the :before pseudo-element */
+    overflow: visible !important;
+}
+
+#music-bar > span:before {
+    /* Replace the circular element with a burguer.svg icon */
+    content: url('../images/burger.svg'); /* Provide the correct path to your SVG */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    right: -6px; /* Adjust the distance from the end */
+    transform: translateY(-50%); /* Center vertically */
+    width: 4vh; /* Adjust the width if needed */
+}
+
+
+#paso-3{
+    display: flex !important;
+    flex-direction: column;
+}
+
+ #paso-3 > img {
+    width: 40%;
+ }
+
+ #funko-img {
+    width: 20% !important;
+ }
+
  
  

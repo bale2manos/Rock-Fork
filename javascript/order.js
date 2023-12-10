@@ -2,7 +2,7 @@ $(document).ready(function() {
     // Variables para llevar el seguimiento de los productos seleccionados
     // Function to update the count in the header
     function setProgressBarWidth(percentage) {
-        $(".meter > span").stop().animate({
+        $("#progress-order > span").stop().animate({
             width: percentage + "%"
         }, 500); // You can adjust the animation duration (500 milliseconds in this case)
     }
@@ -112,26 +112,29 @@ function updateQuantityDisplay(plateName) {
 }
 
 
+function animacionFinal() {
+    var progressBar = $("#music-bar > span");
 
-    
-    
+    // Set the target width (100%) and duration (30000 milliseconds = 30 seconds)
+    var targetWidth = "100%";
+    var duration = 30000;
 
-    // Función para iniciar el contador descendente en el paso 3
-    function iniciarContador() {
-        var tiempoRestante = 50; // 10 minutos en segundos
-        var bar2 = document.getElementById('timer').ldBar;
-        var contador = setInterval(function() {
-            $('#tiempo-restante').text(tiempoRestante);
-            tiempoRestante--;
-            let percentage = (tiempoRestante/50)*100;
-            bar2.set(100-percentage);
-            if (tiempoRestante < 0) {
-                clearInterval(contador);
-                $('#paso-3').hide();
-                window.location.href = 'index.html';
-            }
-        }, 1000);
-    }
+    // Animate the progress bar width
+    progressBar.stop().animate({
+        width: targetWidth
+    }, {
+        duration: duration,
+        easing: "linear", // Use linear easing for a constant speed
+        step: function (now, fx) {
+            // You can add additional logic if needed during the animation
+        },
+        complete: function () {
+            // The animation is complete
+            console.log("Animation completed!");
+        }
+    });
+}
+    
 
    
     
@@ -279,19 +282,10 @@ $('.bolsa-productos').click(function () {
         }
         else{
         setProgressBarWidth(100);
-        let bar2 = document.getElementById('timer').ldBar;
-        bar2.set(0);
-        console.log(bar2);
-        $('#timer').css({
-            width: '75%',
-            height: '75%',
-            'margin-top': '-10vmin'
-        });
-        
-
-        iniciarContador();
+        animacionFinal();
         $('#paso-2').hide();
         $('#paso-3').show();
+        $('#paso-3').css('display', 'flex');
         }
     });
 
@@ -305,19 +299,11 @@ $('.bolsa-productos').click(function () {
         }
         else{
         setProgressBarWidth(100);
-        let bar2 = document.getElementById('timer').ldBar;
-        bar2.set(0);
-        console.log(bar2);
-        $('#timer').css({
-            width: '75%',
-            height: '75%',
-            'margin-top': '-10vmin'
-        });
-        
+        animacionFinal();
 
-        iniciarContador();
         $('#paso-2').hide();
         $('#paso-3').show();
+        $('#paso-3').css('display', 'flex');
         }
     });
 
