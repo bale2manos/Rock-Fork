@@ -52,7 +52,7 @@
             </div>
             
             <input type="number" id="comensales" name="comensales" min="1" max="30" placeholder="Personas">
-            <button type="reservar-mesa">Reservar mesa</button>    
+            <button type="reservar-mesa" id="reservar-mesa-button">Reservar mesa</button>    
         
         </form>
         
@@ -598,6 +598,7 @@
         </div>
     </div>
 
+
     <!--Footer-->
     <!--
     <footer class="footer-basic">
@@ -615,6 +616,16 @@
         </ul>
     </footer>
     -->
+    <div id="reserva-satisfactoria" class="popup">
+        <div class="popup-content" id="reserva-popup-content">
+            <p id="popup-address"></p>
+            <p id="popup-date"></p>
+            <p id="popup-hour"></p>
+            <p id="popup-comensales"></p>
+            <a href="#" id="downloadIcs" download="reservation.ics">Download .ics file</a>
+            <button id="closePopup-reserva-satisfactoria">Cerrar</button>
+        </div>
+    </div>
     
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

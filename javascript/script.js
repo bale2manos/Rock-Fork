@@ -172,18 +172,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //#######################################################################################################################
 //#######################################################################################################################
 // Al iniciar la página, solo los entrantes serán mostrados.
+
 $(document).ready(function() {
-  // Oculta todos los contenedores excepto los relacionados con "Novedades-Entrantes"
-  $('#popup-entrantes-1').hide();
-  $('#popup-entrantes-2').hide();
-  $('#popup-burgers-1').hide();
-  $('#popup-burgers-2').hide();
-  $('#popup-costillas-1').hide();
-  $('#popup-costillas-2').hide();
-  $('#popup-ensaladas-1').hide();
-  $('#popup-ensaladas-2').hide();
-  $('#popup-postres-1').hide();
-  $('#popup-postres-2').hide();
   hide_others();
   $('#Novedades-Entrantes1').show();
   $('#Novedades-Entrantes2').show();
@@ -353,122 +343,177 @@ var currentDate = new Date();
   reservationForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting
 
-    // Check if all fields are filled
-    if (
-      addressInput.value &&
-      currentDateInput.value &&
-      hourInput.value &&
-      comensalesInput.value
-    ) {
-      // Display reservation message with input information
-      var reservationMessage =
-        "Mesa reservada. Información: " +
-        "Dirección: " +
-        addressInput.value +
-        ", Fecha: " +
-        currentDateInput.value +
-        ", Hora: " +
-        hourInput.value +
-        ", Personas: " +
-        comensalesInput.value;
+    // Validate and sanitize user inputs
+    var address = addressInput.value.trim();
+    var currentDate = currentDateInput.value;
+    var hour = hourInput.value;
+    var comensales = comensalesInput.value;
 
-      alert(reservationMessage);
+    if (address && currentDate && hour && comensales) {
+        var formattedTime = hour.replace(':', '') + '00';
+        // Parse the date to ensure it's in the correct format
+        // Parse the date to ensure it's in the correct format (DD/MM/YYYY)
+        var dateParts = currentDateInput.value.split('/');
+        var parsedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]); // Note: Months are zero-based
 
-      // Clear input fields
-      addressInput.value = "";
-      currentDateInput.value = "";
-      hourInput.value = "";
-      comensalesInput.value = "";
+        // Extract day, month, and year
+        var day = parsedDate.getUTCDate() + 1;
+        var month = parsedDate.getUTCMonth() + 1; // Months are zero-based
+        var year = parsedDate.getUTCFullYear();
+
+        // Format the date to YYYYMMDD
+        var formattedDate = `${year}${month.toString().padStart(2, '0')}${day.toString().padStart(2, '0')}`;
+
+        // Adjust the date format to YYYYMMDD and time to HHmmss
+        var isoFormattedDateTime = formattedDate + 'T' + formattedTime;
+        console.log(isoFormattedDateTime);
+        
+        // Generate a unique identifier (UID) for the event
+        var uid = 'unique-id-' + Math.random().toString(36).substring(2);
+
+        // Get the current timestamp for DTSTAMP
+        var dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+        // Update the popup with the reservation details
+        $("#popup-address").text("Dirección: " + address);
+        $("#popup-date").text("Fecha: " + currentDate);
+        $("#popup-hour").text("Hora: " + hour);
+        $("#popup-comensales").text("Personas: " + comensales);
+        
+
+        // Generate .ics content with required properties
+        var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:${address}\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+
+        // Create Blob from the .ics content
+        var blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+
+        // Create a download link
+        var downloadLink = $("#downloadIcs");
+        downloadLink.attr("href", window.URL.createObjectURL(blob));
+
+        // Clear input fields
+        addressInput.value = "";
+        currentDateInput.value = "";
+        hourInput.value = "";
+        comensalesInput.value = "";
+
+
+        // Show the popup
+        $("#reserva-satisfactoria").fadeIn();
+        $("#reserva-satisfactoria").css("display", "flex");
     } else {
-      // Display message if any field is missing
-      alert("Rellena todos los campos");
+        // Display message if any field is missing
+        alert("Rellena todos los campos");
     }
-  });
+});
+
 
 
 
 $('#info-entrantes-1').on('click', function () {
   $('#popup-entrantes-1').fadeIn();
+  $('#popup-entrantes-1').css('display', 'flex');
 });
 
 $('#closePopup-entrantes-1').on('click', function () {
   $('#popup-entrantes-1').fadeOut();
+  $('#popup-entrantes-1').css('display', 'none');
 });
 
 $('#info-entrantes-2').on('click', function () {
   $('#popup-entrantes-2').fadeIn();
+  $('#popup-entrantes-2').css('display', 'flex');
 });
 
 $('#closePopup-entrantes-2').on('click', function () {
   $('#popup-entrantes-2').fadeOut();
+  $('#popup-entrantes-2').css('display', 'none');
 });
 
 $('#info-burgers-1').on('click', function () {
   $('#popup-burgers-1').fadeIn();
+  $('#popup-burgers-1').css('display', 'flex');
 });
 
 $('#closePopup-burgers-1').on('click', function () {
   $('#popup-burgers-1').fadeOut();
+  $('#popup-burgers-1').css('display', 'none');
 });
 
 $('#info-burgers-2').on('click', function () {
   $('#popup-burgers-2').fadeIn();
+  $('#popup-burgers-2').css('display', 'flex');
 });
 
 $('#closePopup-burgers-2').on('click', function () {
   $('#popup-burgers-2').fadeOut();
+  $('#popup-burgers-2').css('display', 'none');
 });
 
 $('#info-costillas-1').on('click', function () {
   $('#popup-costillas-1').fadeIn();
+  $('#popup-costillas-1').css('display', 'flex');
 });
 
 $('#closePopup-costillas-1').on('click', function () {
   $('#popup-costillas-1').fadeOut();
+  $('#popup-costillas-1').css('display', 'none');
 });
 
 $('#info-costillas-2').on('click', function () {
   $('#popup-costillas-2').fadeIn();
+  $('#popup-costillas-2').css('display', 'flex');
 });
 
 $('#closePopup-costillas-2').on('click', function () {
   $('#popup-costillas-2').fadeOut();
+  $('#popup-costillas-2').css('display', 'none');
 });
 
 $('#info-ensaladas-1').on('click', function () {
   $('#popup-ensaladas-1').fadeIn();
+  $('#popup-ensaladas-1').css('display', 'flex');
 });
 
 $('#closePopup-ensaladas-1').on('click', function () {
   $('#popup-ensaladas-1').fadeOut();
+  $('#popup-ensaladas-1').css('display', 'none');
 });
 
 $('#info-ensaladas-2').on('click', function () {
   $('#popup-ensaladas-2').fadeIn();
+  $('#popup-ensaladas-2').css('display', 'flex');
 });
 
 $('#closePopup-ensaladas-2').on('click', function () {
   $('#popup-ensaladas-2').fadeOut();
+  $('#popup-ensaladas-2').css('display', 'none');
 });
 
 
 $('#info-postres-1').on('click', function () {
   $('#popup-postres-1').fadeIn();
+  $('#popup-postres-1').css('display', 'flex');
 });
 
 $('#closePopup-postres-1').on('click', function () {
   $('#popup-postres-1').fadeOut();
+  $('#popup-postres-1').css('display', 'none');
 });
 
 $('#info-postres-2').on('click', function () {
   $('#popup-postres-2').fadeIn();
+  $('#popup-postres-2').css('display', 'flex');
 });
 
 $('#closePopup-postres-2').on('click', function () {
   $('#popup-postres-2').fadeOut();
+  $('#popup-postres-2').css('display', 'none');
 });
 
-
+$("#closePopup-reserva-satisfactoria").click(function () {
+  $("#reserva-satisfactoria").fadeOut();
+});
 
 
 });
