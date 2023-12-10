@@ -57,7 +57,7 @@
     margin-top: 10px;
     white-space: nowrap;
     font: 'ColinSamuelsW00Regular', sans-serif;
-    font-size: 1vw;
+    font-size: max(10px, 1vw); /* Set font size to 1vw or a minimum of 30px */
     width: 3vw;
 }
 
@@ -200,6 +200,12 @@
 #paso-3{
     display: flex !important;
     flex-direction: column;
+}
+
+
+#paso-3 > h2{
+    font-size: 7vmin;
+    padding:2vmin;
 }
 
  #paso-3 > img {
