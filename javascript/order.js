@@ -248,7 +248,8 @@ $('#next_step').on('click', function () {
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
         let cvv = $('#cvv').val();
-        if (name === "" || tarjeta === "" || date === "" || cvv === "") {
+        let email = $('#email_credito').val();
+        if (name === "" || tarjeta === "" || date === "" || cvv === "" || email === "") {
             alert("Por favor, rellene todos los campos");
         }
         else{
@@ -270,12 +271,10 @@ $('#next_step').on('click', function () {
 
     $('#paso-2').on('click', '#revisionBtn2', function() {
 
-        console.log("PORQUE LLEGO AQUi")
-        let name = $('#name').val();
-        let tarjeta = $('#tarjeta').val();
-        let date = $('#date').val();
-        let cvv = $('#cvv').val();
-        if (name === "" || tarjeta === "" || date === "" || cvv === "") {
+        let email = $('#email_paypal').val();
+        let password = $('#password').val();
+
+        if (email === "" || password === "") {
             alert("Por favor, rellene todos los campos");
         }
         else{
