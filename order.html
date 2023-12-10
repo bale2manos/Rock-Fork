@@ -565,7 +565,7 @@
                         <div id = "Novedades-Ensaladas1-1-vegano" class = "box align-center">
                             <div>
                                 <figure>
-                                    <img class="imagen_novedad2" src="images/knopfler's_salad.jpg.jpg" alt="Rock and fork">
+                                    <img class="imagen_novedad2" src="images/knopfler's_salad.jpg" alt="Rock and fork">
                                 </figure>
                             </div>
                             <div>
@@ -771,34 +771,85 @@
                     <div id="total-pagar">Total a Pagar: $0</div>
                 </div>
             </article>
+
             <article class="col-6 col-s-6 align-center" id="paso2-right" >
-                <h2 class="align-center">Formulario de Pago</h2>
-                <form class="centerForm" id="registrationForm">
-                    <!-- Nombre Input -->
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
+                <div class = "pago align-center" id="formularioBtn">
+                        <figure>
+                            <img class="imagen_novedad3" src="images/tarjeta.png" alt="Rock and fork">
+                        </figure>
+                    <p>Tarjeta</p>
+                </div>
+                <div id="popup-formulario" class="popup">
+                    <div class="popup-content">
+                        <h2 class="align-center">Formulario de Pago</h2>
+                        <form class="centerForm" id="registrationForm">
+                            <!-- Nombre Input -->
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                    
+                            <!-- Tarjeta Inputs -->
+                            <div class="form-group">
+                                <label for="tarjeta">Número de tarjeta</label>
+                                <input type="text" id="tarjeta" name="tarjeta" required>
+                            </div>
+                    
+                            <!-- Fecha Caducidad Input -->
+                            <div class="form-group">
+                                <label for="date">Fecha de vencimiento</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                    
+                            <!-- CVV Input -->
+                            <div class="form-group">
+                                <label for="cvv">Cvv</label>
+                                <input type="number" id="cvv" name="cvv" required>
+                            </div>
+                        </form>
+                        <button id="formularioBtn2" class = "boton-barra-menu"><p>Cerrar formulario</p></button>
+                        <button id="revisionBtn" class = "boton-barra-menu"><p>Pagar pedido</p></button>
                     </div>
-            
-                    <!-- Tarjeta Inputs -->
-                    <div class="form-group">
-                        <label for="tarjeta">Número de tarjeta</label>
-                        <input type="text" id="tarjeta" name="tarjeta" required>
+                </div>
+
+                <div class = "pago align-center" id="formularioBtnPaypal">
+                    <figure>
+                        <img class="imagen_novedad3" src="images/pay pal.png" alt="Rock and fork">
+                    </figure>
+                <p>Paypal</p>
+                </div>
+                <div id="popup-formulario-Paypal" class="popup">
+                    <div class="popup-content">
+                        <h2 class="align-center">Formulario de Pago</h2>
+                        <form class="centerForm" id="registrationForm">
+                        <!-- Nombre Input -->
+                            <div class="form-group">
+                                <label for="name">Correo electrónico</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                    
+                            <!-- Tarjeta Inputs -->
+                            <div class="form-group">
+                                <label for="tarjeta">Contraseña</label>
+                                <input type="text" id="tarjeta" name="tarjeta" required>
+                            </div>
+                    
+                            <!-- Fecha Caducidad Input -->
+                            <div class="form-group">
+                                <label for="date">Fecha de vencimiento</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                    
+                            <!-- CVV Input -->
+                            <div class="form-group">
+                                <label for="cvv">Cvv</label>
+                                <input type="number" id="cvv" name="cvv" required>
+                            </div>
+                        </form>
+                        <button id="formularioBtn3" class = "boton-barra-menu"><p>Cerrar formulario</p></button>
+                        <button id="revisionBtn2" class = "boton-barra-menu"><p>Pagar pedido</p></button>
                     </div>
-            
-                    <!-- Fecha Caducidad Input -->
-                    <div class="form-group">
-                        <label for="date">Fecha de vencimiento</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-            
-                    <!-- CVV Input -->
-                    <div class="form-group">
-                        <label for="cvv">Cvv</label>
-                        <input type="number" id="cvv" name="cvv" required>
-                    </div>
-                </form>
-                <button id="revisionBtn">Pagar pedido</button>
+                </div>
             </article>
         </article>
 

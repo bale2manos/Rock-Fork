@@ -183,6 +183,34 @@ function showSelectedProducts() {
 
 // Click event for the "#next-step" button
 $('#next_step').on('click', function () {
+    $('#popup-formulario').hide();
+    $('#popup-formulario-Paypal').hide();
+
+    $('#formularioBtn').on('click', function () {
+        console.log("hola");
+        $('#popup-formulario').fadeIn();
+    });
+
+    $('#formularioBtnPaypal').on('click', function () {
+        console.log("hola");
+        $('#popup-formulario-Paypal').fadeIn();
+    });
+        
+    $('#formularioBtn2').on('click', function () {
+        $('#popup-formulario').fadeOut();
+    });
+
+    $('#formularioBtn3').on('click', function () {
+        $('#popup-formulario-Paypal').fadeOut();
+    });
+
+    $('#revisionBtn').on('click', function () {
+        $('#popup-formulario').fadeOut();
+    });
+
+    $('#revisionBtn2').on('click', function () {
+        $('#popup-formulario').fadeOut();
+    });
     // Check if there are products selected
     if (Object.keys(productosSeleccionados).length > 0) {
         // Call the function to show selected products
@@ -214,6 +242,33 @@ $('#next_step').on('click', function () {
     
     // Iniciar el contador descendente cuando se inicie el paso 3
     $('#paso-2').on('click', '#revisionBtn', function() {
+
+        console.log("PORQUE LLEGO AQUi")
+        let name = $('#name').val();
+        let tarjeta = $('#tarjeta').val();
+        let date = $('#date').val();
+        let cvv = $('#cvv').val();
+        if (name === "" || tarjeta === "" || date === "" || cvv === "") {
+            alert("Por favor, rellene todos los campos");
+        }
+        else{
+        let bar2 = document.getElementById('timer').ldBar;
+        bar2.set(0);
+        console.log(bar2);
+        $('#timer').css({
+            width: '75%',
+            height: '75%',
+            'margin-top': '-10vmin'
+        });
+        
+
+        iniciarContador();
+        $('#paso-2').hide();
+        $('#paso-3').show();
+        }
+    });
+
+    $('#paso-2').on('click', '#revisionBtn2', function() {
 
         console.log("PORQUE LLEGO AQUi")
         let name = $('#name').val();
@@ -393,5 +448,7 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
       }
     });
   
+
+
 
 });

@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const userDataJSON = JSON.stringify(userData);
 
-        console.log("HOLA");
         console.log(userDataJSON);
         const user_registered = getCookie(dniInput.value);
 
@@ -162,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Ajuste enlace menu original
   $('#go-to-order').click(function() {
-    console.log("HOLA")
+
     window.location.href = 'order.html';
 });
 
@@ -207,7 +206,6 @@ function colors(x) {
 
 // Cuando se haga click en entrantes, se muestran solo las novedades de entrantes.
 $('#boton-barra-entrantes').click(function() {
-  console.log("HOLA");
   hide_others();
   colors('boton-barra-entrantes');
   $('#Novedades-Entrantes1').show();
@@ -216,7 +214,6 @@ $('#boton-barra-entrantes').click(function() {
 
 
 $('#boton-barra-Burgers').click(function() {
-  console.log("HOLA");
   hide_others();
   colors('boton-barra-Burgers');
   $('#Novedades-Burgers1').show();
@@ -224,7 +221,6 @@ $('#boton-barra-Burgers').click(function() {
 });
 
 $('#boton-barra-Costillas').click(function() {
-  console.log("HOLA");
   hide_others();
   colors('boton-barra-Costillas');
   $('#Novedades-Costillas1').show();
@@ -232,7 +228,6 @@ $('#boton-barra-Costillas').click(function() {
 });
 
 $('#boton-barra-Ensaladas').click(function() {
-  console.log("HOLA");
   hide_others();
   colors('boton-barra-Ensaladas');
   $('#Novedades-Ensaladas1').show();
@@ -240,7 +235,6 @@ $('#boton-barra-Ensaladas').click(function() {
 });
 
 $('#boton-barra-Postres').click(function() {
-  console.log("HOLA");
   hide_others();
   colors('boton-barra-Postres');
   $('#Novedades-Postres1').show();
@@ -262,7 +256,6 @@ function hide_others(){
 }
 // Ajuste enlace menu original
 $('#boton-ver-carta-completa, #a_la_carta, .menu-footer').click(function() {
-  console.log("HOLA")
   window.location.href = 'carta.html';
 });
 

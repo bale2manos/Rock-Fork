@@ -1164,13 +1164,9 @@ li{
   border: none; /* Remove the button border */
   cursor: pointer; /* Add a pointer cursor on hover */
 }
-#paso-2 button,
 
 
 
-#paso-1 .seleccionar{
-  background-image: url('../images/seleccionar.png'); 
-}
 
 .eliminar{
   background-image: url('../images/eliminar.png'); 
@@ -1181,7 +1177,6 @@ li{
 }
 
 
-#paso-2 button:hover,
 #paso-1 button:hover{
   background-color: #d08662;
 }
@@ -1344,6 +1339,10 @@ button.eliminar:hover{
   background-color: #773E22;
 }
 
+#formularioBtn{
+  background-color: #C1A88C;
+}
+
 .boton-barra-menu:hover{
   background-color: #C1A88C;
 }
@@ -1364,6 +1363,14 @@ button.eliminar:hover{
   min-width: 50px;
   max-width: 450px;
   width:20vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+}
+
+.imagen_novedad3{
+  min-width: 30px;
+  max-width: 250px;
+  width:10vw;
   object-fit: cover;
   aspect-ratio: 1/1; /* Formato cuadrado */
 }
@@ -1423,6 +1430,10 @@ button.eliminar:hover{
   text-align: center;
 }
 
+.pago{
+  display: flex;
+  flex-direction: row;
+}
 
 /*######################################################################################################################*/
 /*######################################################################################################################*/
