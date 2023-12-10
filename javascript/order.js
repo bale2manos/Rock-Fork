@@ -1,6 +1,11 @@
 $(document).ready(function() {
     // Variables para llevar el seguimiento de los productos seleccionados
     // Function to update the count in the header
+    function setProgressBarWidth(percentage) {
+        $(".meter > span").stop().animate({
+            width: percentage + "%"
+        }, 500); // You can adjust the animation duration (500 milliseconds in this case)
+    }
     function calculateTotalQuantity() {
         var totalQuantity = 0;
     
@@ -14,6 +19,12 @@ $(document).ready(function() {
     function updateNumeroProductos() {
         var totalQuantity = calculateTotalQuantity();
         $('.numero-productos').text('(x' + totalQuantity + ')');
+        if (totalQuantity > 0 && $('#paso-2').is(':hidden')) {
+            setProgressBarWidth(25);
+        }
+        else if (totalQuantity === 0) {
+            setProgressBarWidth(10);
+        }
     }
 
     updateNumeroProductos();
@@ -180,43 +191,57 @@ function showSelectedProducts() {
 }
 
 
+$('#formularioBtn').on('click', function () {
+    console.log("hola");
+    $('#popup-formulario').fadeIn();
+});
 
+$('#formularioBtnPaypal').on('click', function () {
+    console.log("hola");
+    $('#popup-formulario-Paypal').fadeIn();
+});
+    
+$('#formularioBtn2').on('click', function () {
+    $('#popup-formulario').fadeOut();
+});
+
+$('#formularioBtn3').on('click', function () {
+    $('#popup-formulario-Paypal').fadeOut();
+});
+
+$('#revisionBtn').on('click', function () {
+    $('#popup-formulario').fadeOut();
+});
+
+$('#revisionBtn2').on('click', function () {
+    $('#popup-formulario').fadeOut();
+});
+
+$('#popup-formulario').hide();
+$('#popup-formulario-Paypal').hide();
 // Click event for the "#next-step" button
 $('#next_step').on('click', function () {
-    $('#popup-formulario').hide();
-    $('#popup-formulario-Paypal').hide();
-
-    $('#formularioBtn').on('click', function () {
-        console.log("hola");
-        $('#popup-formulario').fadeIn();
-    });
-
-    $('#formularioBtnPaypal').on('click', function () {
-        console.log("hola");
-        $('#popup-formulario-Paypal').fadeIn();
-    });
-        
-    $('#formularioBtn2').on('click', function () {
-        $('#popup-formulario').fadeOut();
-    });
-
-    $('#formularioBtn3').on('click', function () {
-        $('#popup-formulario-Paypal').fadeOut();
-    });
-
-    $('#revisionBtn').on('click', function () {
-        $('#popup-formulario').fadeOut();
-    });
-
-    $('#revisionBtn2').on('click', function () {
-        $('#popup-formulario').fadeOut();
-    });
     // Check if there are products selected
     if (Object.keys(productosSeleccionados).length > 0) {
         // Call the function to show selected products
         showSelectedProducts();
+        setProgressBarWidth(50);
     } else {
         alert('No hay productos seleccionados');
+    }
+});
+
+$('.bolsa-productos').click(function () {
+    // Check if #paso-1 is visible
+    if ($('#paso-1').is(':visible')) {
+        // Check if there are products selected
+        if (Object.keys(productosSeleccionados).length > 0) {
+            // Call the function to show selected products
+            showSelectedProducts();
+            setProgressBarWidth(50);
+        } else {
+            alert('No hay productos seleccionados');
+        }
     }
 });
 
@@ -243,7 +268,7 @@ $('#next_step').on('click', function () {
     // Iniciar el contador descendente cuando se inicie el paso 3
     $('#paso-2').on('click', '#revisionBtn', function() {
 
-        console.log("PORQUE LLEGO AQUi")
+
         let name = $('#name').val();
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
@@ -253,6 +278,7 @@ $('#next_step').on('click', function () {
             alert("Por favor, rellene todos los campos");
         }
         else{
+        setProgressBarWidth(100);
         let bar2 = document.getElementById('timer').ldBar;
         bar2.set(0);
         console.log(bar2);
@@ -278,6 +304,7 @@ $('#next_step').on('click', function () {
             alert("Por favor, rellene todos los campos");
         }
         else{
+        setProgressBarWidth(100);
         let bar2 = document.getElementById('timer').ldBar;
         bar2.set(0);
         console.log(bar2);
@@ -311,6 +338,7 @@ $('#next_step').on('click', function () {
         updateQuantityDisplaysInPaso1(); // Update quantity displays
         $('#paso-2').hide();
         $('#paso-1').show();
+        setProgressBarWidth(25);
     });
 
     $('.order_to_home').click(function() {
