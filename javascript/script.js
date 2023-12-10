@@ -350,29 +350,6 @@ var currentDate = new Date();
     var comensales = comensalesInput.value;
 
     if (address && currentDate && hour && comensales) {
-        var formattedTime = hour.replace(':', '') + '00';
-        // Parse the date to ensure it's in the correct format
-        // Parse the date to ensure it's in the correct format (DD/MM/YYYY)
-        var dateParts = currentDateInput.value.split('/');
-        var parsedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]); // Note: Months are zero-based
-
-        // Extract day, month, and year
-        var day = parsedDate.getUTCDate() + 1;
-        var month = parsedDate.getUTCMonth() + 1; // Months are zero-based
-        var year = parsedDate.getUTCFullYear();
-
-        // Format the date to YYYYMMDD
-        var formattedDate = `${year}${month.toString().padStart(2, '0')}${day.toString().padStart(2, '0')}`;
-
-        // Adjust the date format to YYYYMMDD and time to HHmmss
-        var isoFormattedDateTime = formattedDate + 'T' + formattedTime;
-        console.log(isoFormattedDateTime);
-        
-        // Generate a unique identifier (UID) for the event
-        var uid = 'unique-id-' + Math.random().toString(36).substring(2);
-
-        // Get the current timestamp for DTSTAMP
-        var dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
         // Update the popup with the reservation details
         $("#popup-address").text("Dirección: " + address);
@@ -380,16 +357,6 @@ var currentDate = new Date();
         $("#popup-hour").text("Hora: " + hour);
         $("#popup-comensales").text("Personas: " + comensales);
         
-
-        // Generate .ics content with required properties
-        var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:${address}\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
-
-        // Create Blob from the .ics content
-        var blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-
-        // Create a download link
-        var downloadLink = $("#downloadIcs");
-        downloadLink.attr("href", window.URL.createObjectURL(blob));
 
         // Clear input fields
         addressInput.value = "";
@@ -406,6 +373,54 @@ var currentDate = new Date();
         alert("Rellena todos los campos");
     }
 });
+
+$("#downloadButton").on("click", function() {
+    // Get the information from the <p> elements
+    var address = $("#popup-address").text().replace('Dirección: ', '').trim();
+    var date = $("#popup-date").text().replace('Fecha: ', '').trim();
+    var hour = $("#popup-hour").text().replace('Hora: ', '').trim();
+    var comensales = $("#popup-comensales").text().replace('Personas: ', '').trim();
+
+    // Parse date and time
+    var dateParts = date.split('/');
+    var day = parseInt(dateParts[0], 10);
+    var month = parseInt(dateParts[1], 10);
+    var year = parseInt(dateParts[2], 10);
+
+    // Construct a new Date object using the parsed components
+    var parsedDate = new Date(year, month - 1, day+1);
+
+    // Format the date to YYYYMMDD
+    var formattedDate = parsedDate.toISOString().slice(0, 10).replace(/[-T]/g, '');
+    var formattedTime = hour.replace(':', '') + '00';
+
+    // Adjust the date format to YYYYMMDD and time to HHmmss
+    var isoFormattedDateTime = formattedDate + 'T' + formattedTime;
+
+    // Log the final ISO-formatted date and time for debugging
+    console.log("ISO Formatted DateTime:", isoFormattedDateTime);
+
+  // Generate a unique identifier (UID) for the event
+  var uid = 'unique-id-' + Math.random().toString(36).substring(2);
+
+  // Get the current timestamp for DTSTAMP
+  var dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+  // Generate .ics content with required properties
+  var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:${address}\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+
+  // Create Blob from the .ics content
+  var blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+
+  // Create a download link
+  var downloadLink = document.createElement("a");
+  downloadLink.href = window.URL.createObjectURL(blob);
+  downloadLink.download = "reservation.ics";
+
+  // Trigger a click on the link to initiate the download
+  downloadLink.click();
+});
+
 
 
 
@@ -511,7 +526,7 @@ $('#closePopup-postres-2').on('click', function () {
   $('#popup-postres-2').css('display', 'none');
 });
 
-$("#closePopup-reserva-satisfactoria").click(function () {
+$("#popup-reservation-cross").click(function () {
   $("#reserva-satisfactoria").fadeOut();
 });
 

@@ -1237,9 +1237,20 @@ button.eliminar:hover{
  
   #reserva-popup-content{
     max-width: 60%;
-    top:50%;
-    left: 50%;
+    position: relative;
   }
+
+  .popup-cross{
+    min-width: 20px;
+    max-width: 40px; /* Adjust the size of the image as needed */
+    width: 5vmin;
+    position: absolute;
+    top: 1vh; 
+    left: 1vw; 
+    cursor: pointer;
+  }
+
+  
 
 
 
@@ -1316,7 +1327,8 @@ button.eliminar:hover{
   }
 
   .form-group > button,
-  #reservar-mesa > button{
+  #reservar-mesa > button,
+  .popup-content > button{
     background-color: #773E22;
     color: #C1A88C;
     font-size: 3vmin; /* Increase button font size */
@@ -1452,6 +1464,7 @@ button.eliminar:hover{
   width:2vw;
   object-fit: cover;
   aspect-ratio: 1/1; /* Formato cuadrado */
+  cursor: pointer;
 }
 
 .popup {
@@ -1473,6 +1486,7 @@ button.eliminar:hover{
   max-width: 400px; 
   width: 100%;
   text-align: center;
+  position: relative;
 }
 
 .pago{
