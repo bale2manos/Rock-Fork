@@ -257,6 +257,7 @@ var current_position = 0;
 
 function showPopup() {
   scrollPosition = window.scrollY;
+  console.log("holaaa")
   $("#popup-overlay, .popup-container").fadeIn();
   $("body").css("overflow", "hidden"); // Hide the rest of the page
   $(".header-book-table").css("position", "static"); // Hide the rest of the page
@@ -407,7 +408,7 @@ $("#downloadButton").on("click", function() {
   var dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
   // Generate .ics content with required properties
-  var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:${address}\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+  var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:Calle Pepino 23, Leganés, Madrid\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
 
   // Create Blob from the .ics content
   var blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
@@ -529,6 +530,31 @@ $('#closePopup-postres-2').on('click', function () {
 $("#popup-reservation-cross").click(function () {
   $("#reserva-satisfactoria").fadeOut();
 });
+
+var privacyPolicyLink = document.getElementById("privacy-policy-footer-link");
+
+privacyPolicyLink.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Create a link element
+      var downloadLink = document.createElement("a");
+
+      // Set the attributes for the download link
+      downloadLink.href = "./Rock Fork - Privacy Policy.pdf"; 
+      downloadLink.download = "Rock Fork - Privacy Policy.pdf";
+
+      // Append the link to the body
+      document.body.appendChild(downloadLink);
+
+      // Trigger the click event on the link
+      downloadLink.click();
+
+      // Remove the link from the body
+      document.body.removeChild(downloadLink);
+  });
+
+
+
 
 
 });

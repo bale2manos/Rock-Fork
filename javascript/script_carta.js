@@ -220,5 +220,183 @@ $('#boton-carta-default').click(function() {
   $('#boton-carta-vegana').show(); 
   $('#botones_carta_default').show(); 
 });
+
+
+var current_position = 0;
+
+function showPopup() {
+  scrollPosition = window.scrollY;
+  console.log("holaaa")
+  $("#popup-overlay, .popup-container").fadeIn();
+  $("body").css("overflow", "hidden"); // Hide the rest of the page
+  $(".header-book-table").css("position", "static"); // Hide the rest of the page
+
+  // Smoothly scroll to the top
+  $("html, body").animate({ scrollTop: 0 }, "fast");
+}
+
+// Function to hide the popup
+function hidePopup() {
+  $("#popup-overlay, .popup-container").fadeOut();
+  $("body").css("overflow", "auto"); // Restore overflow property
+  setTimeout(function () {
+    // Code to execute after 2 seconds
+    $(".header-book-table").css("position", "fixed"); // Hide the rest of the page
+  }, 500);
+
+  // Smoothly scroll back to the previous position
+  $("html, body").animate({ scrollTop: scrollPosition }, "fast");
+}
+
+// Attach the click event to the user icon
+$(".user-icon-book-table").on("click", function() {
+  showPopup();
+});
+
+// Attach the click event to the overlay and close button (if any)
+$(".close-popup-login").on("click", function() {
+  hidePopup();
+});
+var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth() + 1; // Month is zero-based
+  var year = currentDate.getFullYear();
+
+  // Format the date as "DD/MM/YYYY"
+  var formattedDate = `${day}/${month}/${year}`;
+
+  // Set the formatted date as the placeholder
+  document.getElementById("current_date").placeholder = formattedDate;
+
+
+  var dropdownBtn = document.getElementById("dropdown-btn");
+  var dropdownContent = document.getElementById("time-dropdown");
+  var hourInput = document.getElementById("hour");
+
+
+  // DROPDOWN
+  var dropdownBtn = document.getElementById("dropdown-btn");
+  var dropdownContent = document.getElementById("time-dropdown");
+  var hourInput = document.getElementById("hour");
+  var addressInput = document.getElementById("address");
+  var currentDateInput = document.getElementById("current_date");
+  var comensalesInput = document.getElementById("comensales");
+  var reservationForm = document.getElementById("reservar-mesa");
+
+  dropdownBtn.addEventListener("click", function () {
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
+  });
+
+  // Close the dropdown when clicking outside of it
+  window.addEventListener("click", function (event) {
+    if (!event.target.matches(".triangulo-book-table")) {
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      }
+    }
+  });
+
+  // Add click event listeners to each time option
+  var timeOptions = document.querySelectorAll(".time-option");
+  timeOptions.forEach(function (option) {
+    option.addEventListener("click", function () {
+      // Update the text of the hour input
+      hourInput.value = option.textContent;
+
+      // Close the dropdown after selecting a time
+      dropdownContent.style.display = "none";
+    });
+  });
+
+
+  $("#popup-reservation-cross").click(function () {
+    $("#reserva-satisfactoria").fadeOut();
+  });
+  // Add submit event listener to the reservation form
+  reservationForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Validate and sanitize user inputs
+    var address = addressInput.value.trim();
+    var currentDate = currentDateInput.value;
+    var hour = hourInput.value;
+    var comensales = comensalesInput.value;
+
+    if (address && currentDate && hour && comensales) {
+
+        // Update the popup with the reservation details
+        $("#popup-address").text("Dirección: " + address);
+        $("#popup-date").text("Fecha: " + currentDate);
+        $("#popup-hour").text("Hora: " + hour);
+        $("#popup-comensales").text("Personas: " + comensales);
+        
+
+        // Clear input fields
+        addressInput.value = "";
+        currentDateInput.value = "";
+        hourInput.value = "";
+        comensalesInput.value = "";
+
+
+        // Show the popup
+        $("#reserva-satisfactoria").fadeIn();
+        $("#reserva-satisfactoria").css("display", "flex");
+    } else {
+        // Display message if any field is missing
+        alert("Rellena todos los campos");
+    }
+});
+
+$("#downloadButton").on("click", function() {
+    // Get the information from the <p> elements
+    var address = $("#popup-address").text().replace('Dirección: ', '').trim();
+    var date = $("#popup-date").text().replace('Fecha: ', '').trim();
+    var hour = $("#popup-hour").text().replace('Hora: ', '').trim();
+    var comensales = $("#popup-comensales").text().replace('Personas: ', '').trim();
+
+    // Parse date and time
+    var dateParts = date.split('/');
+    var day = parseInt(dateParts[0], 10);
+    var month = parseInt(dateParts[1], 10);
+    var year = parseInt(dateParts[2], 10);
+
+    // Construct a new Date object using the parsed components
+    var parsedDate = new Date(year, month - 1, day+1);
+
+    // Format the date to YYYYMMDD
+    var formattedDate = parsedDate.toISOString().slice(0, 10).replace(/[-T]/g, '');
+    var formattedTime = hour.replace(':', '') + '00';
+
+    // Adjust the date format to YYYYMMDD and time to HHmmss
+    var isoFormattedDateTime = formattedDate + 'T' + formattedTime;
+
+    // Log the final ISO-formatted date and time for debugging
+    console.log("ISO Formatted DateTime:", isoFormattedDateTime);
+
+  // Generate a unique identifier (UID) for the event
+  var uid = 'unique-id-' + Math.random().toString(36).substring(2);
+
+  // Get the current timestamp for DTSTAMP
+  var dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+  // Generate .ics content with required properties
+  var icsContent = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Your Company//Your App//EN\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:${dtstamp}\r\nSUMMARY:Reserva de mesa\r\nLOCATION:Calle Pepino 23, Leganés, Madrid\r\nDESCRIPTION:Reserva de mesa para ${comensales} personas.\r\nDTSTART:${isoFormattedDateTime}\r\nDTEND:${isoFormattedDateTime}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+
+  // Create Blob from the .ics content
+  var blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+
+  // Create a download link
+  var downloadLink = document.createElement("a");
+  downloadLink.href = window.URL.createObjectURL(blob);
+  downloadLink.download = "reservation.ics";
+
+  // Trigger a click on the link to initiate the download
+  downloadLink.click();
+});
+
+
+
+
 });
   

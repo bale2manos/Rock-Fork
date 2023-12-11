@@ -774,7 +774,7 @@ float: left;
   text-transform: capitalize;
   margin-top: 33px;
   white-space: nowrap;
-  font: 400 16px 'ColinSamuelsW00Regular'ColinSam, -apple-system, Roboto, Helvetica,
+  font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
 @media (max-width: 991px) {
@@ -794,6 +794,7 @@ float: left;
   white-space: nowrap;
   font: 400 16px 'ColinSamuelsW00Regular', -apple-system, Roboto, Helvetica,
     sans-serif;
+    cursor: pointer;
 }
 @media (max-width: 991px) {
   .privacy-policy-footer {
@@ -894,6 +895,12 @@ float: left;
     margin-top: 40px;
   }
 }
+
+#pag_carta{
+    padding-top: 15vh;
+    overflow: scroll;
+}
+
 
 
 
