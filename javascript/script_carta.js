@@ -248,6 +248,8 @@ function hidePopup() {
   $("html, body").animate({ scrollTop: scrollPosition }, "fast");
 }
 
+
+
 // Attach the click event to the user icon
 $(".user-icon-book-table").on("click", function() {
   showPopup();
@@ -257,6 +259,7 @@ $(".user-icon-book-table").on("click", function() {
 $(".close-popup-login").on("click", function() {
   hidePopup();
 });
+
 var currentDate = new Date();
   var day = currentDate.getDate();
   var month = currentDate.getMonth() + 1; // Month is zero-based

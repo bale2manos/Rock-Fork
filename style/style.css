@@ -360,6 +360,12 @@ video {
   font: 700 22px 'ColinSamuelsW00Bold', -apple-system, Roboto, Helvetica,
     sans-serif;
 }
+
+#popup-overlay2{
+  display: none;
+}
+
+
 @media (max-width: 991px) {
   .email-popup-login {
     max-width: 100%;
@@ -1356,8 +1362,79 @@ button.eliminar:hover{
 }
 
 
+.popup-labels {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 4vmin; /* Center the form horizontally */
+  padding:2vmin;
+}
 
+.popup-labels > label {
+  font-size: 9.5vmin; /* Increase label font size */
+}
 
+.form-group > textarea {
+  background-color: #eee0ce;
+  width: 100%;
+  height: 4vh;
+  font-size: 3vmin;
+  padding-left: 2vmin;
+}
+.popup-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+
+.texto-horizontal{
+  writing-mode: vertical-rl;  
+  text-orientation: mixed;
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  margin:auto;
+  font-size: 3vmin;
+}
+
+.popup-mini-labels {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 4vmin;
+   /* Center the form horizontally */
+  padding:2vmin;
+  padding-top: 5vmin;
+
+}
+
+.popup-mini-labels > label {
+  font-size: 3vmin; /* Increase label font size */
+}
+
+.popup-mini-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+
+.popup-mini-right-labels {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 0vmin; /* Center the form horizontally */
+  padding:2vmin;
+  position:absolute;
+  left: 30%;
+  top: 48%;
+}
+
+.popup-mini-right-labels > label {
+  font-size: 3vmin; /* Increase label font size */
+}
+
+.popup-mini-right-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
 
 /* SLIDER */
 
