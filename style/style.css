@@ -8,6 +8,12 @@
   src: url('../ColinSamuelsW00Regular.ttf'); 
 }
 
+@font-face {
+  font-family: 'ColinSamuelsW00Thin';
+  src: url('../ColinSamuelsW00Thin.ttf');
+}
+
+
 *{
     margin: 0;/*externo al bloque*/
     padding: 0;/*interno al bloque (mueve el contenido (puede hacer crecer el elemento))*/
@@ -139,15 +145,25 @@ h3{
   align-self: center;
   justify-content: center;
   margin: auto 0;
-  padding: 2vh 3vw 2vh 2vw;
-  font: 400 14px Inter, sans-serif;
-  width: 10vw;
-  min-width: 150px;
+  padding: 2vh 1.2vw 2vh 1.2vw;
+  font: 400 2vmin Inter, sans-serif;
+  width: 8vw;
+  min-width: 90px;
+  font-family: 'ColinSamuelsW00Regular', sans-serif;
 }
 
 #address{
-  width: 20vw;
-  min-width: 150px;
+  width: 16vw;
+  min-width: 185px;
+}
+
+#comensales{
+  min-width: 145px;
+}
+
+#current_date{
+  width: 14vw;
+  min-width: 160px;
 }
 
 #address::placeholder,
@@ -457,7 +473,14 @@ video {
   border-radius: 10px;
   /*Primer valor es cuanto se mueve las sombra en horizontal, el segundo en vertical y el tercer valor
   es la opacidad de la sombra, a menor valor, más opaca*/
-  box-shadow: 3px 10px 20px black;
+  box-shadow: 3px 5px 15px black;
+}
+
+#reservar-mesa > input, #hour, #comensales, #current_date{
+  overflow:hidden;
+  /*Radio del contenedor de un elemento*/
+	-webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 
@@ -491,6 +514,9 @@ video {
   width:28vw;
   object-fit: cover;
   aspect-ratio: 1/1; /* Formato cuadrado */
+}
+#pag3{
+  padding-bottom: 5vh;
 }
 
 /*Comportamiento de las fotos en la página 3 (distinto ya que metemos muchas menos fotos)*/
@@ -543,7 +569,7 @@ video {
   flex-direction: row;
   background-color: #773E22;
   justify-content: center;
-
+  align-items: center; 
 }
 
 #fork-knife-landing{
@@ -1466,7 +1492,6 @@ button.eliminar:hover{
   gap:2px;
   width: 100vw;
   padding-top: 10px;
-  padding-left: 10px;
 }
 
 .boton-barra-menu{
@@ -1549,6 +1574,7 @@ button.eliminar:hover{
   object-fit: cover;
   aspect-ratio: 1/1; /* Formato cuadrado */
   cursor: pointer;
+
 }
 
 .popup {
@@ -1808,6 +1834,7 @@ button.eliminar:hover{
     
     .pagina-special{
       height:100%;
+      width: 100%;
       
       overflow: hidden;
     }

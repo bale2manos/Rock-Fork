@@ -8,11 +8,18 @@
     src: url('../ColinSamuelsW00Regular.ttf'); 
   }
 
+
 #pag1{
     padding-top: 15vh;
-    overflow: scroll;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 100vh;
+ 
 }
 
+#pag_carta_order{
+  height:100vh;
+}
 
 .plate-container {
     display: flex;
@@ -164,6 +171,8 @@
     margin: 80px auto;
   }
 
+  
+
 
   #music-bar {
     /* Remove background color */
@@ -198,7 +207,7 @@
 
 
 #paso-3{
-    display: flex !important;
+    display: none;
     flex-direction: column;
 }
 
@@ -215,6 +224,12 @@
  #funko-img {
     width: 20% !important;
  }
+
+
+
+#progress-order {
+  display: block;
+}
 
  
  
