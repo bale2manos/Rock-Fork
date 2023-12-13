@@ -375,6 +375,46 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
   $(".close-popup-login").on("click", function() {
     hidePopup();
   });
+
+  function showPopup2() {
+    scrollPosition = window.scrollY;
+    console.log("holaaa")
+    $("#popup-overlay2, .popup-container2").slideDown("200");
+    $("#pag1").css("display", "none"); // Hide the rest of the page
+    $(".header-book-table").css("display", "none"); // Hide the rest of the page
+  
+    // Smoothly scroll to the top
+    $("html, pag1").animate({ scrollTop: 0 }, "fast");
+  }
+  
+  // Function to hide the popup
+  function hidePopup2() {
+    $("#popup-overlay2, .popup-container2").slideUp("200");
+   
+    $("#pag1").css("display", ""); // Hide the rest of the page
+    setTimeout(function () {
+      // Code to execute after 2 seconds
+      $(".header-book-table").css("position", "fixed"); // Hide the rest of the page
+    }, 500);
+    $(".header-book-table").css("display", ""); // Hide the rest of the page
+  
+  
+    // Smoothly scroll back to the previous position
+    $("html, pag1").animate({ scrollTop: scrollPosition }, "fast");
+  
+  }
+  
+  // Attach the click event to the user icon
+  $(".burger-icon-book-table").on("click", function() {
+    showPopup2();
+  });
+  
+  // Attach the click event to the overlay and close button (if any)
+  $(".close-popup-login2").on("click", function() {
+    hidePopup2();
+  });
+  
+
   var currentDate = new Date();
     var day = currentDate.getDate();
     var month = currentDate.getMonth() + 1; // Month is zero-based
@@ -462,6 +502,28 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
         alert("Rellena todos los campos");
       }
     });
+    
+    var privacyPolicyLink2 = document.getElementById("mini3");
+    privacyPolicyLink2.addEventListener("click", function (event) {
+        event.preventDefault();
+    
+        // Create a link element
+        var downloadLink = document.createElement("a");
+    
+        // Set the attributes for the download link
+        downloadLink.href = "./Rock Fork - Privacy Policy.pdf"; 
+        downloadLink.download = "Rock Fork - Privacy Policy.pdf";
+    
+        // Append the link to the body
+        document.body.appendChild(downloadLink);
+    
+        // Trigger the click event on the link
+        downloadLink.click();
+    
+        // Remove the link from the body
+        document.body.removeChild(downloadLink);
+    });
+
   
 
 

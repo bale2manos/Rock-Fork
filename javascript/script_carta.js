@@ -191,6 +191,13 @@ $('#boton-home').click(function() {
     window.location.href = 'index.html';
   });
 
+$('#mini-home').click(function() {
+  console.log("HOLA")
+  window.location.href = 'index.html';
+});
+
+
+
 $('#boton-carta-vegana').click(function() {
     console.log("HOLA")
   $('#botones_carta_default').hide();

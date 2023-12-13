@@ -277,7 +277,7 @@ $(".burger-icon-book-table").on("click", function() {
 });
 
 // Attach the click event to the overlay and close button (if any)
-$(".close-popup-login2").on("click", function() {
+$(".close-popup-login2, #mini-1").on("click", function() {
   hidePopup2();
 });
 
