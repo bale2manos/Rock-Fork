@@ -197,18 +197,20 @@ function showSelectedProducts() {
 $('#formularioBtn').on('click', function () {
     console.log("hola");
     $('#popup-formulario').fadeIn();
+    $("#popup-formulario").css("display", "flex");
 });
 
 $('#formularioBtnPaypal').on('click', function () {
     console.log("hola");
     $('#popup-formulario-Paypal').fadeIn();
+    $("#popup-formulario-Paypal").css("display", "flex");
 });
     
-$('#formularioBtn2').on('click', function () {
+$('#closePopup-formulario-tarjeta').on('click', function () {
     $('#popup-formulario').fadeOut();
 });
 
-$('#formularioBtn3').on('click', function () {
+$('#closePopup-formulario-Paypal').on('click', function () {
     $('#popup-formulario-Paypal').fadeOut();
 });
 

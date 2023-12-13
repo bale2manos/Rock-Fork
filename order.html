@@ -65,7 +65,7 @@
                         <button id = "boton-carta-default" class = "box boton-barra-menu">
                             <p>Carta</p>
                         </button>
-                        <article id="botones_carta_default" class="align-center barra-menu">
+                        <article id="botones_carta_default" class="align-center barra-menu2">
                             <button id = "boton-barra-entrantes" class = "box boton-barra-menu">
                                 <p>Entrantes</p>
                             </button>
@@ -82,7 +82,7 @@
                                 <p>Postres</p>
                             </button>
                         </article>
-                        <article id="botones_carta_vegana" class="align-center barra-menu">
+                        <article id="botones_carta_vegana" class="align-center barra-menu2">
                             <button id = "boton-barra-entrantes-vegano" class = "box boton-barra-menu">
                                 <p>Entrantes</p>
                             </button>
@@ -787,8 +787,10 @@
                         </figure>
                     <p>Tarjeta</p>
                 </div>
-                <div id="popup-formulario" class="popup">
+                <div id="popup-formulario" class="popup align-center">
                     <div class="popup-content">
+                        <img src="./images/cruz-negra.png" alt="Cruz Negra" class="popup-cross" 
+                            id="closePopup-formulario-tarjeta">
                         <form class="centerForm" id="registrationForm">
                             <!-- Nombre Input -->
                             <div class="form-group">
@@ -820,7 +822,6 @@
                                 <input type="email" id="email_credito" name="email" required>
                             </div>
                         </form>
-                        <button id="formularioBtn2" class="boton-pago"><p>Cerrar formulario</p></button>
                         <button id="revisionBtn" class="boton-pago"><p>Pagar pedido</p></button>
                     </div>
                 </div>
@@ -834,6 +835,8 @@
 
                 <div id="popup-formulario-Paypal" class="popup">
                     <div class="popup-content">
+                        <img src="./images/cruz-negra.png" alt="Cruz Negra" class="popup-cross" 
+                            id="closePopup-formulario-Paypal">
                         <form class="centerForm" id="registrationForm">
                             <!-- Nombre Input -->
                             <div class="form-group">
@@ -847,7 +850,6 @@
                                 <input type="password" id="password" name="password" required>
                             </div>
                         </form>
-                        <button id="formularioBtn3" class="boton-pago"><p>Cerrar formulario</p></button>
                         <button id="revisionBtn2" class="boton-pago"><p>Pagar pedido</p></button>
                     </div>
                 </div>

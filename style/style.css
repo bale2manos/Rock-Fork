@@ -1351,7 +1351,7 @@ button.eliminar:hover{
   }
 
   .form-group > label {
-    font-size: 5vmin; /* Increase label font size */
+    font-size: 3vmin; /* Increase label font size */
   }
 
 
@@ -1359,7 +1359,7 @@ button.eliminar:hover{
     background-color: #eee0ce;
     width: 100%;
     height: 6vh;
-    font-size: 3vmin;
+    font-size: 2vmin;
     padding-left: 2vmin;
   }
 
@@ -1497,6 +1497,14 @@ button.eliminar:hover{
   flex-direction: row;
   gap:2px;
   width: 100vw;
+  padding-top: 10px;
+}
+
+.barra-menu2{
+  display: flex;
+  flex-direction: row;
+  gap:2px;
+  width: 65vw;
   padding-top: 10px;
 }
 
