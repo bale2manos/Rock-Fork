@@ -564,6 +564,12 @@ video {
   
 }
 
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .boton-inicio{
   display: flex;
   flex-direction: row;

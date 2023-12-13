@@ -1,13 +1,6 @@
 // JavaScript
 document.addEventListener('DOMContentLoaded', function () {
-    const registrationForm = document.getElementById('registrationForm');
-    const dniInput = document.getElementById('dni');
-    const fullNameInput = document.getElementById('fullName');
-    const phoneInput = document.getElementById('phone');
-    const emailInput = document.getElementById('email');
-    const dniError = document.getElementById('dniError');
-    const clearBtn = document.getElementById('clearBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
+    
 
     /* GALERIA 1 */
     var thumbnails = document.querySelectorAll(".thumbnail")
@@ -89,47 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return "";
     }
     
-    /* ******************FORMULARIO******************  */
-    registrationForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!validateSpanishDNI(dniInput.value)) {
-          return;
-        }
 
-
-        
-        const userData = {
-          dni: dniInput.value,
-          fullName: fullNameInput.value,
-          phone: phoneInput.value,
-          email: emailInput.value,
-        };
-
-        
-        const userDataJSON = JSON.stringify(userData);
-
-        console.log(userDataJSON);
-        const user_registered = getCookie(dniInput.value);
-
-        if (user_registered == ""){
-          setCookie(dniInput.value, userDataJSON, 7);
-        }
-        else {
-          alert("Already registered, welcome again!!");
-        }
-        
-        registrationForm.reset();
-
-    });
-
-    clearBtn.addEventListener('click', function () {
-      registrationForm.reset();
-    });
-  
-    cancelBtn.addEventListener('click', function () {
-      registrationForm.reset();
-      alert('Form canceled');
-    });
   
 
     /* ******************MENU******************  */
