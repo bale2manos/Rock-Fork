@@ -214,13 +214,7 @@ $('#closePopup-formulario-Paypal').on('click', function () {
     $('#popup-formulario-Paypal').fadeOut();
 });
 
-$('#revisionBtn').on('click', function () {
-    $('#popup-formulario').fadeOut();
-});
 
-$('#revisionBtn2').on('click', function () {
-    $('#popup-formulario').fadeOut();
-});
 
 $('#popup-formulario').hide();
 $('#popup-formulario-Paypal').hide();
@@ -270,6 +264,26 @@ $('.bolsa-productos').click(function () {
     // Al cerrar la página, guardar los productos en la cookie
     window.onbeforeunload = guardarProductosEnCookie;
     
+
+    
+    $('#inicio-sesion-pedido-realizado').on('click', function () {
+        animacionFinal();
+        $('#paso-2').hide();
+        $('#paso-3').show();
+        $('#paso-3').css('display', 'flex');
+        setProgressBarWidth(100);
+    });
+
+    $('#pagar-pedido').on('click', function () {
+        animacionFinal();
+        $('#paso-2').hide();
+        $('#paso-3').show();
+        $('#paso-3').css('display', 'flex');
+        setProgressBarWidth(100);
+    });
+    
+    
+    
     // Iniciar el contador descendente cuando se inicie el paso 3
     $('#paso-2').on('click', '#revisionBtn', function() {
 
@@ -278,18 +292,65 @@ $('.bolsa-productos').click(function () {
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
         let cvv = $('#cvv').val();
-        let email = $('#email_credito').val();
-        if (name === "" || tarjeta === "" || date === "" || cvv === "" || email === "") {
+        if (name === "" || tarjeta === "" || date === "" || cvv === "" ) {
             alert("Por favor, rellene todos los campos");
         }
         else{
-        setProgressBarWidth(100);
-        animacionFinal();
-        $('#paso-2').hide();
-        $('#paso-3').show();
-        $('#paso-3').css('display', 'flex');
+        setProgressBarWidth(80);
+           // Fade out the element with ID 'popup-formulario'
+            $('#popup-formulario').fadeOut();
+        
+            // Set the CSS display property of the element with ID 'opciones-pago' to 'none'
+            $('#opciones-pago').css('display', 'none');
+        
+            // Get the value of the credit card number input in the form
+            var creditCardNumber = $('#tarjeta').val();
+        
+            // Mask the credit card number
+            var maskedCreditCard = maskCreditCard(creditCardNumber);
+        
+            // Set the masked credit card number in the 'resumen-pago' element in 'info-pago'
+            $('#resumen-pago').html(
+            '<img src="./images/cruz-negra.png" alt="Cruz Negra" id="go-back-to-opciones-pago">' +
+            '<p>Credit Card Number: ' + maskedCreditCard + '</p>');
+        
+            // Set the CSS display property of the element with ID 'info-pago' to 'flex'
+            $('#info-pago').css('display', 'flex');
+
+            $('#name').val('');
+            $('#tarjeta').val('');
+            $('#date').val('');
+            $('#cvv').val('');
         }
+        });
+        
+        // Function to mask the credit card number
+        function maskCreditCard(creditCardNumber) {
+            // Mask all but the last 4 digits of the credit card number
+            var maskedDigits = creditCardNumber.slice(0, -4).replace(/./g, '*');
+            var lastFourDigits = creditCardNumber.slice(-4);
+            return maskedDigits + lastFourDigits;
+        }
+        
+        
+    $('#paso-2').on('click', '#go-back-to-opciones-pago', function() {
+        $('#info-pago').css('display', 'none');
+        $('#user-pedido').css('display', 'flex');
+        setProgressBarWidth(50);
     });
+ 
+    $('#paso-2').on('click', '#pedido-invitado', function() {
+        $('#opciones-pago').css('display', 'flex');
+        $('#opciones-pago').css('flex-direction', 'column');
+        $('#user-pedido').css('display', 'none');
+    });
+
+    $('#paso-2').on('click', '#pedido-registrado', function() {
+        $('#login-pedido-form').css('display', 'flex');
+        $('#user-pedido').css('display', 'none');
+    });
+
+
 
     $('#paso-2').on('click', '#revisionBtn2', function() {
 
@@ -300,14 +361,48 @@ $('.bolsa-productos').click(function () {
             alert("Por favor, rellene todos los campos");
         }
         else{
-        setProgressBarWidth(100);
-        animacionFinal();
+        setProgressBarWidth(80);
+        // Fade out the element with ID 'popup-formulario-Paypal'
+        $('#popup-formulario-Paypal').fadeOut();
+    
+        // Set the CSS display property of the element with ID 'opciones-pago' to 'none'
+        $('#opciones-pago').css('display', 'none');
+    
+        // Get the value of the email input in the PayPal popup
+        var paypalEmail = $('#email_paypal').val();
+    
+        // Mask the email address
+        var maskedEmail = maskEmail(paypalEmail);
+    
+        // Set the masked email value in the 'resumen-pago' element in 'info-pago'
+        $('#resumen-pago').html(
+            '<img src="./images/cruz-negra.png" alt="Cruz Negra" id="go-back-to-opciones-pago">' +
+            '<p>' + maskedEmail + '</p>'
+        );
+    
+        // Set the CSS display property of the element with ID 'info-pago' to 'flex'
+        $('#info-pago').css('display', 'flex');
 
-        $('#paso-2').hide();
-        $('#paso-3').show();
-        $('#paso-3').css('display', 'flex');
+        $('#email_paypal').val('');
+        $('#password').val('');
         }
+    
     });
+    // Function to mask the email address
+    function maskEmail(email) {
+        var atIndex = email.indexOf('@');
+        if (atIndex !== -1) {
+            var firstTwoChars = email.substring(0, 2);
+            var domain = email.substring(atIndex);
+            var maskedDomain = domain.replace(/./g, '*');
+            return firstTwoChars + '*****' + maskedDomain;
+        } else {
+            // Handle invalid email format (no '@' character)
+            return 'Invalid email format';
+        }
+    }
+    
+
 
     // MIGA DE PAN
 

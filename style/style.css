@@ -553,6 +553,8 @@ video {
   -webkit-text-stroke-color: rgb(0, 0, 0);
   -webkit-text-stroke-width: 1.50px; 
   font-weight: 900;
+  padding-bottom: 4vh;
+
 }
 
 
@@ -1496,7 +1498,7 @@ button.eliminar:hover{
   display: flex;
   flex-direction: row;
   gap:2px;
-  width: 100vw;
+  width: 90vw;
   padding-top: 10px;
 }
 

@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
 
+
   
 
     /* ******************MENU******************  */
@@ -417,7 +418,9 @@ $("#downloadButton").on("click", function() {
   downloadLink.click();
 });
 
-
+$('#go_home').on('click', function () {
+  window.location.href = 'index.html';
+});
 
 
 

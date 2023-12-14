@@ -11,10 +11,12 @@
 
 #pag1{
     padding-top: 15vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
     height: 100vh;
  
+}
+
+.boton-barra-menu{
+  max-height: 100px;
 }
 
 #pag_carta_order{
@@ -25,12 +27,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    gap:2vw;
+}
+
+@media screen and (max-width: 768px) {
+    .plate-container {
+        gap : 0;
+    }
+  
 }
 
 .add-plate,
 .remove-plate {
-    padding: 5px 10px;
+    padding: 1vmin 2vmin;
+    font-family: 'ColinSamuelsW00Bold', sans-serif;
+    font-weight: 900;
+    font-size: 3vmin;
 }
 
 .selected-product {
@@ -212,6 +225,8 @@
 }
 
 
+
+
 #paso-3 > h2{
     font-size: 7vmin;
     padding:2vmin;
@@ -232,4 +247,36 @@
 }
 
  
- 
+#info-pago{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#resumen-pago{
+  display: flex;
+  flex-direction: row;
+}
+
+#go-back-to-opciones-pago{
+  min-width: 20px;
+    max-width: 40px; /* Adjust the size of the image as needed */
+    max-height: 40px;
+    height: 5vmin;
+    width: 5vmin;
+    cursor: pointer;
+}
+
+#datos-pago {
+  border: 1px solid black; /* Set border to 1px solid black */
+  padding: 10px; /* Optional: Add padding for better visual appearance */
+}
+
+#opciones-pago{
+  display:none;
+}
+
+#login-pedido-form{
+  display: 	none;
+}
