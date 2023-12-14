@@ -91,7 +91,7 @@ h3{
 .header-book-table {
   position:fixed;
   width: 100vw;
-  background: linear-gradient(0deg, #e7a66f 0%, #e7a66f 100%), #be7110;
+  background: linear-gradient(0deg, #C1A88C 0%, #e7a66f 100%), #be7110;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset,
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -239,6 +239,16 @@ h3{
   gap: 10vh;
 }
 
+#left-side-popup2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  gap: 10vh;
+}
+
 
 .social-images-icons {
   display: flex;
@@ -265,6 +275,19 @@ h3{
   max-width: 100%;
 }
 #twitter-icon-login {
+  aspect-ratio: 1.23;
+  object-fit: contain;
+  object-position: center;
+  width: 54px;
+  fill: #c55000;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+  align-self: center;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+#twitter-icon-login2 {
   aspect-ratio: 1.23;
   object-fit: contain;
   object-position: center;
@@ -582,6 +605,8 @@ video {
 
 #fork-knife-landing{
   padding-left:1vw;
+  height: 5vmin;
+  width: 2vw;
 }
 
 
@@ -1322,6 +1347,10 @@ button.eliminar:hover{
     height: 55vh;
     margin: 0;
   }
+  #registrationFormPopUp2{
+    height: 55vh;
+    margin: 0;
+  }
   
   .popup-login{
     display: flex;
@@ -1511,7 +1540,12 @@ button.eliminar:hover{
 }
 
 .boton-barra-menu{
+  height: 35px;
+  width: 15vw;
   background-color: #773E22;
+  color: #C1A88C;
+  font-size: 2.6vw;
+  min-width: 1vw;
 }
 
 .boton-barra-menu:hover{
@@ -1564,8 +1598,19 @@ button.eliminar:hover{
 }
 
 #boton-ver-carta-completa{
+  height: 7vh;
   margin-top: 5px;
+  font-size: 3vw;
+  width: 35vmin;
 }
+
+#next_step{
+  font-size: 2vw;
+}
+#boton-carta-vegana{
+  font-size: 2.2vw;
+}
+
 #boton-home{
   margin-left: 15px;
 }
@@ -1652,11 +1697,36 @@ button.eliminar:hover{
     cursor: pointer;
   }
 
+#a_la_carta{
+  font-size: 2.6vw;
+  width:24vw;
+}
+
+.boton-inicio-box{
+height: 35px;
+  width: 15vw;
+  background-color: #773E22;
+  color: #C1A88C;
+  font-size: 2.8vw;
+  min-width: 1vw;
+}
 
 
+.mini_images{
+  display: flex;
+}
 
-
-
+.new{
+  min-width: 2vw;
+  min-height: 2vw;
+  max-width: 50px;
+  max-height: 50px;
+  width:2vw;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Formato cuadrado */
+  cursor: pointer;
+  margin-left: 10px;
+}
 
 
 /*######################################################################################################################*/
@@ -1689,7 +1759,18 @@ button.eliminar:hover{
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
+    #boton-carta-vegana{
+      font-size: 90%;
+    }
+    #next_step{
+      font-size:80%;
+    }
 
+    #boton-ver-carta-completa{
+      height: 7vh;
+      margin-top: 5px;
+      font-size: 100%;
+    }
     .video_container{
       padding-top:0;
       margin:auto;
@@ -1729,7 +1810,14 @@ button.eliminar:hover{
       padding-top: 6vh;
     }
     
-    
+    .boton-barra-menu{
+      height: 35px;
+      width: 15vw;
+      background-color: #773E22;
+      color: #C1A88C;
+      font-size: 2vw;
+      min-width: 1vw;
+    }
     
 
 }
@@ -1747,12 +1835,44 @@ button.eliminar:hover{
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    
+    .boton-inicio-box{
+      height: 35px;
+        width: 14vw;
+        background-color: #773E22;
+        color: #C1A88C;
+        font-size: 2vw;
+        min-width: 1vw;
+      }
+      #a_la_carta{
+        font-size: 2vw;
+        width:20vw;
+      }
+    .boton-barra-menu{
+      height: 35px;
+      width: 15vw;
+      background-color: #773E22;
+      color: #C1A88C;
+      font-size: 1.8vw;
+      min-width: 1vw;
+    }
+
 
     .video_container{
       padding-top:0;
       padding-bottom: 6vh;
     }
-
+    #next_step{
+      font-size: 100%;
+    }
+    #boton-carta-vegana{
+      font-size: 90%;
+    }
+    #boton-ver-carta-completa{
+      height: 7vh;
+      margin-top: 5px;
+      font-size: 1.4vw;
+    }
     #reservar-mesa{
       display: flex;
       flex-direction: row;
