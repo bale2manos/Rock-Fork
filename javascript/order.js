@@ -340,6 +340,13 @@ $('.bolsa-productos').click(function () {
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
         let cvv = $('#cvv').val();
+        console.log(name);
+        console.log(tarjeta);
+        console.log(date);
+        console.log(cvv);
+
+
+
         if (name === "" || tarjeta === "" || date === "" || cvv === "" ) {
             alert("Por favor, rellene todos los campos");
         }

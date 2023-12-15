@@ -215,8 +215,10 @@ h3{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #C1A88C;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000000;
+  border-radius: 10px;
   z-index: 1;
 }
 
@@ -1386,9 +1388,12 @@ button.eliminar:hover{
   .form-group > label {
     font-size: 3vmin; /* Increase label font size */
   }
+  #correo-invitado > p{
+    font-weight: 600;
+  }
 
-
-  .form-group > input {
+  .form-group > input, 
+   #correo-invitado > input{
     background-color: #eee0ce;
     width: 100%;
     height: 6vh;
@@ -1432,11 +1437,39 @@ button.eliminar:hover{
   margin:auto;
   margin-left: 4vmin; /* Center the form horizontally */
   padding:2vmin;
+  
 }
 
-.popup-labels > label {
-  font-size: 9.5vmin; /* Increase label font size */
+#pagar-pedido{
+  margin-top: 5vh;
+
 }
+
+.info-pago  input {
+  background-color: #eee0ce;
+  width: 100%;
+  height: 6vh;
+  font-size: 2vmin;
+  padding-left: 2vmin;
+}
+
+.popup-labels > label,
+.popup-mini-labels > label,
+.popup-mini-right-labels > label {
+  font-size: 9.5vmin; /* Increase label font size */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .popup-labels > label,
+  .popup-mini-labels > label,
+  .popup-mini-right-labels > label {
+    font-size: 7vmin; /* Increase label font size */
+  }
+  
+}
+
+
 
 .form-group > textarea {
   background-color: #eee0ce;
@@ -1491,6 +1524,21 @@ button.eliminar:hover{
   top: 48%;
 }
 
+@media screen and (max-width: 767px) {
+  .popup-mini-right-labels {
+    width: 100%; /* Adjust the width as needed */
+    margin:auto;
+    margin-left: 4vmin;
+    /* Center the form horizontally */
+    padding:2vmin;
+    padding-top: 5vmin;
+    position:absolute;
+    left: 3.5%;
+    top:55%;
+  }
+  
+}
+
 .popup-mini-right-labels > label {
   font-size: 3vmin; /* Increase label font size */
 }
@@ -1529,7 +1577,6 @@ button.eliminar:hover{
   display: flex;
   flex-direction: row;
   gap:2px;
-  width: 90vw;
   padding-top: 10px;
 }
 
@@ -1595,7 +1642,7 @@ button.eliminar:hover{
 }
 
 .menu_novedad > div{
-  background-color: rgb(152, 191, 193);
+  background-color: #8ca5c1;
   padding: 10px;
 }
 
@@ -1913,7 +1960,6 @@ button.eliminar:hover{
     .boton-barra-menu{
       height: 50px;
       width: 12vw;
-      background-color: #773E22;
       color: #C1A88C;
       font-size: 1.8vw;
       min-width: 1vw;
