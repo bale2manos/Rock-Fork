@@ -297,10 +297,35 @@ $('.bolsa-productos').click(function () {
             $('#paso-3').show();
             $('#paso-3').css('display', 'flex');
             setProgressBarWidth(100);
+            createCookieWithProductosSeleccionados();
         } else {
             // Show an alert if any field is empty
             alert('Por favor, rellena los campos.');
         }
+    });
+
+    $('#pagar-pedido').on('click', function () {
+        // Obtén los valores de los campos de entrada
+    var emailInvitado = $('#email-invitado').val();
+    var direccionPedido = $('#address-order').val();
+
+    // Verifica que ambos campos estén llenos antes de continuar
+    if (emailInvitado && direccionPedido) {
+        // Aquí puedes colocar el código de la animación y otras acciones
+        animacionFinal();
+        $('#paso-2').hide();
+        $('#paso-3').show();
+        $('#paso-3').css('display', 'flex');
+        setProgressBarWidth(100);
+        createCookieWithProductosSeleccionados();
+
+        // También puedes realizar otras acciones, como enviar la información a un servidor, etc.
+
+    } else {
+        // Si falta algún campo, muestra un mensaje de alerta o realiza otra acción
+        alert('Por favor, completa todos los campos antes de continuar.');
+    }
+        
     });
     
     
