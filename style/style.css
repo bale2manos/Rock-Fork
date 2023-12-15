@@ -1347,10 +1347,7 @@ button.eliminar:hover{
     height: 55vh;
     margin: 0;
   }
-  #registrationFormPopUp2{
-    height: 55vh;
-    margin: 0;
-  }
+
   
   .popup-login{
     display: flex;
@@ -1432,8 +1429,10 @@ button.eliminar:hover{
   padding:2vmin;
 }
 
-.popup-labels > label {
+.popup-labels > p {
   font-size: 9.5vmin; /* Increase label font size */
+  font-family: 'ColinSamuelsW00Bold', sans-serif;
+  color: black;
 }
 
 .form-group > textarea {
