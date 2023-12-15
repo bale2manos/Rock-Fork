@@ -276,7 +276,9 @@ var currentDate = new Date();
   var formattedDate = `${day}/${month}/${year}`;
 
   // Set the formatted date as the placeholder
-  document.getElementById("current_date").placeholder = formattedDate;
+  try{  document.getElementById("current_date").placeholder = formattedDate;}
+  catch(err){console.log("No hay current_date");}
+
 
 
   var dropdownBtn = document.getElementById("dropdown-btn");

@@ -858,8 +858,8 @@
             
                     <!-- Nombre y Apellidos Inputs -->
                     <div class="form-group">
-                        <label for="fullName">Contraseña:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password_login" name="password_login" required>
                     </div>
         
                     <!-- Buttons -->
@@ -893,10 +893,12 @@
                         </div>
                     </div>
 
-                    <div id="correo-invitado">
-                        <p>Introduce tu correo</p>
+                    <form id="correo-invitado">
+                        <p>Correo electrónico</p>
                         <input type="email" id="email-invitado" name="email" required>
-                    </div>
+                        <p>¿Dónde lo enviamos?</p>
+                        <input type="text" id="address-order" name="address-order" required>
+                    </form>
 
                     <button id="pagar-pedido" class="box boton-barra-menu">
                         <p>¡A rockear!</p>    
@@ -994,6 +996,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src = "javascript/script_carta.js"></script>
     <script src="javascript/order.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    
     <script type="text/javascript" src="javascript/loading-bar.js"></script>
 
 </body>

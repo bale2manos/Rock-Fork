@@ -350,7 +350,15 @@ video {
   display: none;
 }
 
-.popup-login {
+#lottie-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.popup-login{
   display: flex;
   flex-direction: column;
   fill: #ffeadb;
