@@ -57,6 +57,8 @@
     width: 3vw;
     object-fit: cover; /* Ensure the image covers the entire box without stretching */
     margin-right: 2vw;
+    border-radius: 10px; 
+
 }
 
 
