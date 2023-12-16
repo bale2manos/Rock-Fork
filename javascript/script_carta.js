@@ -22,6 +22,8 @@ $(document).ready(function() {
 
   
   document.getElementById('boton-barra-entrantes').style.backgroundColor = '#FFF6ED';
+  document.getElementById('boton-barra-entrantes').style.color = '#773E22';
+
   
 
 });
@@ -33,7 +35,13 @@ function colors(x) {
   document.getElementById('boton-barra-Costillas').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Ensaladas').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Postres').style.backgroundColor = '#773E22';
+  document.getElementById('boton-barra-entrantes').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Burgers').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Costillas').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Ensaladas').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Postres').style.color = '#FFFFFF';
   document.getElementById(x).style.backgroundColor = '#FFF6ED';
+  document.getElementById(x).style.color = '#773E22';
 }
 
 function colors2(x) {
@@ -41,7 +49,13 @@ function colors2(x) {
   document.getElementById('boton-barra-Burgers-vegano').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Ensaladas-vegano').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Postres-vegano').style.backgroundColor = '#773E22';
-  document.getElementById(x).style.backgroundColor = '#FFF6ED';
+  
+  document.getElementById('boton-barra-entrantes-vegano').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Burgers-vegano').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Ensaladas-vegano').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Postres-vegano').style.color = '#FFFFFF';
+  document.getElementById(x).style.backgroundColor = '#FFFFFF';
+  document.getElementById(x).style.color = '#773E22';
 }
 
 
