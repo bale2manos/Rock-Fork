@@ -91,7 +91,7 @@ h3{
 .header-book-table {
   position:fixed;
   width: 100vw;
-  background: linear-gradient(0deg, #C1A88C 0%, #e7a66f 100%), #be7110;
+  background: linear-gradient(0deg, #e7a66f 0%, #e7a66f 100%), #be7110;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset,
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -305,6 +305,7 @@ h3{
 #pag1-landing{
   display: flex;
   flex-direction: row;
+  background-color: #000;
   background-image: url("../images/muro.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -686,6 +687,7 @@ float: left;
 .footer-main {
   overflow: hidden;
   padding: 46px 49px;
+  background-color: #000;
   background-image: url("../images/footer-bg.png");
 
   background-size: cover;
@@ -1240,6 +1242,7 @@ footer > p{
   color:#30190e;
   font-weight: bolder;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 
@@ -1251,6 +1254,18 @@ ul{
 li{
   padding: 1vmin;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 
 
 
@@ -1427,6 +1442,11 @@ button.eliminar:hover{
     color: #C1A88C;
     font-size: 3vmin; /* Increase button font size */
     padding: 1vmin 2vmin; /* Increase button padding */
+  }
+
+  #reservar-mesa > button{
+    cursor: pointer;
+    background-color:#373737;
   }
 
   #reservar-mesa { 
@@ -1646,8 +1666,16 @@ button.eliminar:hover{
 .barra-menu2{
   display: flex;
   flex-direction: row;
-  gap:2px;
+  gap:2px;  
   width: 65vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.barra-menu3{
+  display: flex;
+  flex-direction: column;
+  gap:2px;  
   padding-top: 10px;
 }
 
@@ -1655,7 +1683,7 @@ button.eliminar:hover{
   height: 35px;
   width: 28vw;
   background-color: #773E22;
-  color: #C1A88C;
+  color: #fff;
   font-size: 4vw;
   min-width: 1vw;
 }
@@ -1697,7 +1725,7 @@ button.eliminar:hover{
 }
 
 .imagen_novedad3{
-  min-width: 30px;
+  min-width: 80px;
   max-width: 250px;
   width:10vw;
   object-fit: cover;
@@ -1708,8 +1736,27 @@ button.eliminar:hover{
   background-color: #8ca5c1;
   padding: 10px;
 }
+#a_pedir_a_domicilio {
+  background-color: #373737;
+  border: 2px solid #8ca5c1; 
+  color: #fff; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+
+#a_la_carta{
+  background-color: #373737;
+  border: 2px solid #8ca5c1; 
+  color: #fff; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 3vw;
+  width:30vw;
+  height: 35px;
+}
 
 #boton-ver-carta-completa{
+  background-color:#373737;
   height: 7vh;
   margin-top: 5px;
   font-size: 3vw;
@@ -1721,12 +1768,12 @@ button.eliminar:hover{
 }
 
 #next_step{
-  font-size: 2vw;
+  font-size: 3.3vw;
   background-color:#373737;
 }
 #boton-carta-vegana{
   font-size: 3.3vw;
-  background-color:#373737;
+  background-color:#174906;
 }
 
 #boton-home{
@@ -1798,7 +1845,7 @@ button.eliminar:hover{
 
 #text-about-us {
   margin-top: 10px; /* Adjust as needed to create space between the text and the container edges */
-  color: #C1A88C;
+  color: #cdbda9;
 }
 
 .burger-about-us {
@@ -1812,15 +1859,9 @@ button.eliminar:hover{
   #about-us{
     overflow: visible;
   }
-  #reservar-mesa-button{
-    cursor: pointer;
-  }
+  
 
-#a_la_carta{
-  font-size: 3vw;
-  width:30vw;
-  height: 35px;
-}
+
 
 .boton-inicio-box{
   height: 35px;
@@ -1967,13 +2008,14 @@ button.eliminar:hover{
       height: 35px;
       width: 12vw;
       background-color: #773E22;
-      color: #C1A88C;
       font-size: 2vw;
       min-width: 1vw;
     }
     
 
 }
+
+
 @media only screen and (min-width: 768px) {
     /* For Desktop: */
     .col-1 {width: 8.33%;}
@@ -1991,7 +2033,9 @@ button.eliminar:hover{
     #boton-barra-Burgers-vegano{
       font-size: 1.4vw;
     }
-
+    .barra-menu3{
+      flex-direction: row;
+    }
     #a_la_carta{
       font-size: 3vw;
       width:30vw;
@@ -2023,7 +2067,6 @@ button.eliminar:hover{
     .boton-barra-menu{
       height: 50px;
       width: 12vw;
-      color: #C1A88C;
       font-size: 1.8vw;
       min-width: 1vw;
     }

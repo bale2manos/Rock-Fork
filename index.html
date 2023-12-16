@@ -18,40 +18,42 @@
             alt = "profile"
           />
         </div>
-          <form class= "align-center" id="reservar-mesa">
+        <form class="align-center" id="reservar-mesa">
+            <label for="address" class="visually-hidden">Dirección:</label>
             <input type="search" id="address" name="address" placeholder="Dirección">
+        
+            <label for="current_date" class="visually-hidden">Current Date:</label>
             <input type="search" id="current_date" name="current_date" placeholder="Current Date">
-            
+        
             <div class="dropdown">
                 <div class="dropdown-input">
+                    <label for="hour" class="visually-hidden">Hora:</label>
                     <input type="search" id="hour" name="hour" placeholder="Hora">
-                    <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&"
-                    class="triangulo-book-table"
-                    id="dropdown-btn"
-                    alt = "dropdown_1"
-                    />
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f00991a37ba7e8ea8cf3b867201e155219e8a3f43520eba96d949df22180f6fb?apiKey=24a24588ff7345eaa80b6926956f4b47&" class="triangulo-book-table" id="dropdown-btn" alt="dropdown_1" />
                 </div>
                 <div class="dropdown-content" id="time-dropdown">
- 
-                  <div class="time-option">13:00</div>
-                  <div class="time-option">13:30</div>
-                  <div class="time-option">14:00</div>
-                  <div class="time-option">14:30</div>
-                  <div class="time-option">15:00</div>
-                  <div class="time-option">15:30</div>
-                  <div class="time-option">16:00</div>
-                  <div class="time-option">20:00</div>
-                  <div class="time-option">20:30</div>
-                  <div class="time-option">21:00</div>
-                  <div class="time-option">21:30</div>
-                  <div class="time-option">22:00</div>
+                    <!-- Time options... -->
+                    <div class="time-option">13:00</div>
+                    <div class="time-option">13:30</div>
+                    <div class="time-option">14:00</div>
+                    <div class="time-option">14:30</div>
+                    <div class="time-option">15:00</div>
+                    <div class="time-option">15:30</div>
+                    <div class="time-option">16:00</div>
+                    <div class="time-option">20:00</div>
+                    <div class="time-option">20:30</div>
+                    <div class="time-option">21:00</div>
+                    <div class="time-option">21:30</div>
+                    <div class="time-option">22:00</div>
                 </div>
-            </div>    
+            </div>
+        
+            <label for="comensales" class="visually-hidden">Personas:</label>
             <input type="number" id="comensales" name="comensales" min="1" max="30" placeholder="Personas">
-            <button type="reservar-mesa" id="reservar-mesa-button" class="box">Reservar mesa</button>    
+        
+            <button type="reservar-mesa" id="reservar-mesa-button" class="box">Reservar mesa</button>
         </form>
+        
 
         <img
           loading="lazy"
@@ -91,7 +93,7 @@
         
                 <!-- Nombre y Apellidos Inputs -->
                 <div class="form-group">
-                    <label for="fullName">Contraseña:</label>
+                    <label for="password">Contraseña:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
     
@@ -212,11 +214,11 @@
                 con más queso, más carne 
                 y mucho más heavy!</h1>
             <div class = "align-center buttons-landing">
+                <button class = "box boton-inicio-box" id="a_la_carta">
+                    Rockea la carta
+                    </button>
                 <button class = "box boton-inicio-box" id="a_pedir_a_domicilio">
                     ¡A CASA!
-                </button>
-                <button class = "box boton-inicio-box" id="a_la_carta">
-                Rockea la carta
                 </button>
             </div>
            
@@ -229,7 +231,6 @@
     
 
     <!--Página 3-->
-    <section id = "pag3" class = "pagina-special flex-column">
     <section id = "pag3" class = "pagina-special flex-column">
         <article>
             <article class="align-center barra-menu">
