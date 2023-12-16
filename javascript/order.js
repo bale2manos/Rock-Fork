@@ -507,7 +507,9 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
     window.location.href = "order.html";
   });
   
-
+  $('#go_home').on('click', function () {
+    window.location.href = 'index.html';
+  });
   
   function showPopup() {
     scrollPosition = window.scrollY;
