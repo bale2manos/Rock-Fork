@@ -1255,6 +1255,18 @@ li{
   padding: 1vmin;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
 
 
 .seleccionar, .eliminar{
@@ -1654,7 +1666,7 @@ button.eliminar:hover{
   height: 35px;
   width: 28vw;
   background-color: #773E22;
-  color: #C1A88C;
+  color: #fff;
   font-size: 4vw;
   min-width: 1vw;
 }
@@ -1979,7 +1991,6 @@ button.eliminar:hover{
       height: 35px;
       width: 12vw;
       background-color: #773E22;
-      color: #C1A88C;
       font-size: 2vw;
       min-width: 1vw;
     }
@@ -2039,7 +2050,6 @@ button.eliminar:hover{
     .boton-barra-menu{
       height: 50px;
       width: 12vw;
-      color: #C1A88C;
       font-size: 1.8vw;
       min-width: 1vw;
     }
