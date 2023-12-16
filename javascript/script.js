@@ -124,7 +124,7 @@ $(document).ready(function() {
   $('#Novedades-Entrantes1').show();
   $('#Novedades-Entrantes2').show();
   document.getElementById('boton-barra-entrantes').style.backgroundColor = '#FFF6ED';
-  document.getElementById('boton-barra-entrantes').style.color = '#773E22';
+  
 
 });
 
@@ -141,12 +141,9 @@ function colors(x) {
   document.getElementById('boton-barra-Ensaladas').style.color = '#FFFFFF';
   document.getElementById('boton-barra-Postres').style.color = '#FFFFFF';
   document.getElementById(x).style.backgroundColor = '#FFF6ED';
-  document.getElementById(x).style.color = '#773E22';
 }
 
-function colors2(x){
-  document.getElementById(x).style.color = '#C1A88C';
-}
+
 
 // Cuando se haga click en entrantes, se muestran solo las novedades de entrantes.
 $('#boton-barra-entrantes').click(function() {
@@ -483,7 +480,7 @@ $('#HISTORIAPOP').on('click', function () {
   if (window.location.href.indexOf('index.html') !== -1) {
   hidePopup2()
    $('html, body').animate({
-    scrollTop: '1400vmin'
+    scrollTop: '1100vmin'
   }, 500);
 } else {
   // If it's not the desired page, change the page and then scroll.

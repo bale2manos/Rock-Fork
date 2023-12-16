@@ -582,32 +582,47 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
     hidePopup2();
   });
   
-
+  $('#HISTORIAPOP').on('click', function () {
+    if (window.location.href.indexOf('index.html') !== -1) {
+    hidePopup2()
+     $('html, body').animate({
+      scrollTop: '1100vmin'
+    }, 500);
+  } else {
+    // If it's not the desired page, change the page and then scroll.
+    // Replace 'newPageURL' with the URL of the desired page.
   
-    
-    var privacyPolicyLink2 = document.getElementById("mini3");
+    window.location.href =  'index.html#boton-ver-carta-completa';
+   
+  }
+  });
+  $('#boton-ver-carta-completa, #a_la_carta, #cartapop, .menu-footer').click(function() {
+    window.location.href = 'carta.html';
+  });
+  
+  var privacyPolicyLink2 = document.getElementById("mini3");
+  
+
+
     privacyPolicyLink2.addEventListener("click", function (event) {
-        event.preventDefault();
-    
-        // Create a link element
-        var downloadLink = document.createElement("a");
-    
-        // Set the attributes for the download link
-        downloadLink.href = "./Rock Fork - Privacy Policy.pdf"; 
-        downloadLink.download = "Rock Fork - Privacy Policy.pdf";
-    
-        // Append the link to the body
-        document.body.appendChild(downloadLink);
-    
-        // Trigger the click event on the link
-        downloadLink.click();
-    
-        // Remove the link from the body
-        document.body.removeChild(downloadLink);
-    });
-
+      event.preventDefault();
   
-
+      // Create a link element
+      var downloadLink = document.createElement("a");
+  
+      // Set the attributes for the download link
+      downloadLink.href = "./Rock Fork - Privacy Policy.pdf"; 
+      downloadLink.download = "Rock Fork - Privacy Policy.pdf";
+  
+      // Append the link to the body
+      document.body.appendChild(downloadLink);
+  
+      // Trigger the click event on the link
+      downloadLink.click();
+  
+      // Remove the link from the body
+      document.body.removeChild(downloadLink);
+  });
 
     setTimeout(function() {
         console.log("Hiding loader container.");
