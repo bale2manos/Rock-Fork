@@ -1552,8 +1552,25 @@ button.eliminar:hover{
   padding:2vmin;
   position:absolute;
   left: 30%;
-  top: 48%;
+  top: 47%;
 }
+.popup-mini-right-labels2 {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 0vmin; /* Center the form horizontally */
+  padding:2vmin;
+  position:absolute;
+  left: 30%;
+  top: 47%;
+  font-size: 3vmin; /* Increase label font size */
+
+}
+.popup-mini-right-labels2 > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+
 
 @media screen and (max-width: 767px) {
   .popup-mini-right-labels {

@@ -507,7 +507,9 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
     window.location.href = "order.html";
   });
   
-
+  $('#go_home').on('click', function () {
+    window.location.href = 'index.html';
+  });
   
   function showPopup() {
     scrollPosition = window.scrollY;
@@ -580,9 +582,25 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
     hidePopup2();
   });
   
-
+  $('#HISTORIAPOP').on('click', function () {
+    if (window.location.href.indexOf('index.html') !== -1) {
+    hidePopup2()
+     $('html, body').animate({
+      scrollTop: '1400vmin'
+    }, 500);
+  } else {
+    // If it's not the desired page, change the page and then scroll.
+    // Replace 'newPageURL' with the URL of the desired page.
   
-    
+    window.location.href =  'index.html#boton-ver-carta-completa';
+  
+  }
+  });
+  
+  $('#boton-ver-carta-completa, #a_la_carta, #cartapop, .menu-footer').click(function() {
+    window.location.href = 'carta.html';
+  });
+  
     var privacyPolicyLink2 = document.getElementById("mini3");
     privacyPolicyLink2.addEventListener("click", function (event) {
         event.preventDefault();

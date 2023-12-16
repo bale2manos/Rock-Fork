@@ -374,6 +374,27 @@ var currentDate = new Date();
         alert("Rellena todos los campos");
     }
 });
+var privacyPolicyLink2 = document.getElementById("mini3");
+
+privacyPolicyLink2.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  // Create a link element
+  var downloadLink = document.createElement("a");
+
+  // Set the attributes for the download link
+  downloadLink.href = "./Rock Fork - Privacy Policy.pdf"; 
+  downloadLink.download = "Rock Fork - Privacy Policy.pdf";
+
+  // Append the link to the body
+  document.body.appendChild(downloadLink);
+
+  // Trigger the click event on the link
+  downloadLink.click();
+
+  // Remove the link from the body
+  document.body.removeChild(downloadLink);
+});
 
 $("#downloadButton").on("click", function() {
     // Get the information from the <p> elements

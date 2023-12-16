@@ -282,6 +282,20 @@ $(".close-popup-login2, #mini-1").on("click", function() {
   hidePopup2();
 });
 
+$('#HISTORIAPOP').on('click', function () {
+  if (window.location.href.indexOf('index.html') !== -1) {
+  hidePopup2()
+   $('html, body').animate({
+    scrollTop: '1200vmin'
+  }, 500);
+} else {
+  // If it's not the desired page, change the page and then scroll.
+  // Replace 'newPageURL' with the URL of the desired page.
+
+  window.location.href =  'index.html#boton-ver-carta-completa';
+
+}
+});
 
 
 var currentDate = new Date();
