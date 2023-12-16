@@ -91,7 +91,7 @@ h3{
 .header-book-table {
   position:fixed;
   width: 100vw;
-  background: linear-gradient(0deg, #C1A88C 0%, #e7a66f 100%), #be7110;
+  background: linear-gradient(0deg, #e7a66f 0%, #e7a66f 100%), #be7110;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset,
     0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -305,6 +305,7 @@ h3{
 #pag1-landing{
   display: flex;
   flex-direction: row;
+  background-color: #000;
   background-image: url("../images/muro.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -686,6 +687,7 @@ float: left;
 .footer-main {
   overflow: hidden;
   padding: 46px 49px;
+  background-color: #000;
   background-image: url("../images/footer-bg.png");
 
   background-size: cover;
@@ -1430,6 +1432,11 @@ button.eliminar:hover{
     padding: 1vmin 2vmin; /* Increase button padding */
   }
 
+  #reservar-mesa > button{
+    cursor: pointer;
+    background-color:#373737;
+  }
+
   #reservar-mesa { 
     display: none;
   }
@@ -1700,8 +1707,27 @@ button.eliminar:hover{
   background-color: #8ca5c1;
   padding: 10px;
 }
+#a_pedir_a_domicilio {
+  background-color: #373737;
+  border: 2px solid #8ca5c1; 
+  color: #fff; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+
+#a_la_carta{
+  background-color: #373737;
+  border: 2px solid #8ca5c1; 
+  color: #fff; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 3vw;
+  width:30vw;
+  height: 35px;
+}
 
 #boton-ver-carta-completa{
+  background-color:#373737;
   height: 7vh;
   margin-top: 5px;
   font-size: 3vw;
@@ -1790,7 +1816,7 @@ button.eliminar:hover{
 
 #text-about-us {
   margin-top: 10px; /* Adjust as needed to create space between the text and the container edges */
-  color: #C1A88C;
+  color: #cdbda9;
 }
 
 .burger-about-us {
@@ -1804,15 +1830,9 @@ button.eliminar:hover{
   #about-us{
     overflow: visible;
   }
-  #reservar-mesa-button{
-    cursor: pointer;
-  }
+  
 
-#a_la_carta{
-  font-size: 3vw;
-  width:30vw;
-  height: 35px;
-}
+
 
 .boton-inicio-box{
   height: 35px;
