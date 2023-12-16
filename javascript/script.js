@@ -135,11 +135,11 @@ function colors(x) {
   document.getElementById('boton-barra-Costillas').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Ensaladas').style.backgroundColor = '#773E22';
   document.getElementById('boton-barra-Postres').style.backgroundColor = '#773E22';
-  document.getElementById('boton-barra-entrantes').style.color = '#C1A88C';
-  document.getElementById('boton-barra-Burgers').style.color = '#C1A88C';
-  document.getElementById('boton-barra-Costillas').style.color = '#C1A88C';
-  document.getElementById('boton-barra-Ensaladas').style.color = '#C1A88C';
-  document.getElementById('boton-barra-Postres').style.color = '#C1A88C';
+  document.getElementById('boton-barra-entrantes').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Burgers').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Costillas').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Ensaladas').style.color = '#FFFFFF';
+  document.getElementById('boton-barra-Postres').style.color = '#FFFFFF';
   document.getElementById(x).style.backgroundColor = '#FFF6ED';
   document.getElementById(x).style.color = '#773E22';
 }
