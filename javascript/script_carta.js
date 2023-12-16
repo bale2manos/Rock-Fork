@@ -405,6 +405,10 @@ $("#downloadButton").on("click", function() {
   downloadLink.click();
 });
 
+setTimeout(function() {
+  console.log("Hiding loader container.");
+  $("#loaderContainer").fadeOut();
+}, 0);
 
 
 

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // Variables para llevar el seguimiento de los productos seleccionados
     // Function to update the count in the header
+      
     function setProgressBarWidth(percentage) {
         $("#progress-order > span").stop().animate({
             width: percentage + "%"
@@ -263,6 +264,21 @@ $('.bolsa-productos').click(function () {
     
     // Al cerrar la página, guardar los productos en la cookie
     window.onbeforeunload = guardarProductosEnCookie;
+
+    $('#back-to-user-pedido').on('click', function () {
+        $('#login-pedido-form').hide();
+
+        $('#user-pedido').show();
+    });
+
+    
+    $('#back-to-user-pedido-card').on('click', function () {
+        $('#opciones-pago').hide();
+
+        $('#user-pedido').show();
+    });
+
+
     
 
     
@@ -510,93 +526,7 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
   });
   
 
-  var currentDate = new Date();
-    var day = currentDate.getDate();
-    var month = currentDate.getMonth() + 1; // Month is zero-based
-    var year = currentDate.getFullYear();
   
-    // Format the date as "DD/MM/YYYY"
-    var formattedDate = `${day}/${month}/${year}`;
-  
-    // Set the formatted date as the placeholder
-    document.getElementById("current_date").placeholder = formattedDate;
-  
-  
-    var dropdownBtn = document.getElementById("dropdown-btn");
-    var dropdownContent = document.getElementById("time-dropdown");
-    var hourInput = document.getElementById("hour");
-  
-  
-    // DROPDOWN
-    var dropdownBtn = document.getElementById("dropdown-btn");
-    var dropdownContent = document.getElementById("time-dropdown");
-    var hourInput = document.getElementById("hour");
-    var addressInput = document.getElementById("address");
-    var currentDateInput = document.getElementById("current_date");
-    var comensalesInput = document.getElementById("comensales");
-    var reservationForm = document.getElementById("reservar-mesa");
-  
-    dropdownBtn.addEventListener("click", function () {
-      dropdownContent.style.display =
-        dropdownContent.style.display === "block" ? "none" : "block";
-    });
-  
-    // Close the dropdown when clicking outside of it
-    window.addEventListener("click", function (event) {
-      if (!event.target.matches(".triangulo-book-table")) {
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        }
-      }
-    });
-  
-    // Add click event listeners to each time option
-    var timeOptions = document.querySelectorAll(".time-option");
-    timeOptions.forEach(function (option) {
-      option.addEventListener("click", function () {
-        // Update the text of the hour input
-        hourInput.value = option.textContent;
-  
-        // Close the dropdown after selecting a time
-        dropdownContent.style.display = "none";
-      });
-    });
-  
-    // Add submit event listener to the reservation form
-    reservationForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the form from submitting
-  
-      // Check if all fields are filled
-      if (
-        addressInput.value &&
-        currentDateInput.value &&
-        hourInput.value &&
-        comensalesInput.value
-      ) {
-        // Display reservation message with input information
-        var reservationMessage =
-          "Mesa reservada. Información: " +
-          "Dirección: " +
-          addressInput.value +
-          ", Fecha: " +
-          currentDateInput.value +
-          ", Hora: " +
-          hourInput.value +
-          ", Personas: " +
-          comensalesInput.value;
-  
-        alert(reservationMessage);
-  
-        // Clear input fields
-        addressInput.value = "";
-        currentDateInput.value = "";
-        hourInput.value = "";
-        comensalesInput.value = "";
-      } else {
-        // Display message if any field is missing
-        alert("Rellena todos los campos");
-      }
-    });
     
     var privacyPolicyLink2 = document.getElementById("mini3");
     privacyPolicyLink2.addEventListener("click", function (event) {
@@ -622,5 +552,8 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
   
 
 
-
+    setTimeout(function() {
+        console.log("Hiding loader container.");
+        $("#loaderContainer").fadeOut();
+    }, 0);
 });

@@ -1322,6 +1322,9 @@ button.eliminar:hover{
     cursor: pointer;
   }
 
+  #about-us{
+    padding-bottom: 10vh;
+  }
   
 
 
@@ -1334,6 +1337,14 @@ button.eliminar:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top:8formvh;
+  }
+
+  .centerFormOrder{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin:auto;
     margin-top:8formvh;
@@ -1513,6 +1524,41 @@ button.eliminar:hover{
   animation: slide 35s infinite; /* Set the animation for the slider */
   object-fit:cover;
 }
+#registrationFormPopUp2 label {
+  cursor: pointer;
+}
+
+
+/* LOADER */
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #C1A88C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Set a high z-index to ensure it appears above other elements */
+}
+
+.loader {
+  display: inline-block;
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader img {
+  max-width: 50vmin; /* Adjust the image size as needed */
+  width:100%
+}
+
+
 
 .pagina-special{
   height:100%;
@@ -1527,7 +1573,6 @@ button.eliminar:hover{
   display: flex;
   flex-direction: row;
   gap:2px;
-  width: 90vw;
   padding-top: 10px;
 }
 
@@ -1541,7 +1586,7 @@ button.eliminar:hover{
 
 .boton-barra-menu{
   height: 35px;
-  width: 15vw;
+  width: 12vw;
   background-color: #773E22;
   color: #C1A88C;
   font-size: 2.6vw;
@@ -1812,7 +1857,7 @@ height: 35px;
     
     .boton-barra-menu{
       height: 35px;
-      width: 15vw;
+      width: 12vw;
       background-color: #773E22;
       color: #C1A88C;
       font-size: 2vw;
@@ -1850,7 +1895,7 @@ height: 35px;
       }
     .boton-barra-menu{
       height: 35px;
-      width: 15vw;
+      width: 12vw;
       background-color: #773E22;
       color: #C1A88C;
       font-size: 1.8vw;

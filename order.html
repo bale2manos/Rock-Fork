@@ -45,6 +45,11 @@
         
       </header>
       <!-- Log In / Sign Up Pop up -->
+      <div class="loader-container" id="loaderContainer">
+        <div class="loader">
+            <img src="./images/burger.svg" alt="Hamburguesa">
+        </div>
+      </div>
      
 
 
@@ -849,8 +854,10 @@
                 </div>
                 
 
-                <form class="centerForm" id="login-pedido-form">
+                <form class="centerFormOrder" id="login-pedido-form">
                     <!-- Correo Electrónico Input -->
+                    <img src="./images/cruz-negra.png" alt="Cruz Negra"  
+                            id="back-to-user-pedido">
                     <div class="form-group">
                         <label for="email">Correo Electrónico:</label>
                         <input type="email" id="email" name="email" required>
@@ -863,13 +870,16 @@
                     </div>
         
                     <!-- Buttons -->
-                    <div class="form-group align-center">
-                        <button type="submit" class="box" id="inicio-sesion-pedido-realizado">Iniciar Sesión</button>
+                    <div class="form-group align-center" id="login-order-to-pay">
+                        
+                        <button type="submit" class="box" id="inicio-sesion-pedido-realizado">Paga con tu cuenta</button>
                     </div>
                 </form>
 
 
                 <div id="opciones-pago">
+                    <img src="./images/cruz-negra.png" alt="Cruz Negra"  
+                            id="back-to-user-pedido-card">
                     <div class = "pago align-center" id="formularioBtn">
                         <figure>
                             <img class="imagen_novedad3" src="images/tarjeta.png" alt="Rock and fork">

@@ -268,6 +268,8 @@
     cursor: pointer;
 }
 
+
+
 #datos-pago {
   border: 1px solid black; /* Set border to 1px solid black */
   padding: 10px; /* Optional: Add padding for better visual appearance */
@@ -279,4 +281,14 @@
 
 #login-pedido-form{
   display: 	none;
+}
+
+
+#back-to-user-pedido, #back-to-user-pedido-card{
+  min-width: 20px;
+  max-width: 40px; /* Adjust the size of the image as needed */
+  width: 5vmin;
+  top: 1vh; 
+  left: 1vw; 
+  cursor: pointer;
 }

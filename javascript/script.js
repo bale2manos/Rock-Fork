@@ -1,5 +1,9 @@
 // JavaScript
 document.addEventListener('DOMContentLoaded', function () {
+
+
+  
+
     
 
     /* GALERIA 1 */
@@ -315,6 +319,13 @@ var currentDate = new Date();
       dropdownContent.style.display === "block" ? "none" : "block";
   });
 
+  hourInput.addEventListener("click", function () {
+    console.log("holaaa");
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
+    console.log(dropdownContent.style.display);
+  });
+
   // Close the dropdown when clicking outside of it
   window.addEventListener("click", function (event) {
     if (!event.target.matches(".triangulo-book-table")) {
@@ -575,6 +586,9 @@ privacyPolicyLink.addEventListener("click", function (event) {
 
 
 
-
+setTimeout(function() {
+  console.log("Hiding loader container.");
+  $("#loaderContainer").fadeOut();
+}, 0);
 });
   
