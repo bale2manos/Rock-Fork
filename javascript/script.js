@@ -15,51 +15,39 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 }
     
-    /* GALERIA 2 */
-    var thumbnails2 = document.querySelectorAll(".thumbnail2")
-    var mainImage2 = document.querySelector("#zoomed-image2")
-    for (var i = 0; i < thumbnails2.length; i++) {
-      thumbnails2[i].addEventListener("click", function () {
-        mainImage2.src = this.src
-      })
-}  
+
+// **********LOGIN********** //
+document.getElementById('registrationFormPopUp').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+
+  // Get user inputs
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  // Check if the user is already logged in by checking the existence of the cookie
+  if (getCookie(email)) {
+      alert('Ya has iniciado sesión');
+      hidePopup();
+      return;
+  }
+
+  // Encrypt the data (you can use a more secure encryption method in a production environment)
+  var encryptedPassword = CryptoJS.AES.encrypt(password, 'secretKey').toString();
+
+  // Create a cookie with the email as the title and encrypted data
+  setCookie(email, encryptedPassword, 30); // 30 days expiration
+
+  // You can perform additional actions here, such as redirecting the user or displaying a success message
+
+  // Clear the form fields
+  document.getElementById('email').value = '';
+  document.getElementById('password').value = '';
+  hidePopup();
+});
+    
 
 
-    // Validar DNI español:
-    function validateSpanishDNI(dni) {
-        const dniPattern = /^[0-9]{8}[A-Za-z]$/;
-    
-        if (!dniPattern.test(dni)) {
-          console.log("MARCOOOS");
-          displayDNIError('DNI Inválido');
-          return false;
-        }
-    
-        const dniNumber = dni.slice(0, 8);
-        const dniLetter = dni.slice(8).toUpperCase();
-    
-        const letterIndex = parseInt(dniNumber) % 23;
-        const validLetters = 'TRWAGMYFPDXBNJZSQVHLCKE';
-        const expectedLetter = validLetters.charAt(letterIndex);
-    
-        if (dniLetter != expectedLetter) {
-          displayDNIError('DNI Inválido');
-          return false; 
-        }
-    
-        return true;
-    }
-
-    /* Eror en el DNI */
-    function displayDNIError(message) {
-        const dniError = document.getElementById('dniError');
-        dniError.textContent = message;
-      
-        setTimeout(function () {
-          dniError.textContent = '';
-        }, 3000);
-      }
-
+  
 
     // ******************COOKIES MANAGEMENT******************  
     function setCookie(cname, cvalue, exdays) {
@@ -347,6 +335,9 @@ var currentDate = new Date();
     });
   });
 
+
+  
+
   // Add submit event listener to the reservation form
   reservationForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the form from submitting
@@ -360,10 +351,30 @@ var currentDate = new Date();
     if (address && currentDate && hour && comensales) {
 
         // Update the popup with the reservation details
-        $("#popup-address").text("Dirección: " + address);
+        $("#popup-address").text("Dirección: " + 'Calle Pepinero, 23, Leganés');
         $("#popup-date").text("Fecha: " + currentDate);
         $("#popup-hour").text("Hora: " + hour);
         $("#popup-comensales").text("Personas: " + comensales);
+
+
+        // Obtener el ID actual de la cookie o inicializarlo si no existe
+        var reservationId = parseInt(getCookie("reservationId")) || 1;
+
+        // Crear una nueva cookie con los datos de la reserva
+        var reservationData = {
+            "id": reservationId,
+            "date": currentDate,
+            "hour": hour,
+            "comensales": comensales,
+        };
+        var now = new Date();
+        var timestamp = now.toISOString().split('T')[0] + ' ' + now.toTimeString().split(' ')[0];
+
+        var cookieTitle = "Reserva " + timestamp;
+        setCookie(cookieTitle, JSON.stringify(reservationData), 30);
+        setCookie("reservationId", reservationId + 1, 30);
+
+
         
 
         // Clear input fields
@@ -381,6 +392,33 @@ var currentDate = new Date();
         alert("Rellena todos los campos");
     }
 });
+
+// Función para establecer una cookie
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+// Función para obtener el valor de una cookie
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      while (cookie.charAt(0) == ' ') {
+          cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(nameEQ) == 0) {
+          return cookie.substring(nameEQ.length, cookie.length);
+      }
+  }
+  return null;
+}
 
 $("#downloadButton").on("click", function() {
     // Get the information from the <p> elements

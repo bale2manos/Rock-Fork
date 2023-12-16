@@ -103,7 +103,7 @@
                                 Postres
                             </button>
                         </article>
-                        <button id="next_step" class="box boton-barra-menu">SIGUIENTE PASO</button>
+                        <button id="next_step" class="box boton-barra-menu">Siguiente paso</button>
                     </article>
                     
                     
@@ -790,8 +790,8 @@
             <article class="col-6 col-s-6 align-center" id="paso2-right" >
 
                 <div class="flex-column" id="user-pedido">
-                    <button id="pedido-registrado" class="box boton-barra-menu"><p>Iniciar sesión</p></button>
-                    <button id="pedido-invitado" class="box boton-barra-menu"><p>Continua como invitado</p></button>
+                    <button id="pedido-registrado" class="box boton-revisión">Iniciar sesión</button>
+                    <button id="pedido-invitado" class="box boton-revisión">Continua como invitado</button>
                 </div>
                 
                 <div id="popup-formulario" class="popup align-center">
@@ -865,8 +865,8 @@
             
                     <!-- Nombre y Apellidos Inputs -->
                     <div class="form-group">
-                        <label for="fullName">Contraseña:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password_login" name="password_login" required>
                     </div>
         
                     <!-- Buttons -->
@@ -903,13 +903,15 @@
                         </div>
                     </div>
 
-                    <div id="correo-invitado">
-                        <p>Introduce tu correo</p>
+                    <form id="correo-invitado" class="align-center flex-column">
+                        <p>Correo electrónico</p>
                         <input type="email" id="email-invitado" name="email" required>
-                    </div>
+                        <p>¿Dónde lo enviamos?</p>
+                        <input type="text" id="address-order" name="address-order" required>
+                    </form>
 
                     <button id="pagar-pedido" class="box boton-barra-menu">
-                        <p>¡A rockear!</p>    
+                        ¡A rockear! 
                     </button>
                 </div>
 
@@ -1004,6 +1006,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src = "javascript/script_carta.js"></script>
     <script src="javascript/order.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    
     <script type="text/javascript" src="javascript/loading-bar.js"></script>
 
 </body>

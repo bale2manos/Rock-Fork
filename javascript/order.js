@@ -68,6 +68,19 @@ function updateProductosSeleccionados(plateName, increment) {
     }
     console.log(productosSeleccionados);
 }
+function createCookieWithProductosSeleccionados() {
+    // Obtén el timestamp actual
+    var timestamp = new Date().getTime();
+
+    // Convierte productosSeleccionados a cadena JSON
+    var productosSeleccionadosJSON = JSON.stringify(productosSeleccionados);
+
+    // Crea la cookie con el timestamp como nombre y los datos de productosSeleccionados como valor
+    setCookie(timestamp.toString(), productosSeleccionadosJSON, 30); // Puedes ajustar el tiempo de expiración según tus necesidades
+
+    // Muestra un mensaje o realiza otras acciones según sea necesario
+    console.log('Cookie creada con éxito:', timestamp);
+}
 
 // Click event for the "AÑADIR" button
 $('.add-plate').on('click', function () {
@@ -282,21 +295,56 @@ $('.bolsa-productos').click(function () {
     
 
     
-    $('#inicio-sesion-pedido-realizado').on('click', function () {
-        animacionFinal();
-        $('#paso-2').hide();
-        $('#paso-3').show();
-        $('#paso-3').css('display', 'flex');
-        setProgressBarWidth(100);
+    $('#inicio-sesion-pedido-realizado').on('click', function (event) {
+        event.preventDefault(); // Prevent the form from submitting
+    
+        // Obtain the values of the input fields
+        var emailValue = $('#email').val();
+        var passwordValue = $('#password_login').val();
+        console.log(emailValue);
+        console.log(passwordValue);
+
+    
+        // Check if both fields are filled
+        if (emailValue && passwordValue) {
+            // Execute the desired actions
+            animacionFinal();
+            $('#paso-2').hide();
+            $('#paso-3').show();
+            $('#paso-3').css('display', 'flex');
+            setProgressBarWidth(100);
+            createCookieWithProductosSeleccionados();
+        } else {
+            // Show an alert if any field is empty
+            alert('Por favor, rellena los campos.');
+        }
     });
 
     $('#pagar-pedido').on('click', function () {
+        // Obtén los valores de los campos de entrada
+    var emailInvitado = $('#email-invitado').val();
+    var direccionPedido = $('#address-order').val();
+
+    // Verifica que ambos campos estén llenos antes de continuar
+    if (emailInvitado && direccionPedido) {
+        // Aquí puedes colocar el código de la animación y otras acciones
         animacionFinal();
         $('#paso-2').hide();
         $('#paso-3').show();
         $('#paso-3').css('display', 'flex');
         setProgressBarWidth(100);
+        createCookieWithProductosSeleccionados();
+
+        // También puedes realizar otras acciones, como enviar la información a un servidor, etc.
+
+    } else {
+        // Si falta algún campo, muestra un mensaje de alerta o realiza otra acción
+        alert('Por favor, completa todos los campos antes de continuar.');
+    }
+        
     });
+    
+    
     
     
     
@@ -308,6 +356,13 @@ $('.bolsa-productos').click(function () {
         let tarjeta = $('#tarjeta').val();
         let date = $('#date').val();
         let cvv = $('#cvv').val();
+        console.log(name);
+        console.log(tarjeta);
+        console.log(date);
+        console.log(cvv);
+
+
+
         if (name === "" || tarjeta === "" || date === "" || cvv === "" ) {
             alert("Por favor, rellene todos los campos");
         }

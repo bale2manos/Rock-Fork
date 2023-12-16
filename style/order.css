@@ -57,6 +57,8 @@
     width: 3vw;
     object-fit: cover; /* Ensure the image covers the entire box without stretching */
     margin-right: 2vw;
+    border-radius: 10px; 
+
 }
 
 
@@ -257,6 +259,7 @@
 #resumen-pago{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 #go-back-to-opciones-pago{
@@ -273,6 +276,7 @@
 #datos-pago {
   border: 1px solid black; /* Set border to 1px solid black */
   padding: 10px; /* Optional: Add padding for better visual appearance */
+  border-radius: 10px; 
 }
 
 #opciones-pago{

@@ -215,8 +215,10 @@ h3{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #C1A88C;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000000;
+  border-radius: 10px;
   z-index: 1;
 }
 
@@ -350,7 +352,15 @@ video {
   display: none;
 }
 
-.popup-login {
+#lottie-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.popup-login{
   display: flex;
   flex-direction: column;
   fill: #ffeadb;
@@ -595,13 +605,7 @@ video {
   justify-content: center;
 }
 
-.boton-inicio{
-  display: flex;
-  flex-direction: row;
-  background-color: #773E22;
-  justify-content: center;
-  align-items: center; 
-}
+
 
 #fork-knife-landing{
   padding-left:1vw;
@@ -1395,9 +1399,12 @@ button.eliminar:hover{
   .form-group > label {
     font-size: 3vmin; /* Increase label font size */
   }
+  #correo-invitado > p{
+    font-weight: 600;
+  }
 
-
-  .form-group > input {
+  .form-group > input, 
+   #correo-invitado > input{
     background-color: #eee0ce;
     width: 100%;
     height: 6vh;
@@ -1441,11 +1448,39 @@ button.eliminar:hover{
   margin:auto;
   margin-left: 4vmin; /* Center the form horizontally */
   padding:2vmin;
+  
 }
 
-.popup-labels > label {
-  font-size: 9.5vmin; /* Increase label font size */
+#pagar-pedido{
+  margin-top: 5vh;
+
 }
+
+.info-pago  input {
+  background-color: #eee0ce;
+  width: 100%;
+  height: 6vh;
+  font-size: 2vmin;
+  padding-left: 2vmin;
+}
+
+.popup-labels > label,
+.popup-mini-labels > label,
+.popup-mini-right-labels > label {
+  font-size: 9.5vmin; /* Increase label font size */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .popup-labels > label,
+  .popup-mini-labels > label,
+  .popup-mini-right-labels > label {
+    font-size: 7vmin; /* Increase label font size */
+  }
+  
+}
+
+
 
 .form-group > textarea {
   background-color: #eee0ce;
@@ -1498,6 +1533,21 @@ button.eliminar:hover{
   position:absolute;
   left: 30%;
   top: 48%;
+}
+
+@media screen and (max-width: 767px) {
+  .popup-mini-right-labels {
+    width: 100%; /* Adjust the width as needed */
+    margin:auto;
+    margin-left: 4vmin;
+    /* Center the form horizontally */
+    padding:2vmin;
+    padding-top: 5vmin;
+    position:absolute;
+    left: 3.5%;
+    top:55%;
+  }
+  
 }
 
 .popup-mini-right-labels > label {
@@ -1586,10 +1636,10 @@ button.eliminar:hover{
 
 .boton-barra-menu{
   height: 35px;
-  width: 12vw;
+  width: 28vw;
   background-color: #773E22;
   color: #C1A88C;
-  font-size: 2.6vw;
+  font-size: 4vw;
   min-width: 1vw;
 }
 
@@ -1638,7 +1688,7 @@ button.eliminar:hover{
 }
 
 .menu_novedad > div{
-  background-color: rgb(152, 191, 193);
+  background-color: #8ca5c1;
   padding: 10px;
 }
 
@@ -1649,15 +1699,22 @@ button.eliminar:hover{
   width: 35vmin;
 }
 
+#boton-carta-default{
+  background-color:#373737;
+}
+
 #next_step{
   font-size: 2vw;
+  background-color:#373737;
 }
 #boton-carta-vegana{
-  font-size: 2.2vw;
+  font-size: 3.3vw;
+  background-color:#373737;
 }
 
 #boton-home{
   margin-left: 15px;
+  background-color: #373737;
 }
 .menu_carta_completa > div{
   background-color: rgb(152, 191, 193);
@@ -1743,16 +1800,17 @@ button.eliminar:hover{
   }
 
 #a_la_carta{
-  font-size: 2.6vw;
-  width:24vw;
+  font-size: 3vw;
+  width:30vw;
+  height: 35px;
 }
 
 .boton-inicio-box{
-height: 35px;
-  width: 15vw;
+  height: 35px;
+  width: 20vw;
   background-color: #773E22;
   color: #C1A88C;
-  font-size: 2.8vw;
+  font-size: 3vw;
   min-width: 1vw;
 }
 
@@ -1773,6 +1831,27 @@ height: 35px;
   margin-left: 10px;
 }
 
+.boton-revisión{
+  height: 10vh;
+  width: 48vw;
+  background-color: #773E22;
+  color: #C1A88C;
+  font-size: 5vw;
+  min-width: 1vw;
+  margin-bottom: 15px;
+}
+
+.boton-inicio{
+  display: flex;
+  flex-direction: row;
+  background-color: #773E22;
+  justify-content: center;
+  align-items: center; 
+}
+
+#boton-barra-Burgers-vegano{
+  font-size: 2.5vw;
+}
 
 /*######################################################################################################################*/
 /*######################################################################################################################*/
@@ -1809,6 +1888,18 @@ height: 35px;
     }
     #next_step{
       font-size:80%;
+    }
+    #boton-barra-Burgers-vegano{
+      font-size: 2vw;
+    }
+    .boton-revisión{
+      height: 15vh;
+      width: 50vw;
+      background-color: #773E22;
+      color: #C1A88C;
+      font-size: 5vw;
+      min-width: 1vw;
+      margin-bottom: 15px;
     }
 
     #boton-ver-carta-completa{
@@ -1880,9 +1971,28 @@ height: 35px;
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-    
+    #boton-barra-Burgers-vegano{
+      font-size: 1.4vw;
+    }
+
+    #a_la_carta{
+      font-size: 3vw;
+      width:30vw;
+      height: 55px;
+    }
+
+    .boton-revisión{
+      height: 30vh;
+      width: 28vw;
+      background-color: #773E22;
+      color: #C1A88C;
+      font-size: 4vw;
+      min-width: 1vw;
+      margin-bottom: 15px;
+    }
+
     .boton-inicio-box{
-      height: 35px;
+      height: 50px;
         width: 14vw;
         background-color: #773E22;
         color: #C1A88C;
@@ -1894,9 +2004,8 @@ height: 35px;
         width:20vw;
       }
     .boton-barra-menu{
-      height: 35px;
+      height: 50px;
       width: 12vw;
-      background-color: #773E22;
       color: #C1A88C;
       font-size: 1.8vw;
       min-width: 1vw;
@@ -1911,7 +2020,7 @@ height: 35px;
       font-size: 100%;
     }
     #boton-carta-vegana{
-      font-size: 90%;
+      font-size: 130%;
     }
     #boton-ver-carta-completa{
       height: 7vh;
