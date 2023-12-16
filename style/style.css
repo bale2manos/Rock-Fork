@@ -1240,6 +1240,7 @@ footer > p{
   color:#30190e;
   font-weight: bolder;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 
@@ -1629,8 +1630,16 @@ button.eliminar:hover{
 .barra-menu2{
   display: flex;
   flex-direction: row;
-  gap:2px;
+  gap:2px;  
   width: 65vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.barra-menu3{
+  display: flex;
+  flex-direction: column;
+  gap:2px;  
   padding-top: 10px;
 }
 
@@ -1680,7 +1689,7 @@ button.eliminar:hover{
 }
 
 .imagen_novedad3{
-  min-width: 30px;
+  min-width: 80px;
   max-width: 250px;
   width:10vw;
   object-fit: cover;
@@ -1704,12 +1713,12 @@ button.eliminar:hover{
 }
 
 #next_step{
-  font-size: 2vw;
+  font-size: 3.3vw;
   background-color:#373737;
 }
 #boton-carta-vegana{
   font-size: 3.3vw;
-  background-color:#373737;
+  background-color:#174906;
 }
 
 #boton-home{
@@ -1957,6 +1966,8 @@ button.eliminar:hover{
     
 
 }
+
+
 @media only screen and (min-width: 768px) {
     /* For Desktop: */
     .col-1 {width: 8.33%;}
@@ -1974,7 +1985,9 @@ button.eliminar:hover{
     #boton-barra-Burgers-vegano{
       font-size: 1.4vw;
     }
-
+    .barra-menu3{
+      flex-direction: row;
+    }
     #a_la_carta{
       font-size: 3vw;
       width:30vw;

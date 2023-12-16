@@ -167,7 +167,15 @@
   .orange > span {
     background-image: linear-gradient(#f1a165, #f36d0a);
   }
-  
+  .bin{
+    min-width: 30px;
+    cursor:pointer;
+  }
+
+  .selected-product-image{
+    min-width: 30px;
+  }
+
   .red > span {
     background-image: linear-gradient(#f0a3a3, #f42323);
   }
