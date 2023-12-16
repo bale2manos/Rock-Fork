@@ -1640,7 +1640,7 @@ button.eliminar:hover{
   display: flex;
   flex-direction: row;
   gap:2px;
-  padding-top: 10px;
+  padding-top: 60px;
 }
 
 .barra-menu2{
