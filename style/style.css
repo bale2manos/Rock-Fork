@@ -1484,9 +1484,9 @@ button.eliminar:hover{
   padding-left: 2vmin;
 }
 
-.popup-labels > label,
-.popup-mini-labels > label,
-.popup-mini-right-labels > label {
+.popup-labels > p,
+.popup-mini-labels > p,
+.popup-mini-right-labels > p {
   font-size: 9.5vmin; /* Increase label font size */
   cursor: pointer;
 }
