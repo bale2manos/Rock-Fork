@@ -246,7 +246,6 @@ $(".close-popup-login").on("click", function() {
 
 function showPopup2() {
   scrollPosition = window.scrollY;
-  console.log("holaaa")
   $("#popup-overlay2, .popup-container2").slideDown("200");
   $("body").css("overflow", "hidden"); // Hide the rest of the page
   $(".header-book-table").css("display", "none"); // Hide the rest of the page

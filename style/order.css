@@ -14,6 +14,79 @@
     height: 100vh;
  
 }
+.popup-labelsOrder {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 4vmin; /* Center the form horizontally */
+  padding:2vmin;
+  font-size: 8.5vmin;
+}
+
+.popup-labelsOrder > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+.popup-mini-labels > p,
+.popup-mini-right-labels > p {
+  font-size: 3.5vmin; /* Increase label font size */
+  cursor: pointer;
+}
+
+.popup-mini-right-labels > label {
+  font-size: 3vmin; /* Increase label font size */
+}
+
+.popup-mini-right-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+.popup-mini-labels > label {
+  font-size: 3vmin; /* Increase label font size */
+}
+
+.popup-mini-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+
+.popup-mini-right-labels {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 0vmin; /* Center the form horizontally */
+  padding:2vmin;
+  position:absolute;
+  left: 30%;
+  top: 47%;
+}
+.popup-mini-right-labels2Order {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 0vmin; /* Center the form horizontally */
+  padding:2vmin;
+  position:absolute;
+  left: 35%;
+  top: 69%;
+  font-size: 3vmin; /* Increase label font size */
+
+}
+.popup-mini-right-labels2Order > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
+.popup-mini-labels {
+  width: 100%; /* Adjust the width as needed */
+  margin:auto;
+  margin-left: 4vmin;
+   /* Center the form horizontally */
+  padding:2vmin;
+  padding-top: 5vmin;
+
+}
+
 
 .boton-barra-menu{
   max-height: 100px;

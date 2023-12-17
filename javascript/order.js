@@ -546,7 +546,6 @@ $('#a_pedir_a_domicilio, .wheel').click(function() {
 
   function showPopup2() {
     scrollPosition = window.scrollY;
-    console.log("holaaa")
     $("#popup-overlay2, .popup-container2").slideDown("200");
     $("#pag1").css("display", "none"); // Hide the rest of the page
     $(".header-book-table").css("display", "none"); // Hide the rest of the page

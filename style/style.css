@@ -250,7 +250,18 @@ h3{
   padding-bottom: 10vh;
   gap: 10vh;
 }
-
+#left-side-popup2Order{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  gap: 10vh;
+  position: absolute;
+  right: -1%;
+  top: 33%;
+}
 
 .social-images-icons {
   display: flex;
@@ -1364,9 +1375,12 @@ button.eliminar:hover{
   .centerFormOrder{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin:auto;
-    margin-top:8formvh;
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
   }
 
   #registrationForm{
@@ -1468,9 +1482,14 @@ button.eliminar:hover{
   margin:auto;
   margin-left: 4vmin; /* Center the form horizontally */
   padding:2vmin;
-  
+  font-size: 8.5vmin;
 }
 
+.popup-labels > :hover{
+  color: ghostwhite;
+  border-color: #000;
+  border-width: 20cm;
+}
 #pagar-pedido{
   margin-top: 5vh;
 
@@ -1484,10 +1503,10 @@ button.eliminar:hover{
   padding-left: 2vmin;
 }
 
-.popup-labels > p,
+
 .popup-mini-labels > p,
 .popup-mini-right-labels > p {
-  font-size: 9.5vmin; /* Increase label font size */
+  font-size: 3.5vmin; /* Increase label font size */
   cursor: pointer;
 }
 
@@ -1509,11 +1528,7 @@ button.eliminar:hover{
   font-size: 3vmin;
   padding-left: 2vmin;
 }
-.popup-labels > :hover{
-  color: ghostwhite;
-  border-color: #000;
-  border-width: 20cm;
-}
+
 
 .texto-horizontal{
   writing-mode: vertical-rl;  
@@ -1561,7 +1576,7 @@ button.eliminar:hover{
   padding:2vmin;
   position:absolute;
   left: 30%;
-  top: 47%;
+  top: 42%;
   font-size: 3vmin; /* Increase label font size */
 
 }
