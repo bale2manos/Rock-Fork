@@ -23,6 +23,8 @@ $(document).ready(function() {
   
   document.getElementById('boton-barra-entrantes').style.backgroundColor = '#FFF6ED';
   document.getElementById('boton-barra-entrantes').style.color = '#773E22';
+  document.getElementById('boton-barra-entrantes-vegano').style.color = '#773E22';
+  
 
   
 
